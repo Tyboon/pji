@@ -18,11 +18,13 @@ def get_monomers() :
 	response = urllib2.urlopen(url).read()
 	try :
 		writer = csv.writer(csv_file)
-		writer.writerow(('molecularFormula'))
+		writer.writerow(('num','code'))
 		json_struct = json.loads(response)
+		num = 0
 		for i in json_struct :
-			if 'molecularFormula' in i :
-				writer.writerow((i['molecularFormula']))
+			if 'code' in i :
+				writer.writerow((`num`,i['code']))
+				num += 1
 	finally :
 		csv_file.close()
 
@@ -42,19 +44,22 @@ def get_all_peptides() :
 	csv_file = open(csv_name, "wb")
 	try :
 		writer = csv.writer(csv_file)
-		writer.writerow(('id','activity','composition'))
+		writer.writerow(('activity','id','composition'))
 		for i in range(1,1174) : 
 			json_data = get_peptide(i)
 			json_struct = json.loads(json_data)
 			if 'peptides' in json_struct :
-				if len(json_struct['peptides']) >= 1 :
+				if (len(json_struct['peptides']) >= 1) :
 					if 'activity' in json_struct['peptides'][0]['general'] :
-						if 'formula' in json_struct['peptides'][0]['general'] :
-							if 'id' in json_struct['peptides'][0]['general'] :
-								writer.writerow((json_struct['peptides'][0]['general']['activity'][0], json_struct['peptides'][0]['general']['formula'], json_struct['peptides'][0]['general']['id']))
+						if 'id' in json_struct['peptides'][0]['general'] :
+							if 'composition' in json_struct['peptides'][0]['structure'] :
+								composition = json_struct['peptides'][0]['structure']['composition']
+								composition = composition.replace(',',';')
+								writer.writerow((json_struct['peptides'][0]['general']['activity'][0], json_struct['peptides'][0]['general']['id'],composition))	
 	finally :
 		csv_file.close()
 
 if __name__ == "__main__" :
-	#get_all_peptides()
-	get_monomers()
+	#print get_peptide(2)
+	get_all_peptides()
+	#get_monomers()
