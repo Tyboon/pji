@@ -59,7 +59,61 @@ def get_all_peptides() :
 	finally :
 		csv_file.close()
 
+'''
+	Premits to create a list from a csv
+'''
+def get_list(file) :
+	with open(file) as f :
+		list_f = []
+		for line in csv.reader(f,delimiter=',') :
+			list_f.append(line)
+	return list_f
+
+'''
+	ajoute a la liste les compteurs et les valeurs pour chaque monomeres
+'''
+def add_cpt(pep,monomere) :
+	len_mono = len(monomere)
+	len_pep = len(pep)
+	#ajout de l'entete
+	for m in range(1,len_mono):
+		pep[0].append(monomere[m][1])
+	
+	#ajout des donnees
+	for p in range(1,len_pep):
+		for m in range(1,len_mono):
+			pep[p].append(nb_occ(monomere[m][1],pep[p][2]))
+	
+	return pep
+
+'''
+	Counts the number of occurancies of a monomer in a peptide
+'''
+def nb_occ(monom, pep) :
+	occ = 0
+	list_p = pep.split('; ')
+	for m in list_p:
+		if m == monom :
+			occ += 1
+	return occ
+
+'''
+	Creates csv from a list
+'''
+def create_csv(mylist,filename) :
+	csv_file = open(filename, "wb")
+	try :
+		writer = csv.writer(csv_file)
+		for line in mylist :
+				writer.writerow((line))
+	finally :
+		csv_file.close()
+
 if __name__ == "__main__" :
 	#print get_peptide(2)
-	get_all_peptides()
+	#get_all_peptides()
 	#get_monomers()
+	p = get_list('peptide.csv')
+	l = get_list('monomeres.csv')
+	p = add_cpt(p,l)
+	create_csv(p,"peptides_weka.csv")
