@@ -11,3 +11,8 @@ Emilie Allart
 		enlever les peptides à plusieurs activités
 		enlever les peptides à activité inconnue ? 
 		ajouter le vecteur de comptage de monomère pour chaque peptide
+
+18/02 : TODO done
+		prise en main de weka sous python 
+		utilisation des methodes d'apprentissage automatique supervise 
+		validation croisee en 9/10
