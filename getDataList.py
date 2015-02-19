@@ -28,43 +28,26 @@ def get_peptide(i) :
 '''
 def get_list_peptides() :
 	liste = [['activity','id','composition']]
-	for i in range(1174) :
+	for i in range(1174) : 
 		json_data = get_peptide(i)
 		json_struct = json.loads(json_data)
 		if 'peptides' in json_struct :
 			if (len(json_struct['peptides']) >= 1) :
-				if (('activity' in json_struct['peptides'][0]['general']) and (json_struct['peptides'][0]['general']['activity'][0] != 'unknown')) :
+				if (('activity' in json_struct['peptides'][0]['general']) and (len(json_struct['peptides'][0]['general']['activity']) == 1 ) and (json_struct['peptides'][0]['general']['activity'][0] != 'unknown')) :
 					if 'id' in json_struct['peptides'][0]['general'] :
 						if 'composition' in json_struct['peptides'][0]['structure'] :
 							composition = json_struct['peptides'][0]['structure']['composition']
-							composition = composition.replace(',',';')
+							composition = "'" + composition.replace(', ',';') + "'"
 							liste.append([json_struct['peptides'][0]['general']['activity'][0], json_struct['peptides'][0]['general']['id'],composition])
 	return liste
-
-'''
-	Permits to delete peptides with several activities
-'''
-def tri_list(liste_pep) :
-	double = False
-	for p1 in liste_pep :
-		for p2 in liste_pep :
-			if ((p1[2] == p2[2]) and (p1 != p2)) :
-				liste_pep.remove(p2)
-				double = True
-		if double == True :
-			liste_pep.remove(p1)
-			double = False
-	return liste_pep
 
 '''
 	Counts the number of occurancies of a monomer in a peptide
 '''
 def nb_occ(monom, pep) :
 	occ = 0
-	list_p = pep.split('; ')
-	for m in list_p:
-		if m == monom :
-			occ += 1
+	list_p = pep.split(';')
+	occ = list_p.count(monom)
 	return occ
 
 '''
@@ -82,6 +65,7 @@ def add_cpt(peptides,monomers) :
 				p.append(nb_occ(m,p[2]))
 	
 	return peptides
+
 
 '''
 	Creates csv from a list
@@ -102,11 +86,9 @@ if __name__ == "__main__" :
 	print 'get monomers'
 	peptides_norine = get_list_peptides()
 	print 'get peptides'
-	peptides_tri = tri_list(peptides_norine)
-	print 'get peptides tris'
-	#print peptides_tri
-	peptides_count = add_cpt(peptides_tri,monomers)
+	#print peptides_norine
+	peptides_count = add_cpt(peptides_norine,monomers)
 	print 'get peptides count'
 	#print peptides_count
-	create_csv(peptides_tri,'peptides_final.csv')
+	create_csv(peptides_count,'peptides_final.csv')
 
