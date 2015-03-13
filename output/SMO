@@ -1,0 +1,3663 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Relation:     peptides_final-weka.filters.unsupervised.attribute.Remove-R2-3
+Instances:    724
+Attributes:   529
+[list of attributes omitted]
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: antibiotic, immunomodulating
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0105 * (normalized) 4oxo-5Me-Pro
+ +      -0.1089 * (normalized) 3OH-Leu
+ +      -0.1729 * (normalized) 4OH-D-Ph-Lac
+ +       0.7433 * (normalized) Abu
+ +      -0.01   * (normalized) D-bPhe
+ +       0      * (normalized) Arg
+ +      -0.0082 * (normalized) Asp
+ +      -0.0809 * (normalized) dhCys
+ +      -0.0082 * (normalized) bMe-Asp
+ +      -0.0572 * (normalized) bOH-NMe-Phe
+ +      -0.0064 * (normalized) D-NMe-Ser
+ +       0      * (normalized) bU-dAla
+ +      -0.0814 * (normalized) Cys
+ +      -0.5796 * (normalized) Hmp
+ +       0      * (normalized) dhAbu
+ +      -0.0126 * (normalized) D-Hiv
+ +       0      * (normalized) D-Hmp
+ +      -0.3472 * (normalized) D-Lac
+ +      -0.5189 * (normalized) D-Ph-Lac
+ +      -0.0165 * (normalized) D-Val
+ +       0      * (normalized) Cap
+ +       0.2247 * (normalized) Glu
+ +      -0.0064 * (normalized) NMe-Hpg
+ +      -0.0041 * (normalized) Hpr
+ +      -0.0126 * (normalized) Lac
+ +       0      * (normalized) Agdha
+ +       0      * (normalized) D-OH-Asp
+ +       0      * (normalized) Dpr
+ +       0.1024 * (normalized) Gly
+ +       0.6652 * (normalized) Nva
+ +      -0.0426 * (normalized) Ser
+ +      -0.5    * (normalized) Thr
+ +      -0.0052 * (normalized) Trp
+ +      -0.0082 * (normalized) D-Dbu
+ +       0.114  * (normalized) Tyr
+ +      -0.0082 * (normalized) Dbu
+ +       0      * (normalized) L-Dbu
+ +      -0.3833 * (normalized) Pro
+ +       0      * (normalized) Ival
+ +      -0.0761 * (normalized) 3Me-Pro
+ +      -0.005  * (normalized) 4OH-Thr
+ +      -0.0055 * (normalized) 3OH-5Me-Pro
+ +       0      * (normalized) 3OH-Pro
+ +      -0.0055 * (normalized) 4Cl-Thr
+ +       0      * (normalized) 4OH-Pro
+ +      -0.0572 * (normalized) aIle
+ +       0.0166 * (normalized) Ala
+ +      -0.3259 * (normalized) Asn
+ +      -0.1738 * (normalized) aThr
+ +       0.2765 * (normalized) NMe-Gly
+ +       0      * (normalized) OMe-Asp
+ +      -0.4606 * (normalized) Dab
+ +      -0.0011 * (normalized) D-Ala
+ +      -0.0328 * (normalized) D-Arg
+ +       0      * (normalized) D-Asn
+ +      -0.0541 * (normalized) D-Asp
+ +      -0.0105 * (normalized) ChrAct
+ +      -0.0811 * (normalized) D-Glu
+ +      -0.0164 * (normalized) D-aThr
+ +      -0.2542 * (normalized) Aib
+ +      -0.1349 * (normalized) D-Leu
+ +      -0.0515 * (normalized) D-Lys
+ +      -0.1069 * (normalized) D-Orn
+ +      -0.005  * (normalized) 5Me-Pro
+ +      -0.0866 * (normalized) D-Phe
+ +      -0.1286 * (normalized) D-Pro
+ +       0      * (normalized) D-Ser
+ +       0      * (normalized) D-Trp
+ +      -0.0515 * (normalized) D-Tyr
+ +      -0.3823 * (normalized) Gln
+ +      -0.1622 * (normalized) His
+ +      -0.072  * (normalized) Hpg
+ +       0.4704 * (normalized) Ile
+ +      -0.0702 * (normalized) Leu
+ +      -0.1069 * (normalized) Lys
+ +       0.4888 * (normalized) NMe-Bmt
+ +       0      * (normalized) 3Me-4Me-Gln
+ +      -0.2528 * (normalized) NMe-Phe
+ +       0.361  * (normalized) Phe
+ +       0.04   * (normalized) Val
+ +       0.8715 * (normalized) NMe-Leu
+ +       0.1383 * (normalized) NMe-Val
+ +      -0.0328 * (normalized) OH-Asn
+ +       0      * (normalized) D-Hpg
+ +       0.2334 * (normalized) Orn
+ +      -0.072  * (normalized) D-Dhpg
+ +       0      * (normalized) D-Ival
+ +      -0.0033 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +      -0.1592 * (normalized) PALOA
+ +       0.637  * (normalized) PAOA
+ +      -0.1281 * (normalized) D-4OH-Pro
+ +      -0.0265 * (normalized) dPyr
+ +      -0.2567 * (normalized) NMe-bMe-Leu
+ +      -0.0033 * (normalized) Cl-Ile
+ +      -0.0258 * (normalized) D-Cl-CONH2-Trp
+ +      -0.0267 * (normalized) D-Cl-Trp
+ +      -0.0527 * (normalized) D-COOH-Trp
+ +      -0.0095 * (normalized) D-I-NMe-Tyr
+ +      -0.0263 * (normalized) OH-Pyr
+ +      -0.0328 * (normalized) Ph-Ser
+ +       0.4778 * (normalized) k-Leu
+ +      -0.0525 * (normalized) Pyr
+ +       0      * (normalized) bOMe-Tyr
+ +      -0.2567 * (normalized) NMe-Ph-Gly
+ -       1.0035
+
+Number of kernel evaluations: 19108 (79.037% cached)
+
+Classifier for classes: antibiotic, toxin
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.2472 * (normalized) 4oxo-5Me-Pro
+ +      -0.781  * (normalized) 3OH-Leu
+ +      -0.4944 * (normalized) 4oxo-Hpr
+ +      -0.2786 * (normalized) 4OH-D-Ph-Lac
+ +       0.5533 * (normalized) Abu
+ +      -1.2349 * (normalized) D-bPhe
+ +       0.4835 * (normalized) bAla
+ +       0.2299 * (normalized) Arg
+ +      -0.7489 * (normalized) Asp
+ +      -0.7658 * (normalized) dhCys
+ +       0.8101 * (normalized) ADMAdda
+ +      -0.12   * (normalized) bMe-Asp
+ +      -0.0993 * (normalized) D-CysA
+ +      -0.3818 * (normalized) bOH-NMe-Phe
+ +      -0.6054 * (normalized) D-NMe-Ser
+ +      -1.1444 * (normalized) bU-dAla
+ +      -1      * (normalized) Cys
+ +      -0.1777 * (normalized) D-Abu
+ +       0.4796 * (normalized) D-bMe-Asp
+ +      -1      * (normalized) Hmp
+ +      -0.5027 * (normalized) dhAbu
+ +      -0.4547 * (normalized) D-Hiv
+ +      -0.3269 * (normalized) D-Hmp
+ +       0.0745 * (normalized) NMe-Gln
+ +      -0.5612 * (normalized) D-Lac
+ +      -0.8385 * (normalized) D-Ph-Lac
+ +       1.1142 * (normalized) D-NMe-Leu
+ +       0.9219 * (normalized) D-NMe-Val
+ +      -0.444  * (normalized) D-Val
+ +       0      * (normalized) Et-Nva
+ +       0      * (normalized) Hty
+ +      -0.2953 * (normalized) Cap
+ +      -0.1597 * (normalized) Glu
+ +      -0.6054 * (normalized) NMe-Hpg
+ +      -0.1777 * (normalized) NMe-MeA-Phe
+ +       1.4152 * (normalized) Hiv
+ +      -0.2358 * (normalized) Hpr
+ +      -0.0715 * (normalized) Lac
+ +      -0.0055 * (normalized) Agdha
+ +       0.9706 * (normalized) Met
+ +       0.1792 * (normalized) DMAdda
+ +      -0.8084 * (normalized) D-OH-Asp
+ +       0      * (normalized) D-PO-Asn
+ +      -0.0018 * (normalized) Dpr
+ +      -0.3326 * (normalized) Gly
+ +      -0.0115 * (normalized) Nva
+ +      -0.5939 * (normalized) Ser
+ +      -0.7748 * (normalized) Thr
+ +      -0.1386 * (normalized) t-Leu
+ +      -0.3561 * (normalized) Trp
+ +      -0.12   * (normalized) D-Dbu
+ +      -0.1801 * (normalized) Tyr
+ +      -0.0458 * (normalized) Dbu
+ +      -0.0742 * (normalized) L-Dbu
+ +      -1      * (normalized) Pro
+ +      -0.0241 * (normalized) Ival
+ +      -0.5902 * (normalized) 3Me-Pro
+ +      -0.1234 * (normalized) 4OH-Thr
+ +      -0.5902 * (normalized) 3Me-Phe
+ +      -0.1234 * (normalized) 3OH-5Me-Pro
+ +      -0.8401 * (normalized) 3OH-Pro
+ +      -0.1238 * (normalized) 4Cl-Thr
+ +      -0.2328 * (normalized) 4OH-Pro
+ +       0.7302 * (normalized) NMe-dPhe
+ +      -0.3818 * (normalized) aIle
+ +      -0.7474 * (normalized) Ala
+ +      -0.2209 * (normalized) Asn
+ +      -0.8868 * (normalized) aThr
+ +      -0.5439 * (normalized) NMe-Gly
+ +      -0.0633 * (normalized) OH-Asp
+ +      -0.3167 * (normalized) NMe-Me2A-Phe
+ +      -0.0044 * (normalized) OMe-Asp
+ +      -0.9411 * (normalized) Dab
+ +      -0.2332 * (normalized) D-Ala
+ +       0.1739 * (normalized) D-Arg
+ +      -0.0224 * (normalized) D-Asn
+ +      -0.4549 * (normalized) D-Asp
+ +       0      * (normalized) D-aIle
+ +      -0.423  * (normalized) ChrAct
+ +      -0.0869 * (normalized) D-Glu
+ +      -0.6281 * (normalized) D-aThr
+ +      -0.8502 * (normalized) Aib
+ +      -0.9225 * (normalized) D-Leu
+ +      -0.0044 * (normalized) D-Lys
+ +      -0.3829 * (normalized) D-Orn
+ +      -0.1238 * (normalized) 5Me-Pro
+ +      -0.1185 * (normalized) 3Me-Glu
+ +      -0.4633 * (normalized) D-Phe
+ +      -0.32   * (normalized) D-Pro
+ +      -0.1839 * (normalized) D-Ser
+ +      -0.2318 * (normalized) D-Trp
+ +       0.1147 * (normalized) Har
+ +      -0.0996 * (normalized) 4Me-D-Hva
+ +      -0.6667 * (normalized) Gln
+ +       0.2342 * (normalized) His
+ +      -0.2739 * (normalized) Hpg
+ +      -0.022  * (normalized) Ile
+ +      -0.8552 * (normalized) Leu
+ +      -0.1965 * (normalized) Lys
+ +       0.809  * (normalized) Adda
+ +       0.4506 * (normalized) NMe-Ala
+ +      -0.3962 * (normalized) bMe-Asn
+ +      -0.0993 * (normalized) bMe-Ile
+ +       0.3825 * (normalized) NMe-Ile
+ +       0.7859 * (normalized) NMe-aIle
+ +      -0.8316 * (normalized) 3Me-4Me-Gln
+ +      -1.1141 * (normalized) NMe-Phe
+ +      -1.4411 * (normalized) Phe
+ +      -0.6188 * (normalized) Val
+ +      -1.0035 * (normalized) NMe-Leu
+ +       0.6116 * (normalized) NMe-OMe-Tyr
+ +       0.3071 * (normalized) NMe-Val
+ +      -0.4006 * (normalized) OH-Asn
+ +      -1      * (normalized) OH-dHpg
+ +      -0.0957 * (normalized) Orn
+ +      -0.2739 * (normalized) D-Dhpg
+ +       0      * (normalized) D-Ival
+ +       0.2848 * (normalized) dDil
+ +       0.27   * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       0.1934 * (normalized) PALOA
+ +       0.1052 * (normalized) PMST
+ +       0.3825 * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +       0.2848 * (normalized) dDap
+ +      -0.3201 * (normalized) D-4OH-Pro
+ +      -0.4208 * (normalized) dPyr
+ +       1      * (normalized) D-Har
+ +       1      * (normalized) Cl2-Pro
+ +       0.9043 * (normalized) D-NMe-Nva
+ +       0.7859 * (normalized) NMe-Asn
+ +      -0.6402 * (normalized) NMe-bMe-Leu
+ +       0.27   * (normalized) Cl-Ile
+ +       0.6256 * (normalized) CO
+ +       0.7079 * (normalized) D-Br-NMe-Tyr
+ +      -0.4211 * (normalized) D-Cl-CONH2-Trp
+ +      -0.3962 * (normalized) DHMDA
+ +       0.708  * (normalized) D-Cl-NMe-Tyr
+ +      -0.4216 * (normalized) D-Cl-Trp
+ +       0.8225 * (normalized) Iser
+ +      -0.8423 * (normalized) D-COOH-Trp
+ +       0.7079 * (normalized) D-I-NMe-Tyr
+ +      -0.4215 * (normalized) OH-Pyr
+ +       0.3728 * (normalized) NMe-Cl-Trp
+ +       0.5867 * (normalized) NMe-hv-Val
+ +       0.1475 * (normalized) PTTA
+ +       0.1934 * (normalized) k-Leu
+ +       0.8439 * (normalized) Ph-Lac
+ +      -0.8427 * (normalized) Pyr
+ +       0.9624 * (normalized) Ala-Thz
+ +      -0.0993 * (normalized) bOH-Br-Phe
+ +       0.1739 * (normalized) bOMe-Tyr
+ +      -0.6402 * (normalized) NMe-Ph-Gly
+ +       0.4414
+
+Number of kernel evaluations: 52394 (90.96% cached)
+
+Classifier for classes: antibiotic, siderophore
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1173 * (normalized) 4oxo-5Me-Pro
+ +      -0.1511 * (normalized) 3OH-Leu
+ +      -0.0907 * (normalized) 4oxo-Hpr
+ +      -0.0723 * (normalized) 4OH-D-Ph-Lac
+ +       0      * (normalized) Abu
+ +      -0.1734 * (normalized) D-bPhe
+ +       1.1164 * (normalized) Ac-OH-Orn
+ +      -0.8752 * (normalized) Arg
+ +      -0.1514 * (normalized) Asp
+ +      -0.1389 * (normalized) dhCys
+ +      -0.0387 * (normalized) bMe-Asp
+ +      -0.2161 * (normalized) D-NMe-Ser
+ +      -0.8993 * (normalized) bU-dAla
+ +       0.7574 * (normalized) D-Fo-OH-Orn
+ +       0.026  * (normalized) D-OH-Orn
+ +       0.9007 * (normalized) diOH-Bz
+ +       1      * (normalized) DMOG
+ +      -0.0579 * (normalized) Cit
+ +      -0.3795 * (normalized) Cys
+ +      -0.0438 * (normalized) D-Abu
+ +      -0.021  * (normalized) D-Dab
+ +      -0.0579 * (normalized) End
+ +      -0.0519 * (normalized) Hmp
+ +      -0.0896 * (normalized) dhAbu
+ +      -0.1167 * (normalized) D-Hiv
+ +      -0.1168 * (normalized) D-Hmp
+ +       0.2206 * (normalized) D-Hse
+ +      -0.1467 * (normalized) D-Lac
+ +      -0.0579 * (normalized) Cl2-Hpg
+ +      -0.2184 * (normalized) D-Ph-Lac
+ +      -0.1259 * (normalized) D-Val
+ +       0      * (normalized) Et-Nva
+ +      -0.1968 * (normalized) Glu
+ +      -0.2161 * (normalized) NMe-Hpg
+ +      -0.0438 * (normalized) NMe-MeA-Phe
+ +      -0.1755 * (normalized) Hpr
+ +       0.0552 * (normalized) Hse
+ +      -0.3745 * (normalized) Agdha
+ +       1.2206 * (normalized) D-Ac-OH-Orn
+ +      -0.181  * (normalized) D-OH-Asn
+ +       1.1053 * (normalized) D-OH-Asp
+ +      -0.1808 * (normalized) D-PO-Asn
+ +      -0.0017 * (normalized) Dpr
+ +       0.6367 * (normalized) Gly
+ +      -0.0579 * (normalized) D-End
+ +      -0.0959 * (normalized) Nva
+ +       1.3609 * (normalized) OH-Orn
+ +       0.7426 * (normalized) Fo-OH-Orn
+ +       1.0411 * (normalized) Ser
+ +       0.4815 * (normalized) Thr
+ +      -0.0242 * (normalized) t-Leu
+ +      -0.2404 * (normalized) Trp
+ +      -0.0387 * (normalized) D-Dbu
+ +      -0.1365 * (normalized) Tyr
+ +      -0.0163 * (normalized) Dbu
+ +      -0.0448 * (normalized) L-Dbu
+ +      -1.0871 * (normalized) Pro
+ +      -0.0006 * (normalized) Ival
+ +      -0.1041 * (normalized) 3Me-Pro
+ +      -0.0604 * (normalized) 3Me-Phe
+ +      -0.0586 * (normalized) 3OH-5Me-Pro
+ +      -1.1284 * (normalized) 3OH-Pro
+ +       0      * (normalized) 4Cl-Thr
+ +       0      * (normalized) 4OH-Pro
+ +      -0.2055 * (normalized) aIle
+ +       0.0655 * (normalized) Ala
+ +      -0.0224 * (normalized) Asn
+ +      -0.3806 * (normalized) aThr
+ +      -0.352  * (normalized) NMe-Gly
+ +       0.9258 * (normalized) OH-Asp
+ +      -0.0469 * (normalized) NMe-Me2A-Phe
+ +       0.367  * (normalized) OH-His
+ +      -0.2285 * (normalized) OMe-Asp
+ +      -0.2933 * (normalized) Dab
+ +      -0.2386 * (normalized) D-Ala
+ +      -0.4808 * (normalized) D-Asn
+ +      -0.1028 * (normalized) D-Asp
+ +      -0.2367 * (normalized) ChrAct
+ +       0.7201 * (normalized) D-Gln
+ +      -0.2676 * (normalized) D-Glu
+ +       0.5171 * (normalized) D-aThr
+ +      -0.3334 * (normalized) Aib
+ +      -0.7976 * (normalized) D-Leu
+ +       0.471  * (normalized) D-Lys
+ +      -0.2487 * (normalized) D-Orn
+ +      -0.0587 * (normalized) 5Me-Pro
+ +      -0.733  * (normalized) 3Me-Glu
+ +      -0.3016 * (normalized) D-Phe
+ +      -0.1118 * (normalized) D-Pro
+ +       0.8555 * (normalized) D-Ser
+ +      -0.3618 * (normalized) D-Trp
+ +      -0.3005 * (normalized) D-Tyr
+ +      -0.0586 * (normalized) 4Me-D-Hva
+ +      -0.0415 * (normalized) Gln
+ +      -0.1389 * (normalized) His
+ +      -0.0386 * (normalized) Hpg
+ +      -0.2892 * (normalized) Ile
+ +      -0.4804 * (normalized) Leu
+ +       1.4546 * (normalized) Lys
+ +      -0.2364 * (normalized) NMe-Ala
+ +      -0.0085 * (normalized) bMe-Asn
+ +      -0.4819 * (normalized) 3Me-4Me-Gln
+ +      -0.2627 * (normalized) NMe-Phe
+ +      -0.1635 * (normalized) Phe
+ +      -0.617  * (normalized) Val
+ +      -0.2687 * (normalized) NMe-Leu
+ +      -0.1402 * (normalized) NMe-Val
+ +      -0.2371 * (normalized) OH-Asn
+ +      -0.64   * (normalized) OH-dHpg
+ +      -0.2389 * (normalized) D-Hpg
+ +       0.6226 * (normalized) Orn
+ +      -0.0005 * (normalized) D-Ival
+ +      -0.1038 * (normalized) PALOA
+ +       0.026  * (normalized) C4:0-OH(3)
+ +      -0.1121 * (normalized) D-4OH-Pro
+ +      -0.1238 * (normalized) dPyr
+ +      -0.1768 * (normalized) NMe-bMe-Leu
+ +      -0.1238 * (normalized) D-Cl-CONH2-Trp
+ +      -0.0085 * (normalized) DHMDA
+ +      -0.1239 * (normalized) D-Cl-Trp
+ +      -0.2477 * (normalized) D-COOH-Trp
+ +      -0.4595 * (normalized) D-I-NMe-Tyr
+ +      -0.1239 * (normalized) OH-Pyr
+ +      -0.1038 * (normalized) k-Leu
+ +      -0.2477 * (normalized) Pyr
+ +      -0.1074 * (normalized) bOMe-Tyr
+ +      -0.1768 * (normalized) NMe-Ph-Gly
+ -       0.6203
+
+Number of kernel evaluations: 35275 (88.839% cached)
+
+Classifier for classes: antibiotic, surfactant
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0463 * (normalized) 4oxo-5Me-Pro
+ +      -0.1431 * (normalized) 3OH-Leu
+ +      -0.0346 * (normalized) 4oxo-Hpr
+ +      -0.014  * (normalized) 4OH-D-Ph-Lac
+ +      -0.0564 * (normalized) Abu
+ +       0      * (normalized) Arg
+ +       0.1786 * (normalized) Asp
+ +       0      * (normalized) dhCys
+ +      -0.0187 * (normalized) bMe-Asp
+ +       0      * (normalized) bOH-NMe-Phe
+ +       1      * (normalized) C10:0-OH(3)
+ +       0      * (normalized) D-NMe-Ser
+ +      -0.1014 * (normalized) bU-dAla
+ +      -0.0727 * (normalized) Cys
+ +       0      * (normalized) D-Dab
+ +       0      * (normalized) dhAbu
+ +      -0.3307 * (normalized) D-Hiv
+ +      -0.3302 * (normalized) D-Hmp
+ +      -0.144  * (normalized) NMe-Gln
+ +      -0.0296 * (normalized) D-Lac
+ +      -0.0432 * (normalized) D-Ph-Lac
+ +      -0.0621 * (normalized) D-Val
+ +       0      * (normalized) Cap
+ +       0.5254 * (normalized) Glu
+ +       0      * (normalized) NMe-Hpg
+ +      -0.0696 * (normalized) Hpr
+ +       0      * (normalized) Agdha
+ +      -0.163  * (normalized) D-OH-Asn
+ +       0      * (normalized) D-OH-Asp
+ +      -0.163  * (normalized) D-PO-Asn
+ +       0      * (normalized) Dpr
+ +      -0.2427 * (normalized) Gly
+ +       0.0563 * (normalized) Ser
+ +       0.4814 * (normalized) Thr
+ +       0      * (normalized) t-Leu
+ +      -0.1729 * (normalized) Trp
+ +      -0.0187 * (normalized) D-Dbu
+ +      -0.1213 * (normalized) Tyr
+ +      -0.0187 * (normalized) Dbu
+ +      -1.1858 * (normalized) Pro
+ +       0      * (normalized) Ival
+ +      -0.0235 * (normalized) 3OH-5Me-Pro
+ +       0      * (normalized) 3OH-Pro
+ +       0      * (normalized) 4Cl-Thr
+ +      -0.0979 * (normalized) 4OH-Pro
+ +      -0.0386 * (normalized) aIle
+ +      -0.5645 * (normalized) Ala
+ +      -0.144  * (normalized) Asn
+ +      -0.0386 * (normalized) aThr
+ +      -0.141  * (normalized) NMe-Gly
+ +       0      * (normalized) OMe-Asp
+ +      -0.651  * (normalized) Dab
+ +      -0.4486 * (normalized) D-Ala
+ +      -0.2871 * (normalized) D-Arg
+ +       1.3482 * (normalized) D-Asn
+ +      -0.1213 * (normalized) D-Asp
+ +      -0.1863 * (normalized) ChrAct
+ +      -0.1213 * (normalized) D-Glu
+ +      -0.2156 * (normalized) D-aThr
+ +      -1.3096 * (normalized) Aib
+ +       0.3468 * (normalized) D-Leu
+ +      -0.9618 * (normalized) D-Lys
+ +      -0.4809 * (normalized) D-Orn
+ +      -0.0229 * (normalized) 5Me-Pro
+ +      -0.6916 * (normalized) 3Me-Glu
+ +      -0.5    * (normalized) D-Phe
+ +      -0.0285 * (normalized) D-Pro
+ +      -0.1729 * (normalized) D-Ser
+ +      -0.326  * (normalized) D-Trp
+ +       0.8042 * (normalized) D-Tyr
+ +      -0.1639 * (normalized) 4Me-D-Hva
+ +       0.3312 * (normalized) Gln
+ +       0      * (normalized) His
+ +       0.2369 * (normalized) Ile
+ +       1.6564 * (normalized) Leu
+ +      -0.4809 * (normalized) Lys
+ +       1      * (normalized) NMe-Ala
+ +      -0.144  * (normalized) 3Me-4Me-Gln
+ +       0.2572 * (normalized) NMe-Phe
+ +      -0.3333 * (normalized) Phe
+ +      -0.3014 * (normalized) Val
+ +      -0.0483 * (normalized) NMe-Leu
+ +      -0.0932 * (normalized) NMe-Val
+ +      -0.1431 * (normalized) OH-Asn
+ +      -0.086  * (normalized) OH-dHpg
+ +      -0.163  * (normalized) D-Hpg
+ +      -0.3458 * (normalized) Orn
+ +      -0.0326 * (normalized) D-Ival
+ +      -0.0279 * (normalized) D-4OH-Pro
+ +      -0.0029 * (normalized) dPyr
+ +      -0.0564 * (normalized) NMe-bMe-Leu
+ +      -0.003  * (normalized) D-Cl-CONH2-Trp
+ +      -0.002  * (normalized) D-Cl-Trp
+ +      -0.005  * (normalized) D-COOH-Trp
+ +      -0.0419 * (normalized) D-I-NMe-Tyr
+ +      -0.0021 * (normalized) OH-Pyr
+ +      -0.1431 * (normalized) Ph-Ser
+ +      -0.005  * (normalized) Pyr
+ +      -0.144  * (normalized) bOMe-Tyr
+ +      -0.0564 * (normalized) NMe-Ph-Gly
+ -       0.9273
+
+Number of kernel evaluations: 20157 (79.027% cached)
+
+Classifier for classes: antibiotic, protease inhibitor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.011  * (normalized) 4oxo-5Me-Pro
+ +      -0.0769 * (normalized) 3OH-Leu
+ +      -0.1903 * (normalized) 4oxo-Hpr
+ +      -0.0442 * (normalized) 4OH-D-Ph-Lac
+ +      -0.044  * (normalized) 4oxo-Pro
+ +       1.0915 * (normalized) Abu
+ +      -0.2644 * (normalized) D-bPhe
+ +       0.0249 * (normalized) Arg
+ +      -0.4936 * (normalized) Asp
+ +      -0.055  * (normalized) D-CysA
+ +      -0.0611 * (normalized) D-NMe-Ser
+ +      -0.1022 * (normalized) bU-dAla
+ +      -0.2299 * (normalized) Cys
+ +      -0.081  * (normalized) D-Abu
+ +       1.4067 * (normalized) NMe-Tyr
+ +      -0.0211 * (normalized) Hmp
+ +      -0.0383 * (normalized) dhAbu
+ +      -0.1259 * (normalized) D-Hiv
+ +      -0.0952 * (normalized) D-Hmp
+ +      -0.055  * (normalized) NMe-Gln
+ +      -0.0897 * (normalized) D-Lac
+ +      -0.1346 * (normalized) D-Ph-Lac
+ +      -0.1437 * (normalized) D-Val
+ +      -0.229  * (normalized) Et-Nva
+ +       1      * (normalized) Hty
+ +      -0.1022 * (normalized) Cap
+ +       0.1988 * (normalized) Glu
+ +      -0.0611 * (normalized) NMe-Hpg
+ +      -0.0675 * (normalized) NMe-MeA-Phe
+ +      -0.0894 * (normalized) Hpr
+ +      -0.1096 * (normalized) Lac
+ +      -0.0182 * (normalized) Agdha
+ +       0.4067 * (normalized) Ahp
+ +       0      * (normalized) D-OH-Asn
+ +      -0.1076 * (normalized) D-OH-Asp
+ +      -0.0511 * (normalized) Dpr
+ +      -0.0902 * (normalized) Gly
+ +      -0.0422 * (normalized) Nva
+ +       0.1052 * (normalized) O-Met
+ +      -0.2703 * (normalized) Ser
+ +       0.2436 * (normalized) Thr
+ +      -0.059  * (normalized) t-Leu
+ +      -0.2293 * (normalized) Trp
+ +       1.1119 * (normalized) Tyr
+ +      -0.0184 * (normalized) L-Dbu
+ +       0.0833 * (normalized) Pro
+ +      -0.12   * (normalized) 3Me-Pro
+ +      -0.12   * (normalized) 3Me-Phe
+ +      -0.0057 * (normalized) 3OH-5Me-Pro
+ +      -0.2107 * (normalized) 3OH-Pro
+ +       0      * (normalized) 4OH-Pro
+ +       0.1052 * (normalized) NMe-Hty
+ +       0      * (normalized) aIle
+ +      -0.2885 * (normalized) Ala
+ +      -0.4431 * (normalized) Asn
+ +      -0.1645 * (normalized) aThr
+ +       0.1305 * (normalized) MeO-Glu
+ +      -0.263  * (normalized) NMe-Gly
+ +      -0.2063 * (normalized) OH-Asp
+ +      -0.1093 * (normalized) NMe-Me2A-Phe
+ +       0      * (normalized) OMe-Asp
+ +      -0.2433 * (normalized) Dab
+ +      -0.2335 * (normalized) D-Ala
+ +       0      * (normalized) D-Asn
+ +      -0.4808 * (normalized) D-Asp
+ +      -0.1568 * (normalized) ChrAct
+ +      -0.4808 * (normalized) D-Glu
+ +      -0.1166 * (normalized) D-aThr
+ +      -0.4497 * (normalized) Aib
+ +      -0.5921 * (normalized) D-Leu
+ +       0.1765 * (normalized) D-Lys
+ +      -0.0511 * (normalized) D-Orn
+ +      -0.0053 * (normalized) 5Me-Pro
+ +       0      * (normalized) 3Me-Glu
+ +       0.1736 * (normalized) 3Me-Hty
+ +      -0.1992 * (normalized) D-Phe
+ +      -0.267  * (normalized) D-Pro
+ +      -0.0538 * (normalized) D-Ser
+ +      -0.0998 * (normalized) D-Trp
+ +      -0.1023 * (normalized) D-Tyr
+ +      -0.0325 * (normalized) 4Me-D-Hva
+ +      -0.3767 * (normalized) Gln
+ +      -0.029  * (normalized) Hpg
+ +       0.1052 * (normalized) Hph
+ +      -0.0511 * (normalized) Ile
+ +      -0.4508 * (normalized) Leu
+ +      -0.0511 * (normalized) Lys
+ +       0.1071 * (normalized) NMe-Ala
+ +      -0.084  * (normalized) bMe-Asn
+ +      -0.055  * (normalized) bMe-Ile
+ +       0.5    * (normalized) NMe-Ile
+ +      -0.0951 * (normalized) 3Me-4Me-Gln
+ +      -0.1344 * (normalized) NMe-Phe
+ +      -0.7209 * (normalized) Phe
+ +       0.1017 * (normalized) Val
+ +      -0.1584 * (normalized) NMe-Leu
+ +      -0.0784 * (normalized) NMe-Val
+ +      -0.084  * (normalized) OH-Asn
+ +      -0.163  * (normalized) OH-dHpg
+ +       0      * (normalized) D-Hpg
+ +      -0.2427 * (normalized) Orn
+ +      -0.029  * (normalized) D-Dhpg
+ +       0      * (normalized) D-Ival
+ +      -0.0422 * (normalized) PALOA
+ +      -0.2675 * (normalized) D-4OH-Pro
+ +      -0.0514 * (normalized) dPyr
+ +       0.5715 * (normalized) e-Tyr
+ +      -0.5346 * (normalized) NMe-bMe-Leu
+ +       1.2788 * (normalized) CO
+ +      -0.0511 * (normalized) D-Cl-CONH2-Trp
+ +      -0.084  * (normalized) DHMDA
+ +      -0.0507 * (normalized) D-Cl-Trp
+ +       1.171  * (normalized) NFo-Dpr
+ +      -0.1018 * (normalized) D-COOH-Trp
+ +      -0.2188 * (normalized) D-I-NMe-Tyr
+ +      -0.0504 * (normalized) OH-Pyr
+ +      -0.0422 * (normalized) k-Leu
+ +       0.5995 * (normalized) v-Tyr
+ +      -0.1018 * (normalized) Pyr
+ +      -0.055  * (normalized) bOH-Br-Phe
+ +      -0.0769 * (normalized) bOMe-Tyr
+ +      -0.5346 * (normalized) NMe-Ph-Gly
+ +       0.7686 * (normalized) Sta
+ -       0.7702
+
+Number of kernel evaluations: 27436 (82.756% cached)
+
+Classifier for classes: antibiotic, antiatherogenic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) 4oxo-5Me-Pro
+ +      -0.0581 * (normalized) 3OH-Leu
+ +       0      * (normalized) D-bPhe
+ +      -0.0001 * (normalized) Arg
+ +       0      * (normalized) Asp
+ +       0      * (normalized) dhCys
+ +      -0.0024 * (normalized) bOH-NMe-Phe
+ +      -0.0201 * (normalized) D-NMe-Ser
+ +      -0.0005 * (normalized) bU-dAla
+ +       0      * (normalized) D-Dab
+ +       0      * (normalized) Hmp
+ +       0      * (normalized) dhAbu
+ +       0      * (normalized) D-Hiv
+ +       0      * (normalized) D-Hmp
+ +       0      * (normalized) D-Lac
+ +       0      * (normalized) D-Ph-Lac
+ +      -0.0337 * (normalized) D-Val
+ +      -0.0011 * (normalized) Et-Nva
+ +      -0.0005 * (normalized) Cap
+ +      -0.0649 * (normalized) Glu
+ +      -0.0201 * (normalized) NMe-Hpg
+ +       0      * (normalized) Agdha
+ +      -0.0001 * (normalized) D-OH-Asp
+ +       0      * (normalized) D-PO-Asn
+ +      -0.0003 * (normalized) Dpr
+ +      -0.0149 * (normalized) Gly
+ +      -0.0245 * (normalized) Ser
+ +      -0.1841 * (normalized) Thr
+ +      -0.038  * (normalized) Trp
+ +      -0.2762 * (normalized) Tyr
+ +       0      * (normalized) L-Dbu
+ +      -0.2212 * (normalized) Pro
+ +      -0.0581 * (normalized) 3Me-Pro
+ +       0      * (normalized) 3OH-5Me-Pro
+ +      -0.0002 * (normalized) 3OH-Pro
+ +       0      * (normalized) 4Cl-Thr
+ +      -0.0121 * (normalized) aIle
+ +       0.2076 * (normalized) Ala
+ +      -0.1948 * (normalized) Asn
+ +      -0.0483 * (normalized) aThr
+ +       0      * (normalized) NMe-Gly
+ +       0      * (normalized) OMe-Asp
+ +       0      * (normalized) Dab
+ +      -0.0034 * (normalized) D-Ala
+ +       0      * (normalized) D-Asn
+ +       0      * (normalized) D-Asp
+ +       0      * (normalized) ChrAct
+ +       0      * (normalized) D-Glu
+ +      -0.0001 * (normalized) D-aThr
+ +      -0.0408 * (normalized) Aib
+ +      -0.1099 * (normalized) D-Leu
+ +       0      * (normalized) D-Lys
+ +       0      * (normalized) D-Man
+ +       0      * (normalized) D-Orn
+ +       0      * (normalized) 3Me-Glu
+ +       0      * (normalized) D-Phe
+ +       0      * (normalized) D-Pro
+ +      -0.0001 * (normalized) D-Ser
+ +      -0.09   * (normalized) Gln
+ +       0      * (normalized) His
+ +      -0.0116 * (normalized) Hpg
+ +       0      * (normalized) Ile
+ +      -0.0316 * (normalized) Leu
+ +       0      * (normalized) Lys
+ +      -0.0982 * (normalized) NMe-Ala
+ +       0      * (normalized) 3Me-4Me-Gln
+ +      -0.0048 * (normalized) NMe-Phe
+ +       0.4086 * (normalized) Phe
+ +      -0.1686 * (normalized) Val
+ +      -0.0097 * (normalized) NMe-Leu
+ +      -0.0411 * (normalized) NMe-Val
+ +       0      * (normalized) OH-Asn
+ +       0      * (normalized) D-Hpg
+ +       0      * (normalized) Orn
+ +      -0.0116 * (normalized) D-Dhpg
+ +      -0.0483 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       0      * (normalized) PALOA
+ +       0      * (normalized) NMe-bMe-Leu
+ +      -0.0483 * (normalized) Cl-Ile
+ +       0      * (normalized) D-COOH-Trp
+ +       0      * (normalized) k-Leu
+ +       0      * (normalized) Pyr
+ +       0      * (normalized) NMe-Ph-Gly
+ -       0.9997
+
+Number of kernel evaluations: 14240 (74.742% cached)
+
+Classifier for classes: antibiotic, antitumor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) 4oxo-5Me-Pro
+ +      -0.8191 * (normalized) 3OH-Leu
+ +      -0.368  * (normalized) 4oxo-Hpr
+ +      -0.0474 * (normalized) 4OH-D-Ph-Lac
+ +      -0.026  * (normalized) 4oxo-Pro
+ +      -0.0213 * (normalized) Abu
+ +       0.1784 * (normalized) D-bOH-Val
+ +      -0.1268 * (normalized) D-bPhe
+ +      -0.8175 * (normalized) Arg
+ +      -0.4284 * (normalized) Asp
+ +      -0.0334 * (normalized) dhCys
+ +       0.1784 * (normalized) bbMe2-O-Met
+ +       0      * (normalized) bMe-Asp
+ +      -0.0746 * (normalized) D-CysA
+ +       0.1784 * (normalized) bOH-Val
+ +      -0.0819 * (normalized) D-NMe-Ser
+ +      -0.1173 * (normalized) bU-dAla
+ +       0      * (normalized) Cit
+ +      -0.0829 * (normalized) Cys
+ +      -0.2028 * (normalized) D-Abu
+ +       0      * (normalized) End
+ +       0.6091 * (normalized) NMe-Tyr
+ +       0.3568 * (normalized) Hmp
+ +       0.2125 * (normalized) dhAbu
+ +      -0.2198 * (normalized) D-Hiv
+ +      -0.217  * (normalized) D-Hmp
+ +      -0.0746 * (normalized) NMe-Gln
+ +      -0.156  * (normalized) D-Lac
+ +       0      * (normalized) Cl2-Hpg
+ +      -0.2252 * (normalized) D-Ph-Lac
+ +       0.1784 * (normalized) D-t-Leu
+ +       0.1784 * (normalized) D-N2Me-Asn
+ +      -0.4263 * (normalized) D-Val
+ +      -0.0035 * (normalized) Cap
+ +      -0.3411 * (normalized) Glu
+ +      -0.0819 * (normalized) NMe-Hpg
+ +       0.3333 * (normalized) Hiv
+ +      -0.0537 * (normalized) Hpr
+ +      -0.1141 * (normalized) Agdha
+ +       1      * (normalized) Met
+ +       0      * (normalized) D-OH-Asn
+ +      -0.1644 * (normalized) D-OH-Asp
+ +      -0.0251 * (normalized) Dpr
+ +       0.3696 * (normalized) Gly
+ +       0      * (normalized) D-End
+ +      -0.1254 * (normalized) Nva
+ +       0.8093 * (normalized) O-Met
+ +      -0.0039 * (normalized) Ser
+ +       0.5739 * (normalized) Thr
+ +       0.0078 * (normalized) t-Leu
+ +       0.1111 * (normalized) Trp
+ +       0      * (normalized) D-Dbu
+ +       0.6129 * (normalized) Tyr
+ +       0      * (normalized) Dbu
+ +       0.7281 * (normalized) Pro
+ +       0      * (normalized) Ival
+ +       0.2812 * (normalized) 3Me-Pro
+ +      -0.3892 * (normalized) 3Me-Phe
+ +       0      * (normalized) 3OH-5Me-Pro
+ +      -0.2802 * (normalized) 3OH-Pro
+ +       0      * (normalized) 4OH-Pro
+ +      -0.6603 * (normalized) aIle
+ +       0.0292 * (normalized) Ala
+ +      -0.4974 * (normalized) Asn
+ +      -0.1627 * (normalized) aThr
+ +      -0.1691 * (normalized) NMe-Gly
+ +      -0.2316 * (normalized) OH-Asp
+ +      -0.1652 * (normalized) NMe-Me2A-Phe
+ +       0.1784 * (normalized) D-N2Me-bOH-Asn
+ +      -0.1315 * (normalized) OMe-Asp
+ +      -0.4068 * (normalized) Dab
+ +      -0.1368 * (normalized) D-Ala
+ +       0      * (normalized) D-Arg
+ +       0.1127 * (normalized) D-Asn
+ +      -0.172  * (normalized) D-Asp
+ +      -0.2549 * (normalized) ChrAct
+ +      -0.2469 * (normalized) D-Glu
+ +       0.0322 * (normalized) D-aThr
+ +      -1.5318 * (normalized) Aib
+ +      -0.6313 * (normalized) D-Leu
+ +      -0.1315 * (normalized) D-Lys
+ +      -0.0273 * (normalized) D-Orn
+ +      -0.1081 * (normalized) 3Me-Glu
+ +      -0.3695 * (normalized) D-Phe
+ +       0.365  * (normalized) D-Pro
+ +      -0.1198 * (normalized) D-Ser
+ +      -0.0746 * (normalized) D-Trp
+ +      -0.0836 * (normalized) 4Me-D-Hva
+ +      -1.4574 * (normalized) Gln
+ +      -0.0545 * (normalized) His
+ +      -0.4085 * (normalized) Hpg
+ +       0.5626 * (normalized) Ile
+ +      -0.8289 * (normalized) Leu
+ +      -0.0273 * (normalized) Lys
+ +      -0.3909 * (normalized) NMe-Ala
+ +      -0.1841 * (normalized) bMe-Asn
+ +       0.1038 * (normalized) bMe-Ile
+ +      -0.1141 * (normalized) 3Me-4Me-Gln
+ +       0.0899 * (normalized) NMe-Phe
+ +       0.5391 * (normalized) OMe-Thr
+ +       2.0154 * (normalized) Phe
+ +       0.0348 * (normalized) Val
+ +       0.1605 * (normalized) NMe-Leu
+ +       0.2299 * (normalized) NMe-OMe-Tyr
+ +      -0.4476 * (normalized) NMe-Val
+ +       0.2235 * (normalized) OH-Asn
+ +      -0.0935 * (normalized) OH-dHpg
+ +       0      * (normalized) D-Hpg
+ +       0.5391 * (normalized) 4Me-Pro
+ +      -0.3577 * (normalized) Orn
+ +       0.1784 * (normalized) bMe-Gln
+ +      -0.4085 * (normalized) D-Dhpg
+ +      -0.1107 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       0.8093 * (normalized) bOMe-Asp
+ +      -0.1254 * (normalized) PALOA
+ +       0.9357 * (normalized) Dap
+ +      -0.0154 * (normalized) dPyr
+ +       0.839  * (normalized) Ibu
+ +       0.839  * (normalized) Map
+ +       0.5391 * (normalized) Br-Tyr
+ +      -0.3062 * (normalized) NMe-bMe-Leu
+ +      -0.1107 * (normalized) Cl-Ile
+ +      -0.0604 * (normalized) D-Cl-CONH2-Trp
+ +      -0.1841 * (normalized) DHMDA
+ +      -0.0169 * (normalized) D-Cl-Trp
+ +       0.9357 * (normalized) Dil
+ +      -0.0691 * (normalized) D-COOH-Trp
+ +      -0.1802 * (normalized) D-I-NMe-Tyr
+ +      -0.0537 * (normalized) OH-Pyr
+ +      -0.1254 * (normalized) k-Leu
+ +      -0.0773 * (normalized) Pyr
+ +       1      * (normalized) Ala-Thz
+ +      -0.0746 * (normalized) bOH-Br-Phe
+ +       0      * (normalized) bOMe-Tyr
+ +      -0.3062 * (normalized) NMe-Ph-Gly
+ -       0.9355
+
+Number of kernel evaluations: 23058 (81.331% cached)
+
+Classifier for classes: antibiotic, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) 4oxo-5Me-Pro
+ +      -0.0022 * (normalized) 3OH-Leu
+ +       0      * (normalized) 4oxo-Hpr
+ +      -0.0111 * (normalized) 4OH-D-Ph-Lac
+ +      -0.0244 * (normalized) D-bPhe
+ +       0.2241 * (normalized) Arg
+ +      -0.0046 * (normalized) Asp
+ +      -0.0698 * (normalized) dhCys
+ +      -0.0046 * (normalized) bMe-Asp
+ +      -0.0169 * (normalized) D-NMe-Ser
+ +      -0.1347 * (normalized) bU-dAla
+ +      -0.0695 * (normalized) Cys
+ +       0      * (normalized) D-Abu
+ +       0      * (normalized) Hmp
+ +      -0.0051 * (normalized) dhAbu
+ +      -0.0169 * (normalized) D-Hiv
+ +      -0.0173 * (normalized) D-Hmp
+ +       0      * (normalized) NMe-Gln
+ +      -0.0227 * (normalized) D-Lac
+ +      -0.0342 * (normalized) D-Ph-Lac
+ +       0      * (normalized) D-Val
+ +      -0.109  * (normalized) Cap
+ +       0      * (normalized) Glu
+ +      -0.0169 * (normalized) NMe-Hpg
+ +      -0.0023 * (normalized) Hpr
+ +      -0.0101 * (normalized) Agdha
+ +       0      * (normalized) D-OH-Asn
+ +      -0.0625 * (normalized) D-OH-Asp
+ +       0      * (normalized) D-PO-Asn
+ +       0.1891 * (normalized) Dpr
+ +      -0.019  * (normalized) Gly
+ +      -0.0298 * (normalized) Ser
+ +      -0.4231 * (normalized) Thr
+ +      -0.0044 * (normalized) t-Leu
+ +      -0.1067 * (normalized) Trp
+ +      -0.0046 * (normalized) D-Dbu
+ +       0      * (normalized) Tyr
+ +      -0.0046 * (normalized) Dbu
+ +       0      * (normalized) L-Dbu
+ +      -0.1396 * (normalized) Pro
+ +      -0.0109 * (normalized) 3Me-Pro
+ +      -0.0109 * (normalized) 3Me-Phe
+ +      -0.0945 * (normalized) 3OH-Pro
+ +       0      * (normalized) 4OH-Pro
+ +      -0.02   * (normalized) aIle
+ +      -0.079  * (normalized) Ala
+ +      -0.0133 * (normalized) Asn
+ +      -0.02   * (normalized) aThr
+ +      -0.0162 * (normalized) NMe-Gly
+ +       0      * (normalized) NMe-Me2A-Phe
+ +      -0.1562 * (normalized) Dab
+ +      -0.0215 * (normalized) D-Ala
+ +      -0.0022 * (normalized) D-Arg
+ +       0      * (normalized) D-Asn
+ +      -0.0464 * (normalized) D-Asp
+ +       0.622  * (normalized) D-aIle
+ +       0      * (normalized) ChrAct
+ +      -0.0696 * (normalized) D-Glu
+ +      -0.0571 * (normalized) D-aThr
+ +      -0.0609 * (normalized) Aib
+ +      -0.2221 * (normalized) D-Leu
+ +      -0.0696 * (normalized) D-Orn
+ +       0      * (normalized) 3Me-Glu
+ +       0.3378 * (normalized) D-Phe
+ +      -0.0231 * (normalized) D-Pro
+ +      -0.037  * (normalized) D-Ser
+ +      -0.0084 * (normalized) 4Me-D-Hva
+ +      -0.0407 * (normalized) Gln
+ +      -0.1393 * (normalized) His
+ +       0.1461 * (normalized) Ile
+ +      -0.204  * (normalized) Leu
+ +      -0.0696 * (normalized) Lys
+ +      -0.0065 * (normalized) bMe-Asn
+ +      -0.0101 * (normalized) 3Me-4Me-Gln
+ +      -0.0384 * (normalized) NMe-Phe
+ +      -0.1423 * (normalized) Phe
+ +      -0.0933 * (normalized) Val
+ +      -0.0358 * (normalized) NMe-Leu
+ +       0      * (normalized) NMe-Val
+ +      -0.0088 * (normalized) OH-Asn
+ +      -0.0478 * (normalized) OH-dHpg
+ +       0      * (normalized) D-Hpg
+ +      -0.2334 * (normalized) Orn
+ +       0      * (normalized) D-Ival
+ +       0      * (normalized) PALOA
+ +      -0.0164 * (normalized) dPyr
+ +       0.7753 * (normalized) dv-Tyr
+ +       0.622  * (normalized) k-Arg
+ +      -0.0157 * (normalized) D-Cl-CONH2-Trp
+ +      -0.0065 * (normalized) DHMDA
+ +      -0.0164 * (normalized) D-Cl-Trp
+ +       1.0001 * (normalized) NFo-Dpr
+ +      -0.0324 * (normalized) D-COOH-Trp
+ +      -0.0525 * (normalized) D-I-NMe-Tyr
+ +      -0.0161 * (normalized) OH-Pyr
+ +       0.7758 * (normalized) NAc-Dpr
+ +      -0.0022 * (normalized) Ph-Ser
+ +       0      * (normalized) k-Leu
+ +       0.622  * (normalized) v-OH-Tyr
+ +       1.0006 * (normalized) v-Tyr
+ +      -0.0322 * (normalized) Pyr
+ -       0.945 
+
+Number of kernel evaluations: 22008 (80.616% cached)
+
+Classifier for classes: antibiotic, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) 4oxo-5Me-Pro
+ +      -0.0753 * (normalized) 3OH-Leu
+ +      -0.0057 * (normalized) 4oxo-Hpr
+ +      -0.011  * (normalized) 4oxo-Pro
+ +      -0.0193 * (normalized) Arg
+ +      -0.0881 * (normalized) Asp
+ +       0.3153 * (normalized) D-CysA
+ +      -0.0535 * (normalized) bOH-NMe-Phe
+ +      -0.0063 * (normalized) D-NMe-Ser
+ +      -0.0001 * (normalized) bU-dAla
+ +      -0.0013 * (normalized) Cys
+ +      -0.0057 * (normalized) D-Abu
+ +      -0.0347 * (normalized) D-Dab
+ +      -0.0005 * (normalized) Hmp
+ +      -0.0575 * (normalized) dhAbu
+ +      -0.0009 * (normalized) D-Hiv
+ +       0.2668 * (normalized) NMe-Gln
+ +      -0.0003 * (normalized) D-Lac
+ +      -0.0085 * (normalized) D-F-ph-Gly
+ +      -0.0001 * (normalized) D-Ph-Lac
+ +       0.1939 * (normalized) D-t-Leu
+ +       0.192  * (normalized) D-Val
+ +      -0.0001 * (normalized) Cap
+ +      -0.0238 * (normalized) Glu
+ +      -0.0063 * (normalized) NMe-Hpg
+ +      -0.0029 * (normalized) NMe-MeA-Phe
+ +      -0.0203 * (normalized) Hpr
+ +      -0.0009 * (normalized) Lac
+ +      -0.0457 * (normalized) Agdha
+ +      -0.044  * (normalized) D-OH-Asn
+ +       0      * (normalized) D-OH-Asp
+ +      -0.0441 * (normalized) D-PO-Asn
+ +       0      * (normalized) Dpr
+ +      -0.0239 * (normalized) Gly
+ +      -0.0009 * (normalized) Nva
+ +      -0.0329 * (normalized) Ser
+ +      -0.009  * (normalized) Thr
+ +      -0.0932 * (normalized) t-Leu
+ +      -0.1299 * (normalized) Trp
+ +      -0.057  * (normalized) Tyr
+ +       0.0516 * (normalized) Pro
+ +      -0.0179 * (normalized) Ival
+ +       0      * (normalized) 3OH-5Me-Pro
+ +      -0.0203 * (normalized) 3OH-Pro
+ +       0      * (normalized) 4Cl-Thr
+ +       0      * (normalized) 4OH-Pro
+ +      -0.0535 * (normalized) aIle
+ +       0.1112 * (normalized) Ala
+ +      -0.059  * (normalized) Asn
+ +      -0.0045 * (normalized) aThr
+ +      -0.0476 * (normalized) NMe-Gly
+ +      -0.0042 * (normalized) OH-Asp
+ +      -0.0029 * (normalized) NMe-Me2A-Phe
+ +       0      * (normalized) OMe-Asp
+ +      -0.0058 * (normalized) Dab
+ +      -0.0433 * (normalized) D-Ala
+ +      -0.0485 * (normalized) D-Arg
+ +      -0.0014 * (normalized) D-Asn
+ +       0      * (normalized) D-Asp
+ +      -0.0919 * (normalized) ChrAct
+ +       0      * (normalized) D-Glu
+ +      -0.043  * (normalized) D-aThr
+ +      -0.0316 * (normalized) Aib
+ +      -0.038  * (normalized) D-Leu
+ +       0      * (normalized) D-Lys
+ +       0      * (normalized) D-Orn
+ +       0      * (normalized) 5Me-Pro
+ +      -0.0168 * (normalized) 3Me-Glu
+ +       0      * (normalized) D-Phe
+ +      -0.0082 * (normalized) D-ph-Gly
+ +      -0.0347 * (normalized) D-Pro
+ +       0      * (normalized) D-Ser
+ +       0.171  * (normalized) D-Trp
+ +      -0.0388 * (normalized) Gln
+ +       0      * (normalized) His
+ +      -0.0081 * (normalized) Ile
+ +      -0.0939 * (normalized) Leu
+ +       0      * (normalized) Lys
+ +       1.8144 * (normalized) aMe-Cys
+ +      -0.0392 * (normalized) NMe-Ala
+ +      -0.0195 * (normalized) bMe-Ile
+ +       0.3258 * (normalized) NMe-Ile
+ +      -0.0485 * (normalized) 3Me-4Me-Gln
+ +      -0.1307 * (normalized) NMe-Phe
+ +       0.0209 * (normalized) Phe
+ +      -0.1259 * (normalized) Val
+ +      -0.0011 * (normalized) NMe-Leu
+ +       0.1015 * (normalized) NMe-Val
+ +       0      * (normalized) OH-Asn
+ +      -0.0357 * (normalized) D-Hpg
+ +      -0.0285 * (normalized) Orn
+ +       0      * (normalized) D-Ival
+ +      -0.0045 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       1.116  * (normalized) Br-Phe
+ +      -0.0009 * (normalized) PALOA
+ +       1      * (normalized) MeOx-Ile
+ +      -0.0027 * (normalized) D-4OH-Pro
+ +      -0.0027 * (normalized) NMe-bMe-Leu
+ +      -0.0045 * (normalized) Cl-Ile
+ +       0.1629 * (normalized) NMe-OH-Ile
+ +      -0.0009 * (normalized) k-Leu
+ +      -0.8007 * (normalized) bOH-Br-Phe
+ +      -0.0485 * (normalized) bOMe-Tyr
+ +      -0.0027 * (normalized) NMe-Ph-Gly
+ -       0.9992
+
+Number of kernel evaluations: 20153 (83.049% cached)
+
+Classifier for classes: antibiotic, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) 4oxo-5Me-Pro
+ +       0      * (normalized) 3OH-Leu
+ +       0      * (normalized) 4oxo-Hpr
+ +      -0.0225 * (normalized) 4OH-D-Ph-Lac
+ +       0      * (normalized) Arg
+ +      -0.0045 * (normalized) Asp
+ +      -0.034  * (normalized) dhCys
+ +       0      * (normalized) bMe-Asp
+ +       0      * (normalized) D-NMe-Ser
+ +       0      * (normalized) bU-dAla
+ +      -0.034  * (normalized) Cys
+ +       0      * (normalized) D-Abu
+ +       0      * (normalized) Hmp
+ +       0      * (normalized) dhAbu
+ +       0      * (normalized) D-Hiv
+ +      -0.0011 * (normalized) NMe-Gln
+ +      -0.0457 * (normalized) D-Lac
+ +      -0.0698 * (normalized) D-Ph-Lac
+ +       0      * (normalized) D-Val
+ +       0      * (normalized) Glu
+ +       0      * (normalized) NMe-Hpg
+ +       0      * (normalized) Hpr
+ +       0      * (normalized) Agdha
+ +       0      * (normalized) D-OH-Asp
+ +       0      * (normalized) D-PO-Asn
+ +       0      * (normalized) Dpr
+ +      -0.0035 * (normalized) Gly
+ +      -0.008  * (normalized) Ser
+ +      -0.001  * (normalized) Thr
+ +       0      * (normalized) Trp
+ +       0      * (normalized) D-Dbu
+ +      -0.0067 * (normalized) Tyr
+ +      -0.0462 * (normalized) Pro
+ +       0      * (normalized) 3Me-Pro
+ +       0      * (normalized) 3OH-Pro
+ +       0      * (normalized) 4Cl-Thr
+ +       0      * (normalized) 4OH-Pro
+ +      -0.0063 * (normalized) aIle
+ +       0.0583 * (normalized) Ala
+ +      -0.0027 * (normalized) Asn
+ +      -0.0085 * (normalized) aThr
+ +       0      * (normalized) NMe-Gly
+ +       0      * (normalized) OH-Asp
+ +       0      * (normalized) NMe-Me2A-Phe
+ +       0      * (normalized) OMe-Asp
+ +      -0.0029 * (normalized) Dab
+ +      -0.0321 * (normalized) D-Ala
+ +      -0.0011 * (normalized) D-Arg
+ +      -0.0005 * (normalized) D-Asn
+ +      -0.0227 * (normalized) D-Asp
+ +       0      * (normalized) ChrAct
+ +      -0.034  * (normalized) D-Glu
+ +      -0.0011 * (normalized) D-aThr
+ +      -0.034  * (normalized) Aib
+ +      -0.0139 * (normalized) D-Leu
+ +      -0.0527 * (normalized) D-Lys
+ +      -0.0603 * (normalized) D-Orn
+ +      -0.034  * (normalized) D-Phe
+ +       0      * (normalized) D-Pro
+ +       0      * (normalized) D-Ser
+ +       0      * (normalized) D-Trp
+ +      -0.0527 * (normalized) D-Tyr
+ +      -0.0412 * (normalized) Gln
+ +      -0.068  * (normalized) His
+ +      -0.0533 * (normalized) Ile
+ +       0.0922 * (normalized) Leu
+ +       0.4397 * (normalized) Lys
+ +      -0.0011 * (normalized) 3Me-4Me-Gln
+ +       0      * (normalized) NMe-Phe
+ +      -0.0007 * (normalized) Phe
+ +      -0.0801 * (normalized) Val
+ +       0.1336 * (normalized) NMe-Leu
+ +       0      * (normalized) NMe-Val
+ +       0      * (normalized) OH-Asn
+ +       0      * (normalized) D-Hpg
+ +       0      * (normalized) Orn
+ +      -0.008  * (normalized) D-Ival
+ +      -0.0021 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       0      * (normalized) PALOA
+ +       0      * (normalized) NMe-bMe-Leu
+ +      -0.0021 * (normalized) Cl-Ile
+ +       1      * (normalized) CO
+ +       0      * (normalized) D-COOH-Trp
+ +       0      * (normalized) k-Leu
+ +       0      * (normalized) Pyr
+ +      -0.0011 * (normalized) bOMe-Tyr
+ +       0      * (normalized) NMe-Ph-Gly
+ -       1.0108
+
+Number of kernel evaluations: 11695 (71.953% cached)
+
+Classifier for classes: immunomodulating, toxin
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.4407 * (normalized) Abu
+ +       0.1066 * (normalized) bAla
+ +       0.2    * (normalized) Arg
+ +       0.0184 * (normalized) ADMAdda
+ +       0.2228 * (normalized) D-bMe-Asp
+ +       0.042  * (normalized) D-Hmp
+ +       0.0327 * (normalized) NMe-Gln
+ +       0.084  * (normalized) D-NMe-Leu
+ +       0.0331 * (normalized) D-NMe-Val
+ +      -0.3333 * (normalized) Glu
+ +       0.0411 * (normalized) Hiv
+ +       0.1556 * (normalized) Lac
+ +       0.0137 * (normalized) Met
+ +       0.1914 * (normalized) Dpr
+ +      -0.0555 * (normalized) Gly
+ +      -0.4414 * (normalized) Nva
+ +       0.098  * (normalized) Ser
+ +       0.1288 * (normalized) Thr
+ +       0.0002 * (normalized) t-Leu
+ +      -0.1137 * (normalized) Tyr
+ +      -0.0719 * (normalized) Pro
+ +       0.0035 * (normalized) 4OH-Pro
+ +       0.0988 * (normalized) NMe-dPhe
+ +      -0.0267 * (normalized) Ala
+ +       0.1339 * (normalized) Asn
+ +       0.0247 * (normalized) aThr
+ +       0      * (normalized) MeO-Glu
+ +      -0.3362 * (normalized) NMe-Gly
+ +       0.0012 * (normalized) Dab
+ +       0.0329 * (normalized) D-Ala
+ +       0.0327 * (normalized) D-Arg
+ +       0.0584 * (normalized) D-Asn
+ +       0.0061 * (normalized) D-Asp
+ +       0      * (normalized) D-aIle
+ +       0.1206 * (normalized) D-Glu
+ +       0.0584 * (normalized) D-aThr
+ +       0.0017 * (normalized) D-Leu
+ +       0.067  * (normalized) D-Phe
+ +       0.0017 * (normalized) D-Ser
+ +       0.0184 * (normalized) Har
+ +       0.1531 * (normalized) His
+ +      -0.587  * (normalized) Ile
+ +      -0.4921 * (normalized) Leu
+ +       0.2228 * (normalized) Adda
+ +       0.3199 * (normalized) NMe-Ala
+ +      -0.4287 * (normalized) NMe-Bmt
+ +       0.0051 * (normalized) NMe-Ile
+ +       0.1339 * (normalized) NMe-aIle
+ +       0.0251 * (normalized) NMe-Phe
+ +      -1.2202 * (normalized) Phe
+ +      -0.03   * (normalized) Val
+ +      -1.3162 * (normalized) NMe-Leu
+ +       0.0728 * (normalized) NMe-OMe-Tyr
+ +      -0.124  * (normalized) NMe-Val
+ +      -0.069  * (normalized) Orn
+ +       0.1468 * (normalized) dDil
+ +       0.1167 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       0.931  * (normalized) PALOA
+ +      -1.0691 * (normalized) PAOA
+ +       0.1146 * (normalized) PMST
+ +       0.0411 * (normalized) C8:0:1(7)-Me(2)-NH2(3)
+ +       0.0051 * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +       0.1468 * (normalized) dDap
+ +       0.007  * (normalized) D-Har
+ +       0.4166 * (normalized) Cl2-Pro
+ +       0.1167 * (normalized) D-NMe-Nva
+ +       0.1339 * (normalized) NMe-Asn
+ +       0.1167 * (normalized) Cl-Ile
+ +       0.3828 * (normalized) CO
+ +       0.007  * (normalized) D-Br-NMe-Tyr
+ +       0.0064 * (normalized) D-Cl-NMe-Tyr
+ +       0.007  * (normalized) D-I-NMe-Tyr
+ +       0.0009 * (normalized) NMe-hv-Val
+ +       0.2681 * (normalized) PTTA
+ +      -0.1381 * (normalized) k-Leu
+ +       0.0281 * (normalized) Ph-Lac
+ +       0.0502 * (normalized) Ala-Thz
+ +       0.0327 * (normalized) bOMe-Tyr
+ +       0.9998
+
+Number of kernel evaluations: 6040 (91.968% cached)
+
+Classifier for classes: immunomodulating, siderophore
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.5731 * (normalized) Abu
+ +       0.2693 * (normalized) Ac-OH-Orn
+ +       0.1429 * (normalized) Asp
+ +       0.218  * (normalized) D-Fo-OH-Orn
+ +       0.1513 * (normalized) diOH-Bz
+ +       0.46   * (normalized) DMOG
+ +       0.0943 * (normalized) D-Hse
+ +      -0.1124 * (normalized) D-NMe-Val
+ +      -0.2336 * (normalized) Glu
+ +       0.0236 * (normalized) Hse
+ +       0.2544 * (normalized) D-Ac-OH-Orn
+ +       0.3796 * (normalized) D-OH-Asp
+ +       0.0681 * (normalized) Gly
+ +      -0.5731 * (normalized) Nva
+ +       0.3573 * (normalized) OH-Orn
+ +       0.218  * (normalized) Fo-OH-Orn
+ +       0.4135 * (normalized) Ser
+ +       0.2834 * (normalized) Thr
+ +      -0.5    * (normalized) Tyr
+ +      -0.5897 * (normalized) Pro
+ +       0.0363 * (normalized) Ala
+ +      -0.1924 * (normalized) NMe-Gly
+ +       0.2539 * (normalized) OH-Asp
+ +       0.0202 * (normalized) OH-His
+ +       0.1542 * (normalized) Dab
+ +       0.0322 * (normalized) D-Ala
+ +       0.051  * (normalized) D-Asp
+ +       0.1366 * (normalized) D-Gln
+ +       0.2061 * (normalized) D-aThr
+ +       0.4606 * (normalized) D-Lys
+ +       0.3228 * (normalized) D-Ser
+ +       0.0009 * (normalized) Gln
+ +      -0.5808 * (normalized) Ile
+ +      -0.357  * (normalized) Leu
+ +       0.3086 * (normalized) Lys
+ +      -0.2247 * (normalized) NMe-Bmt
+ +      -0.9283 * (normalized) Phe
+ +      -0.1719 * (normalized) Val
+ +      -0.7245 * (normalized) NMe-Leu
+ +      -0.2724 * (normalized) NMe-Val
+ +       0.1719 * (normalized) Orn
+ +      -0.1886 * (normalized) PALOA
+ +      -0.1881 * (normalized) PAOA
+ +      -0.3767 * (normalized) k-Leu
+ +       0.5392
+
+Number of kernel evaluations: 1121 (91.853% cached)
+
+Classifier for classes: immunomodulating, surfactant
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.4907 * (normalized) Abu
+ +       0.5369 * (normalized) Asp
+ +       0.6696 * (normalized) C10:0-OH(3)
+ +      -0.0968 * (normalized) D-NMe-Val
+ +       0.0967 * (normalized) Glu
+ +      -0.125  * (normalized) Gly
+ +      -0.4904 * (normalized) Nva
+ +       0.389  * (normalized) Ser
+ +       0.6922 * (normalized) Thr
+ +      -0.5    * (normalized) Tyr
+ +      -0.6664 * (normalized) Pro
+ +      -0.0751 * (normalized) Ala
+ +      -0.1654 * (normalized) NMe-Gly
+ +       0.3204 * (normalized) D-Asn
+ +       0.8667 * (normalized) D-Leu
+ +       0.4433 * (normalized) D-Phe
+ +       0.3204 * (normalized) D-Tyr
+ +       0.5035 * (normalized) Gln
+ +       0.0767 * (normalized) Ile
+ +       0.41   * (normalized) Leu
+ +       0.6244 * (normalized) NMe-Ala
+ +      -0.1936 * (normalized) NMe-Bmt
+ +       0.3122 * (normalized) NMe-Phe
+ +      -1.3333 * (normalized) Phe
+ +       0.1152 * (normalized) Val
+ +      -0.6228 * (normalized) NMe-Leu
+ +      -0.234  * (normalized) NMe-Val
+ +      -0.1598 * (normalized) Orn
+ +      -0.16   * (normalized) PALOA
+ +      -0.1596 * (normalized) PAOA
+ +      -0.3196 * (normalized) k-Leu
+ +       0.2341
+
+Number of kernel evaluations: 295 (92.61% cached)
+
+Classifier for classes: immunomodulating, protease inhibitor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1015 * (normalized) Abu
+ +       0.325  * (normalized) NMe-Tyr
+ +      -0.3184 * (normalized) D-NMe-Val
+ +       0.3641 * (normalized) Hty
+ +      -0.219  * (normalized) Glu
+ +       0.325  * (normalized) Ahp
+ +      -0.125  * (normalized) Gly
+ +      -0.5577 * (normalized) Nva
+ +       0.3262 * (normalized) Thr
+ +       0.5444 * (normalized) Tyr
+ +      -0.0902 * (normalized) Pro
+ +       0      * (normalized) NMe-Hty
+ +       0.0798 * (normalized) Ala
+ +      -0.2987 * (normalized) NMe-Gly
+ +       0.3083 * (normalized) D-Lys
+ +       0.1083 * (normalized) Gln
+ +      -0.8609 * (normalized) Ile
+ +      -0.1839 * (normalized) Leu
+ +      -0.6369 * (normalized) NMe-Bmt
+ +       0.2176 * (normalized) NMe-Ile
+ +      -1.0278 * (normalized) Phe
+ +       0.3828 * (normalized) Val
+ +      -1.0056 * (normalized) NMe-Leu
+ +      -0.2789 * (normalized) NMe-Val
+ +      -0.3108 * (normalized) Orn
+ +      -0.3107 * (normalized) PALOA
+ +      -0.311  * (normalized) PAOA
+ +       0.1271 * (normalized) e-Tyr
+ +       0.3083 * (normalized) CO
+ +       0.2534 * (normalized) NFo-Dpr
+ +      -0.6216 * (normalized) k-Leu
+ +       0.1264 * (normalized) v-Tyr
+ +       0.4891 * (normalized) Sta
+ +       0.6499
+
+Number of kernel evaluations: 604 (86.878% cached)
+
+Classifier for classes: immunomodulating, antiatherogenic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0452 * (normalized) Abu
+ +      -0.0226 * (normalized) D-NMe-Val
+ +      -0.3092 * (normalized) Glu
+ +      -0.1159 * (normalized) Gly
+ +      -0.0651 * (normalized) Nva
+ +      -0.4044 * (normalized) Tyr
+ +      -0.3603 * (normalized) Pro
+ +       0.4    * (normalized) Ala
+ +      -0.0276 * (normalized) NMe-Gly
+ +      -0.1535 * (normalized) Ile
+ +      -0.2469 * (normalized) Leu
+ +      -0.0452 * (normalized) NMe-Bmt
+ +       0.2552 * (normalized) Phe
+ +      -0.0368 * (normalized) Val
+ +      -0.1013 * (normalized) NMe-Leu
+ +      -0.0326 * (normalized) NMe-Val
+ +       0      * (normalized) Orn
+ +       0      * (normalized) PAOA
+ +       0      * (normalized) k-Leu
+ -       0.798 
+
+Number of kernel evaluations: 68 (84.075% cached)
+
+Classifier for classes: immunomodulating, antitumor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.7895 * (normalized) Abu
+ +       0.0143 * (normalized) D-bOH-Val
+ +       0.0143 * (normalized) bbMe2-O-Met
+ +       0.0143 * (normalized) bOH-Val
+ +       0.0492 * (normalized) NMe-Tyr
+ +       0.0763 * (normalized) Hmp
+ +       0.0517 * (normalized) dhAbu
+ +       0.0143 * (normalized) D-t-Leu
+ +       0.0143 * (normalized) D-N2Me-Asn
+ +      -0.0832 * (normalized) D-NMe-Val
+ +      -0.3333 * (normalized) Glu
+ +       0.0676 * (normalized) Hiv
+ +       0.0409 * (normalized) Met
+ +       0.0664 * (normalized) Gly
+ +      -0.7884 * (normalized) Nva
+ +       0.1638 * (normalized) O-Met
+ +       0.1585 * (normalized) Ser
+ +       0.4215 * (normalized) Thr
+ +       0.0143 * (normalized) t-Leu
+ +       0.151  * (normalized) Trp
+ +      -0.324  * (normalized) Tyr
+ +       0.6136 * (normalized) Pro
+ +       0.2044 * (normalized) 3Me-Pro
+ +      -0.0274 * (normalized) Ala
+ +       0.3199 * (normalized) Asn
+ +      -0.2117 * (normalized) NMe-Gly
+ +       0.0143 * (normalized) D-N2Me-bOH-Asn
+ +       0.0048 * (normalized) D-Ala
+ +       0.0143 * (normalized) D-Asn
+ +       0.0071 * (normalized) D-aThr
+ +       0.1049 * (normalized) Aib
+ +       0.3498 * (normalized) D-Pro
+ +       0.0036 * (normalized) D-Ser
+ +       0.0048 * (normalized) Gln
+ +       0.1387 * (normalized) Ile
+ +      -0.0221 * (normalized) Leu
+ +       0.0492 * (normalized) NMe-Ala
+ +       0.0143 * (normalized) bMe-Ile
+ +      -0.1664 * (normalized) NMe-Bmt
+ +       0.558  * (normalized) NMe-Phe
+ +       0.1034 * (normalized) OMe-Thr
+ +       0.1099 * (normalized) Phe
+ +       0.0571 * (normalized) Val
+ +      -0.7279 * (normalized) NMe-Leu
+ +       0.1035 * (normalized) NMe-OMe-Tyr
+ +      -0.128  * (normalized) NMe-Val
+ +       0.1034 * (normalized) OH-Asn
+ +       0.1034 * (normalized) 4Me-Pro
+ +      -0.314  * (normalized) Orn
+ +       0.0143 * (normalized) bMe-Gln
+ +       0.1638 * (normalized) bOMe-Asp
+ +      -0.3138 * (normalized) PALOA
+ +      -0.3141 * (normalized) PAOA
+ +       0.1838 * (normalized) Dap
+ +       0.1527 * (normalized) Ibu
+ +       0.1527 * (normalized) Map
+ +       0.1034 * (normalized) Br-Tyr
+ +       0.1838 * (normalized) Dil
+ +      -0.6279 * (normalized) k-Leu
+ +       0.172  * (normalized) Ala-Thz
+ +       0.6138
+
+Number of kernel evaluations: 600 (96.358% cached)
+
+Classifier for classes: immunomodulating, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.2034 * (normalized) Abu
+ +       0.5    * (normalized) Arg
+ +      -0.0306 * (normalized) D-NMe-Val
+ +      -0.3196 * (normalized) Glu
+ +       0.2372 * (normalized) Dpr
+ +      -0.1199 * (normalized) Gly
+ +      -0.2025 * (normalized) Nva
+ +      -0.5    * (normalized) Tyr
+ +      -0.1191 * (normalized) Pro
+ +      -0.1051 * (normalized) Ala
+ +      -0.0535 * (normalized) NMe-Gly
+ +       0.4744 * (normalized) D-aIle
+ +       0.0997 * (normalized) D-Leu
+ +       0.849  * (normalized) D-Phe
+ +       0.1976 * (normalized) Ile
+ +      -0.2744 * (normalized) Leu
+ +      -0.0611 * (normalized) NMe-Bmt
+ +      -0.7907 * (normalized) Phe
+ +      -0.0714 * (normalized) Val
+ +      -0.2019 * (normalized) NMe-Leu
+ +      -0.0765 * (normalized) NMe-Val
+ +      -0.0959 * (normalized) Orn
+ +      -0.0958 * (normalized) PALOA
+ +      -0.096  * (normalized) PAOA
+ +       0.3489 * (normalized) dv-Tyr
+ +       0.4744 * (normalized) k-Arg
+ +       0.7478 * (normalized) NFo-Dpr
+ +       0.3491 * (normalized) NAc-Dpr
+ +      -0.1918 * (normalized) k-Leu
+ +       0.4744 * (normalized) v-OH-Tyr
+ +       0.7481 * (normalized) v-Tyr
+ -       0.5208
+
+Number of kernel evaluations: 186 (92.092% cached)
+
+Classifier for classes: immunomodulating, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0884 * (normalized) Abu
+ +       0.1735 * (normalized) Arg
+ +       0.3471 * (normalized) D-CysA
+ +       0.3471 * (normalized) NMe-Gln
+ +       0.0242 * (normalized) D-t-Leu
+ +       0.2072 * (normalized) D-Val
+ +      -0.317  * (normalized) Glu
+ +      -0.1189 * (normalized) Gly
+ +      -0.1662 * (normalized) Nva
+ +       0.1157 * (normalized) Thr
+ +       0.0549 * (normalized) t-Leu
+ +      -0.3816 * (normalized) Tyr
+ +       0.2183 * (normalized) Pro
+ +       0.1243 * (normalized) Ala
+ +      -0.0416 * (normalized) NMe-Gly
+ +       0.3471 * (normalized) D-Trp
+ +      -0.0442 * (normalized) Ile
+ +      -0.1902 * (normalized) Leu
+ +       1.6217 * (normalized) aMe-Cys
+ +       0.0725 * (normalized) bMe-Ile
+ +      -0.0312 * (normalized) NMe-Bmt
+ +       0.3217 * (normalized) NMe-Ile
+ +      -0.317  * (normalized) Phe
+ +      -0.0554 * (normalized) Val
+ +      -0.16   * (normalized) NMe-Leu
+ +       0.3255 * (normalized) NMe-Val
+ +      -0.0442 * (normalized) Orn
+ +       0.3471 * (normalized) Br-Phe
+ +      -0.0441 * (normalized) PALOA
+ +      -0.0443 * (normalized) PAOA
+ +       1      * (normalized) MeOx-Ile
+ +       0.1612 * (normalized) NMe-OH-Ile
+ +      -0.0884 * (normalized) k-Leu
+ -       0.8084
+
+Number of kernel evaluations: 168 (91.446% cached)
+
+Classifier for classes: immunomodulating, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.043  * (normalized) Abu
+ +      -0.021  * (normalized) D-NMe-Val
+ +      -0.0271 * (normalized) Glu
+ +      -0.0102 * (normalized) Gly
+ +      -0.0884 * (normalized) Nva
+ +      -0.1091 * (normalized) Tyr
+ +      -0.0275 * (normalized) Pro
+ +       0.0862 * (normalized) Ala
+ +      -0.0326 * (normalized) NMe-Gly
+ +      -0.0006 * (normalized) Ile
+ +       0.1837 * (normalized) Leu
+ +       0.5    * (normalized) Lys
+ +      -0.0419 * (normalized) NMe-Bmt
+ +      -0.2168 * (normalized) Phe
+ +      -0.0435 * (normalized) Val
+ +       0.078  * (normalized) NMe-Leu
+ +      -0.0442 * (normalized) NMe-Val
+ +      -0.0006 * (normalized) Orn
+ +      -0.0011 * (normalized) PAOA
+ +       1      * (normalized) CO
+ +      -0.0011 * (normalized) k-Leu
+ -       0.9452
+
+Number of kernel evaluations: 52 (79.283% cached)
+
+Classifier for classes: toxin, siderophore
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1542 * (normalized) Abu
+ +       1.1944 * (normalized) Ac-OH-Orn
+ +      -0.0721 * (normalized) bAla
+ +      -0.1799 * (normalized) Arg
+ +       0.6611 * (normalized) Asp
+ +      -0.0099 * (normalized) ADMAdda
+ +       0.8155 * (normalized) D-Fo-OH-Orn
+ +       0.7337 * (normalized) diOH-Bz
+ +       1      * (normalized) DMOG
+ +      -0.0029 * (normalized) D-bMe-Asp
+ +       0.4932 * (normalized) D-Hse
+ +      -0.282  * (normalized) NMe-Gln
+ +      -0.1634 * (normalized) D-NMe-Leu
+ +      -0.027  * (normalized) D-NMe-Val
+ +      -0.0119 * (normalized) D-Val
+ +       0      * (normalized) Hty
+ +       0.0264 * (normalized) Glu
+ +      -0.0357 * (normalized) NMe-bAla
+ +      -0.3994 * (normalized) Hiv
+ +       0.1233 * (normalized) Hse
+ +       0      * (normalized) Lac
+ +      -0.035  * (normalized) Agdha
+ +       1.0243 * (normalized) D-Ac-OH-Orn
+ +      -0.0356 * (normalized) Met
+ +       1.5014 * (normalized) D-OH-Asp
+ +      -0.0548 * (normalized) Dpr
+ +       0.5281 * (normalized) Gly
+ +      -0.1113 * (normalized) Nva
+ +       1.529  * (normalized) OH-Orn
+ +       0.4872 * (normalized) Fo-OH-Orn
+ +       1.6115 * (normalized) Ser
+ +       1.0091 * (normalized) Thr
+ +      -0.0113 * (normalized) t-Leu
+ +      -0.3242 * (normalized) Tyr
+ +      -0.1632 * (normalized) Pro
+ +      -0.1808 * (normalized) 4OH-Pro
+ +      -0.0208 * (normalized) NMe-dPhe
+ +       0.3687 * (normalized) Ala
+ +       0.0121 * (normalized) Asn
+ +      -0.1536 * (normalized) aThr
+ +       0      * (normalized) MeO-Glu
+ +       0.9239 * (normalized) OH-Asp
+ +       0.2036 * (normalized) OH-His
+ +       0.6127 * (normalized) Dab
+ +       0.071  * (normalized) D-Ala
+ +      -0.282  * (normalized) D-Arg
+ +      -0.0604 * (normalized) D-Asn
+ +       0.0615 * (normalized) D-Asp
+ +      -0.0958 * (normalized) D-aIle
+ +       0.8952 * (normalized) D-Gln
+ +      -0.0401 * (normalized) D-Glu
+ +       0.8256 * (normalized) D-aThr
+ +      -0.1294 * (normalized) D-Leu
+ +       1      * (normalized) D-Lys
+ +       1.1674 * (normalized) D-Ser
+ +      -0.0099 * (normalized) Har
+ +       0.0038 * (normalized) Gln
+ +      -0.0625 * (normalized) Ile
+ +      -0.1926 * (normalized) Leu
+ +       1.26   * (normalized) Lys
+ +      -0.0702 * (normalized) Adda
+ +      -0.0357 * (normalized) NMe-Ala
+ +      -0.0782 * (normalized) NMe-Ile
+ +      -0.035  * (normalized) 3Me-4Me-Gln
+ +      -0.01   * (normalized) NMe-Phe
+ +      -0.0628 * (normalized) Phe
+ +       0.0944 * (normalized) Val
+ +      -0.0558 * (normalized) NMe-OMe-Tyr
+ +      -0.068  * (normalized) NMe-Val
+ +       0.7202 * (normalized) Orn
+ +      -0.0137 * (normalized) dDil
+ +      -0.1885 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +      -0.1113 * (normalized) PALOA
+ +       0      * (normalized) PMST
+ +      -0.0124 * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +       0      * (normalized) C4:0-OH(3)
+ +      -0.0137 * (normalized) dDap
+ +      -0.3616 * (normalized) D-Har
+ +      -0.3078 * (normalized) Cl2-Pro
+ +      -0.1209 * (normalized) D-NMe-Nva
+ +      -0.1885 * (normalized) Cl-Ile
+ +      -0.306  * (normalized) CO
+ +      -0.4623 * (normalized) D-Br-NMe-Tyr
+ +      -0.4619 * (normalized) D-Cl-NMe-Tyr
+ +      -0.1097 * (normalized) Iser
+ +      -0.4607 * (normalized) D-I-NMe-Tyr
+ +      -0.306  * (normalized) NMe-Cl-Trp
+ +      -0.0563 * (normalized) NMe-hv-Val
+ +      -0.1113 * (normalized) k-Leu
+ +      -0.054  * (normalized) Ph-Lac
+ +      -0.0199 * (normalized) Ala-Thz
+ +      -0.282  * (normalized) bOMe-Tyr
+ -       0.9414
+
+Number of kernel evaluations: 13894 (86.152% cached)
+
+Classifier for classes: toxin, surfactant
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0445 * (normalized) Abu
+ +      -0.6147 * (normalized) bAla
+ +      -0.2158 * (normalized) Arg
+ +       0.9091 * (normalized) Asp
+ +      -0.0965 * (normalized) ADMAdda
+ +       1      * (normalized) C10:0-OH(3)
+ +      -0.2466 * (normalized) D-bMe-Asp
+ +       0      * (normalized) D-Hmp
+ +      -0.0968 * (normalized) NMe-Gln
+ +      -0.0982 * (normalized) D-NMe-Leu
+ +      -0.0337 * (normalized) D-NMe-Val
+ +       0      * (normalized) D-Val
+ +       0.6667 * (normalized) Glu
+ +      -0.0982 * (normalized) NMe-bAla
+ +      -0.0669 * (normalized) Hiv
+ +      -0.0146 * (normalized) Lac
+ +      -0.232  * (normalized) Met
+ +      -0.0635 * (normalized) Dpr
+ +      -0.0429 * (normalized) Gly
+ +      -0.0454 * (normalized) Nva
+ +       0.4085 * (normalized) Ser
+ +       0.9089 * (normalized) Thr
+ +      -0.0001 * (normalized) t-Leu
+ +      -0.1996 * (normalized) Tyr
+ +      -0.0528 * (normalized) Pro
+ +      -0.1175 * (normalized) 4OH-Pro
+ +      -0.2896 * (normalized) NMe-dPhe
+ +       0.1087 * (normalized) Ala
+ +       0      * (normalized) Asn
+ +      -0.0439 * (normalized) aThr
+ +      -0.0392 * (normalized) Dab
+ +      -0.1318 * (normalized) D-Ala
+ +      -0.0968 * (normalized) D-Arg
+ +       0.6807 * (normalized) D-Asn
+ +      -0.0322 * (normalized) D-Asp
+ +      -0.0982 * (normalized) D-aIle
+ +      -0.1716 * (normalized) D-Glu
+ +      -0.0466 * (normalized) D-aThr
+ +       1.1421 * (normalized) D-Leu
+ +       0.5    * (normalized) D-Phe
+ +      -0.0588 * (normalized) D-Ser
+ +       0.7273 * (normalized) D-Tyr
+ +      -0.0965 * (normalized) Har
+ +       0.9173 * (normalized) Gln
+ +      -0.2496 * (normalized) His
+ +       0.4654 * (normalized) Ile
+ +       1.4477 * (normalized) Leu
+ +      -0.1006 * (normalized) Lys
+ +      -0.2466 * (normalized) Adda
+ +       0.1126 * (normalized) NMe-Ala
+ +      -0.2831 * (normalized) NMe-Ile
+ +       0.8565 * (normalized) NMe-Phe
+ +      -0.0311 * (normalized) Phe
+ +       0.0855 * (normalized) Val
+ +       0      * (normalized) NMe-Leu
+ +      -0.1416 * (normalized) NMe-OMe-Tyr
+ +      -0.2825 * (normalized) NMe-Val
+ +      -0.0377 * (normalized) Orn
+ +      -0.1166 * (normalized) dDil
+ +      -0.0933 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +      -0.0755 * (normalized) PALOA
+ +      -0.1271 * (normalized) PMST
+ +       0      * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +      -0.1166 * (normalized) dDap
+ +      -0.235  * (normalized) D-Har
+ +      -0.0583 * (normalized) Cl2-Pro
+ +      -0.0933 * (normalized) D-NMe-Nva
+ +      -0.0933 * (normalized) Cl-Ile
+ +      -0.3283 * (normalized) CO
+ +      -0.1023 * (normalized) D-Br-NMe-Tyr
+ +      -0.1027 * (normalized) D-Cl-NMe-Tyr
+ +      -0.1024 * (normalized) D-I-NMe-Tyr
+ +      -0.2012 * (normalized) NMe-Cl-Trp
+ +      -0.0005 * (normalized) NMe-hv-Val
+ +      -0.0755 * (normalized) k-Leu
+ +      -0.0236 * (normalized) Ph-Lac
+ +      -0.2871 * (normalized) Ala-Thz
+ +      -0.0968 * (normalized) bOMe-Tyr
+ -       0.9998
+
+Number of kernel evaluations: 6126 (88.383% cached)
+
+Classifier for classes: toxin, protease inhibitor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.6637 * (normalized) Abu
+ +      -0.1132 * (normalized) bAla
+ +      -0.3081 * (normalized) Arg
+ +      -0.3426 * (normalized) ADMAdda
+ +      -0.2467 * (normalized) D-bMe-Asp
+ +       1.2471 * (normalized) NMe-Tyr
+ +      -0.1668 * (normalized) D-Hmp
+ +      -0.0071 * (normalized) NMe-Gln
+ +      -0.2981 * (normalized) D-NMe-Leu
+ +      -0.6439 * (normalized) D-NMe-Val
+ +      -0.0035 * (normalized) D-Val
+ +       0.7432 * (normalized) Hty
+ +       0.2144 * (normalized) Glu
+ +      -0.0106 * (normalized) NMe-bAla
+ +      -0.1439 * (normalized) Hiv
+ +      -0.3333 * (normalized) Lac
+ +      -0.1037 * (normalized) Met
+ +       0.2471 * (normalized) Ahp
+ +      -0.2547 * (normalized) Dpr
+ +      -0.0809 * (normalized) Gly
+ +      -0.2145 * (normalized) Nva
+ +       0.0358 * (normalized) O-Met
+ +      -0.1475 * (normalized) Ser
+ +       0.6385 * (normalized) Thr
+ +      -0.0001 * (normalized) t-Leu
+ +       1.6313 * (normalized) Tyr
+ +       0.6309 * (normalized) Pro
+ +      -0.071  * (normalized) 4OH-Pro
+ +      -0.0225 * (normalized) NMe-dPhe
+ +       0.2683 * (normalized) NMe-Hty
+ +       0.1853 * (normalized) Ala
+ +      -0.0458 * (normalized) Asn
+ +      -0.037  * (normalized) aThr
+ +       0.1415 * (normalized) MeO-Glu
+ +      -0.0719 * (normalized) NMe-Gly
+ +      -0.0237 * (normalized) Dab
+ +      -0.1782 * (normalized) D-Ala
+ +      -0.0071 * (normalized) D-Arg
+ +      -0.1708 * (normalized) D-Asp
+ +      -0.0106 * (normalized) D-aIle
+ +      -0.3796 * (normalized) D-Glu
+ +      -0.0005 * (normalized) D-aThr
+ +      -0.1438 * (normalized) D-Ile
+ +      -0.0382 * (normalized) D-Leu
+ +       0.7539 * (normalized) D-Lys
+ +       0.3998 * (normalized) 3Me-Hty
+ +      -0.0229 * (normalized) D-Phe
+ +      -0.0355 * (normalized) D-Ser
+ +       0      * (normalized) Har
+ +      -0.4327 * (normalized) His
+ +       0.2683 * (normalized) Hph
+ +      -0.2872 * (normalized) Ile
+ +       0.1073 * (normalized) Leu
+ +      -0.2861 * (normalized) Lys
+ +      -0.4165 * (normalized) Adda
+ +      -0.0268 * (normalized) NMe-Ala
+ +       0.1442 * (normalized) NMe-Ile
+ +      -0.0458 * (normalized) NMe-aIle
+ +       0      * (normalized) Phe
+ +       0.5983 * (normalized) Val
+ +      -0.0092 * (normalized) NMe-Leu
+ +      -0.1729 * (normalized) NMe-OMe-Tyr
+ +      -0.2707 * (normalized) NMe-Val
+ +      -0.1943 * (normalized) Orn
+ +      -0.3886 * (normalized) PALOA
+ +      -0.2948 * (normalized) PMST
+ +      -0.1208 * (normalized) C8:0:1(7)-Me(2)-NH2(3)
+ +      -0.3452 * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +       0.5261 * (normalized) e-Tyr
+ +      -0.1421 * (normalized) D-Har
+ +      -0.6268 * (normalized) Cl2-Pro
+ +      -0.0458 * (normalized) NMe-Asn
+ +       0.6724 * (normalized) CO
+ +      -0.0384 * (normalized) D-Br-NMe-Tyr
+ +      -0.0383 * (normalized) D-Cl-NMe-Tyr
+ +       1.2628 * (normalized) NFo-Dpr
+ +      -0.0383 * (normalized) D-I-NMe-Tyr
+ +      -0.5723 * (normalized) NMe-Cl-Trp
+ +      -0.0005 * (normalized) NMe-hv-Val
+ +      -0.2145 * (normalized) PTTA
+ +      -0.3886 * (normalized) k-Leu
+ +       0.7367 * (normalized) v-Tyr
+ +      -0.2877 * (normalized) Ph-Lac
+ +      -0.0071 * (normalized) bOMe-Tyr
+ +       1      * (normalized) Sta
+ -       0.9993
+
+Number of kernel evaluations: 8357 (90.345% cached)
+
+Classifier for classes: toxin, antiatherogenic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0031 * (normalized) bAla
+ +      -0.0284 * (normalized) Arg
+ +       0      * (normalized) ADMAdda
+ +      -0.1346 * (normalized) D-bMe-Asp
+ +       0      * (normalized) NMe-Gln
+ +      -0.0377 * (normalized) D-NMe-Leu
+ +       0      * (normalized) D-NMe-Val
+ +      -0.0003 * (normalized) D-Val
+ +      -0.001  * (normalized) NMe-bAla
+ +      -0.1558 * (normalized) Hiv
+ +      -0.0263 * (normalized) Met
+ +      -0.0104 * (normalized) Dpr
+ +      -0.0124 * (normalized) Gly
+ +      -0.0081 * (normalized) Nva
+ +       0      * (normalized) Ser
+ +      -0.0114 * (normalized) Thr
+ +      -0.0304 * (normalized) Tyr
+ +      -0.0101 * (normalized) Pro
+ +       0.2591 * (normalized) Ala
+ +      -0.034  * (normalized) Asn
+ +       0      * (normalized) aThr
+ +       0      * (normalized) MeO-Glu
+ +      -0.1819 * (normalized) D-Ala
+ +       0      * (normalized) D-Arg
+ +      -0.0286 * (normalized) D-Asn
+ +       0      * (normalized) D-Asp
+ +      -0.0037 * (normalized) D-aIle
+ +      -0.0673 * (normalized) D-Glu
+ +      -0.0456 * (normalized) D-aThr
+ +      -0.0054 * (normalized) D-Ile
+ +      -0.0016 * (normalized) D-Leu
+ +      -0.0141 * (normalized) Ile
+ +      -0.0274 * (normalized) Leu
+ +      -0.1346 * (normalized) Adda
+ +      -0.001  * (normalized) NMe-Ala
+ +      -0.0024 * (normalized) NMe-Ile
+ +       0.9247 * (normalized) Phe
+ +      -0.0167 * (normalized) Val
+ +       0      * (normalized) NMe-OMe-Tyr
+ +      -0.0014 * (normalized) NMe-Val
+ +      -0.0912 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +      -0.0127 * (normalized) PMST
+ +       0      * (normalized) Cl2-Pro
+ +      -0.0572 * (normalized) D-NMe-Nva
+ +      -0.0912 * (normalized) Cl-Ile
+ +      -0.0209 * (normalized) CO
+ +      -0.0519 * (normalized) D-Br-NMe-Tyr
+ +      -0.0522 * (normalized) D-Cl-NMe-Tyr
+ +      -0.0517 * (normalized) D-I-NMe-Tyr
+ +      -0.0081 * (normalized) PTTA
+ +       0      * (normalized) bOMe-Tyr
+ -       0.9999
+
+Number of kernel evaluations: 3483 (72.547% cached)
+
+Classifier for classes: toxin, antitumor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1541 * (normalized) Abu
+ +       0.0996 * (normalized) D-bOH-Val
+ +      -0.2051 * (normalized) bAla
+ +      -0.857  * (normalized) Arg
+ +      -0.0107 * (normalized) ADMAdda
+ +       0.0996 * (normalized) bbMe2-O-Met
+ +       0.0996 * (normalized) bOH-Val
+ +      -0.3558 * (normalized) D-bMe-Asp
+ +       0.3636 * (normalized) NMe-Tyr
+ +       0.2422 * (normalized) Hmp
+ +       0.2319 * (normalized) dhAbu
+ +      -0.0386 * (normalized) NMe-Gln
+ +       0.0996 * (normalized) D-t-Leu
+ +       0.0996 * (normalized) D-N2Me-Asn
+ +      -0.3847 * (normalized) D-NMe-Leu
+ +      -0.7354 * (normalized) D-NMe-Val
+ +       0      * (normalized) NMe-bAla
+ +      -0.1618 * (normalized) Hiv
+ +      -0.3333 * (normalized) Lac
+ +       0.2861 * (normalized) Met
+ +      -0.3447 * (normalized) Dpr
+ +       0.2371 * (normalized) Gly
+ +      -0.1538 * (normalized) Nva
+ +       0.7698 * (normalized) O-Met
+ +       0.2228 * (normalized) Ser
+ +       0.692  * (normalized) Thr
+ +       0.0958 * (normalized) t-Leu
+ +       0.5    * (normalized) Trp
+ +       1.4916 * (normalized) Pro
+ +       0.7965 * (normalized) 3Me-Pro
+ +      -0.1156 * (normalized) NMe-dPhe
+ +       0.2764 * (normalized) Ala
+ +       0.5409 * (normalized) Asn
+ +      -0.0276 * (normalized) aThr
+ +       0.116  * (normalized) NMe-Gly
+ +       0.0996 * (normalized) D-N2Me-bOH-Asn
+ +       0      * (normalized) Dab
+ +      -0.1976 * (normalized) D-Ala
+ +      -0.0386 * (normalized) D-Arg
+ +       0.0996 * (normalized) D-Asn
+ +      -0.0036 * (normalized) D-Asp
+ +       0      * (normalized) D-aIle
+ +      -0.1833 * (normalized) D-Glu
+ +      -0.1425 * (normalized) D-aThr
+ +       0.1996 * (normalized) Aib
+ +       0      * (normalized) D-Leu
+ +      -0.3381 * (normalized) D-Phe
+ +       0.8006 * (normalized) D-Pro
+ +       0.0249 * (normalized) D-Ser
+ +      -0.0107 * (normalized) Har
+ +       0.0332 * (normalized) Gln
+ +      -1      * (normalized) His
+ +       0.6997 * (normalized) Ile
+ +       0.5793 * (normalized) Leu
+ +      -0.3558 * (normalized) Adda
+ +      -0.2518 * (normalized) NMe-Ala
+ +       0.0996 * (normalized) bMe-Ile
+ +      -0.06   * (normalized) NMe-Ile
+ +      -0.6763 * (normalized) NMe-aIle
+ +       0.8982 * (normalized) NMe-Phe
+ +       0.4638 * (normalized) OMe-Thr
+ +       2.0624 * (normalized) Phe
+ +      -0.0854 * (normalized) Val
+ +       0.224  * (normalized) NMe-Leu
+ +       0.0572 * (normalized) NMe-OMe-Tyr
+ +      -0.0582 * (normalized) NMe-Val
+ +       0.4638 * (normalized) OH-Asn
+ +       0.4638 * (normalized) 4Me-Pro
+ +      -0.154  * (normalized) Orn
+ +       0.0996 * (normalized) bMe-Gln
+ +      -0.1742 * (normalized) dDil
+ +      -0.3847 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       0.7698 * (normalized) bOMe-Asp
+ +      -0.3079 * (normalized) PALOA
+ +      -0.2912 * (normalized) PMST
+ +      -0.1994 * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +       1      * (normalized) Dap
+ +      -0.1742 * (normalized) dDap
+ +       0.8831 * (normalized) Ibu
+ +       0.8831 * (normalized) Map
+ +       0.4638 * (normalized) Br-Tyr
+ +      -0.0276 * (normalized) Cl2-Pro
+ +      -0.6763 * (normalized) NMe-Asn
+ +      -0.3847 * (normalized) Cl-Ile
+ +      -0.2912 * (normalized) CO
+ +      -0.0551 * (normalized) D-Br-NMe-Tyr
+ +      -0.0553 * (normalized) D-Cl-NMe-Tyr
+ +       1      * (normalized) Dil
+ +      -0.3982 * (normalized) Iser
+ +      -0.0542 * (normalized) D-I-NMe-Tyr
+ +      -0.0189 * (normalized) NMe-hv-Val
+ +      -0.3079 * (normalized) k-Leu
+ +      -0.072  * (normalized) Ph-Lac
+ +      -0.0386 * (normalized) bOMe-Tyr
+ -       1.0006
+
+Number of kernel evaluations: 6048 (89.63% cached)
+
+Classifier for classes: toxin, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0361 * (normalized) Abu
+ +      -0.1483 * (normalized) bAla
+ +       0.1905 * (normalized) Arg
+ +      -0.109  * (normalized) ADMAdda
+ +      -0.0218 * (normalized) D-bMe-Asp
+ +       0      * (normalized) NMe-Gln
+ +      -0.1868 * (normalized) D-NMe-Leu
+ +      -0.0355 * (normalized) D-NMe-Val
+ +      -0.0193 * (normalized) D-Val
+ +       0      * (normalized) Hty
+ +       0      * (normalized) Glu
+ +      -0.0578 * (normalized) NMe-bAla
+ +      -0.0058 * (normalized) Hiv
+ +      -0.0237 * (normalized) Lac
+ +      -0.0676 * (normalized) Met
+ +      -0.0105 * (normalized) DMAdda
+ +       0.2453 * (normalized) Dpr
+ +      -0.0103 * (normalized) Gly
+ +      -0.036  * (normalized) Nva
+ +      -0.0001 * (normalized) Ser
+ +      -0.0963 * (normalized) Thr
+ +      -0.0001 * (normalized) t-Leu
+ +      -0.1022 * (normalized) Tyr
+ +       0.1087 * (normalized) Pro
+ +       0.01   * (normalized) Ala
+ +      -0.1212 * (normalized) Asn
+ +      -0.0002 * (normalized) aThr
+ +       0      * (normalized) MeO-Glu
+ +       0      * (normalized) Dab
+ +      -0.0101 * (normalized) D-Ala
+ +       0      * (normalized) D-Arg
+ +      -0.0694 * (normalized) D-Asp
+ +       0.5003 * (normalized) D-aIle
+ +      -0.115  * (normalized) D-Glu
+ +       0      * (normalized) D-aThr
+ +       0.039  * (normalized) D-Leu
+ +       0.9627 * (normalized) D-Phe
+ +       0      * (normalized) Har
+ +      -0.0658 * (normalized) His
+ +       0.2521 * (normalized) Ile
+ +      -0.0288 * (normalized) Leu
+ +      -0.1105 * (normalized) Adda
+ +      -0.0578 * (normalized) NMe-Ala
+ +      -0.1223 * (normalized) NMe-Ile
+ +      -0.121  * (normalized) NMe-aIle
+ +       0      * (normalized) Phe
+ +      -0.0699 * (normalized) Val
+ +      -0.0242 * (normalized) NMe-Leu
+ +      -0.1855 * (normalized) NMe-Val
+ +      -0.0281 * (normalized) Orn
+ +      -0.063  * (normalized) dDil
+ +      -0.0561 * (normalized) PALOA
+ +      -0.1803 * (normalized) PMST
+ +       0      * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +      -0.063  * (normalized) dDap
+ +       0.5231 * (normalized) dv-Tyr
+ +       0.6872 * (normalized) k-Arg
+ +      -0.0002 * (normalized) Cl2-Pro
+ +      -0.121  * (normalized) NMe-Asn
+ +      -0.1963 * (normalized) CO
+ +      -0.0024 * (normalized) D-Br-NMe-Tyr
+ +      -0.0016 * (normalized) D-Cl-NMe-Tyr
+ +       0.9952 * (normalized) NFo-Dpr
+ +      -0.0002 * (normalized) Iser
+ +      -0.0024 * (normalized) D-I-NMe-Tyr
+ +       0.5233 * (normalized) NAc-Dpr
+ +      -0.0005 * (normalized) NMe-hv-Val
+ +      -0.016  * (normalized) PTTA
+ +      -0.0561 * (normalized) k-Leu
+ +       0.6872 * (normalized) v-OH-Tyr
+ +       0.9954 * (normalized) v-Tyr
+ +       0      * (normalized) bOMe-Tyr
+ -       1.0001
+
+Number of kernel evaluations: 5848 (81.092% cached)
+
+Classifier for classes: toxin, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0178 * (normalized) Abu
+ +      -0.08   * (normalized) bAla
+ +       0.0688 * (normalized) Arg
+ +      -0.0393 * (normalized) ADMAdda
+ +       0.4364 * (normalized) D-CysA
+ +      -0.0564 * (normalized) D-bMe-Asp
+ +       0      * (normalized) D-Hmp
+ +       0.2954 * (normalized) NMe-Gln
+ +       0.0271 * (normalized) D-t-Leu
+ +      -0.1074 * (normalized) D-NMe-Leu
+ +      -0.0807 * (normalized) D-NMe-Val
+ +       0.23   * (normalized) D-Val
+ +      -0.041  * (normalized) NMe-bAla
+ +      -0.0663 * (normalized) Hiv
+ +      -0.0538 * (normalized) Lac
+ +      -0.0028 * (normalized) Dpr
+ +      -0.0228 * (normalized) Gly
+ +      -0.0132 * (normalized) Nva
+ +       0.0551 * (normalized) Thr
+ +       0.0685 * (normalized) t-Leu
+ +      -0.1639 * (normalized) Tyr
+ +       0.2654 * (normalized) Pro
+ +       0.117  * (normalized) Ala
+ +      -0.1186 * (normalized) Asn
+ +       0      * (normalized) Dab
+ +      -0.1372 * (normalized) D-Ala
+ +      -0.141  * (normalized) D-Arg
+ +      -0.0109 * (normalized) D-Asn
+ +      -0.0131 * (normalized) D-Asp
+ +      -0.0469 * (normalized) D-aIle
+ +      -0.0478 * (normalized) D-Glu
+ +      -0.0109 * (normalized) D-aThr
+ +      -0.0047 * (normalized) D-Ile
+ +      -0.0434 * (normalized) D-Leu
+ +      -0.0593 * (normalized) D-Phe
+ +       0.4364 * (normalized) D-Trp
+ +      -0.1608 * (normalized) His
+ +      -0.0098 * (normalized) Ile
+ +      -0.0604 * (normalized) Leu
+ +      -0.0564 * (normalized) Adda
+ +       1.8692 * (normalized) aMe-Cys
+ +      -0.1015 * (normalized) NMe-Ala
+ +       0.0813 * (normalized) bMe-Ile
+ +       0.2167 * (normalized) NMe-Ile
+ +      -0.1186 * (normalized) NMe-aIle
+ +      -0.0425 * (normalized) NMe-Phe
+ +       0.3073 * (normalized) Phe
+ +      -0.1759 * (normalized) Val
+ +      -0.0237 * (normalized) NMe-Leu
+ +      -0.0476 * (normalized) NMe-OMe-Tyr
+ +       0.2145 * (normalized) NMe-Val
+ +      -0.0155 * (normalized) Orn
+ +      -0.0218 * (normalized) C6:0-OH(3.5)-NH2(4)
+ +       0.4364 * (normalized) Br-Phe
+ +      -0.031  * (normalized) PALOA
+ +      -0.0056 * (normalized) PMST
+ +      -0.1572 * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +       1      * (normalized) MeOx-Ile
+ +      -0.0218 * (normalized) D-NMe-Nva
+ +      -0.1186 * (normalized) NMe-Asn
+ +      -0.0218 * (normalized) Cl-Ile
+ +      -0.0056 * (normalized) CO
+ +      -0.0224 * (normalized) D-Br-NMe-Tyr
+ +      -0.0223 * (normalized) D-Cl-NMe-Tyr
+ +      -0.0227 * (normalized) D-I-NMe-Tyr
+ +      -0.0125 * (normalized) NMe-hv-Val
+ +       0.1077 * (normalized) NMe-OH-Ile
+ +      -0.031  * (normalized) k-Leu
+ +       0      * (normalized) Ph-Lac
+ +      -0.0851 * (normalized) Ala-Thz
+ +      -0.141  * (normalized) bOMe-Tyr
+ -       1.0006
+
+Number of kernel evaluations: 4737 (86.854% cached)
+
+Classifier for classes: toxin, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) Abu
+ +      -0.0004 * (normalized) bAla
+ +      -0.0045 * (normalized) Arg
+ +       0      * (normalized) ADMAdda
+ +      -0.0039 * (normalized) D-bMe-Asp
+ +       0      * (normalized) D-Hmp
+ +       0      * (normalized) NMe-Gln
+ +      -0.0013 * (normalized) D-NMe-Leu
+ +       0      * (normalized) D-NMe-Val
+ +      -0.0004 * (normalized) D-Val
+ +      -0.0013 * (normalized) NMe-bAla
+ +      -0.0214 * (normalized) Hiv
+ +       0      * (normalized) MeO-D-Glu
+ +      -0.007  * (normalized) Met
+ +      -0.1137 * (normalized) Dpr
+ +      -0.0124 * (normalized) Gly
+ +      -0.099  * (normalized) Nva
+ +       0      * (normalized) Ser
+ +      -0.0011 * (normalized) Thr
+ +      -0.0019 * (normalized) Tyr
+ +      -0.0027 * (normalized) Pro
+ +       0.0916 * (normalized) Ala
+ +      -0.0061 * (normalized) Asn
+ +       0      * (normalized) aThr
+ +       0      * (normalized) MeO-Glu
+ +      -0.0363 * (normalized) D-Ala
+ +       0      * (normalized) D-Arg
+ +       0      * (normalized) D-Asp
+ +      -0.0013 * (normalized) D-aIle
+ +      -0.0019 * (normalized) D-Glu
+ +      -0.071  * (normalized) D-Ile
+ +      -0.0003 * (normalized) D-Leu
+ +      -0.003  * (normalized) D-Phe
+ +      -0.1423 * (normalized) Ile
+ +       0.0171 * (normalized) Leu
+ +       0.2741 * (normalized) Lys
+ +      -0.0039 * (normalized) Adda
+ +      -0.0013 * (normalized) NMe-Ala
+ +      -0.0013 * (normalized) NMe-Ile
+ +      -0.0061 * (normalized) NMe-aIle
+ +      -0.0023 * (normalized) Val
+ +       0.1988 * (normalized) NMe-Leu
+ +      -0.0061 * (normalized) NMe-Val
+ +      -0.1284 * (normalized) PMST
+ +       0      * (normalized) C8:0:1(7)-Me(2)-OH(3)
+ +       0      * (normalized) Cl2-Pro
+ +      -0.0061 * (normalized) NMe-Asn
+ +       0.3209 * (normalized) CO
+ +      -0.0061 * (normalized) D-Br-NMe-Tyr
+ +      -0.0063 * (normalized) D-Cl-NMe-Tyr
+ +      -0.006  * (normalized) D-I-NMe-Tyr
+ +      -0.4518 * (normalized) NMe-Cl-Trp
+ +       0      * (normalized) NMe-hv-Val
+ +      -0.099  * (normalized) PTTA
+ +       0      * (normalized) bOMe-Tyr
+ -       1.0121
+
+Number of kernel evaluations: 3229 (70.605% cached)
+
+Classifier for classes: siderophore, surfactant
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.532  * (normalized) Ac-OH-Orn
+ +       0.0608 * (normalized) Asp
+ +       1      * (normalized) C10:0-OH(3)
+ +      -0.3472 * (normalized) D-Fo-OH-Orn
+ +       0      * (normalized) D-OH-Orn
+ +      -0.3801 * (normalized) diOH-Bz
+ +      -0.5697 * (normalized) DMOG
+ +       0      * (normalized) D-Dab
+ +       0.4184 * (normalized) Glu
+ +       0      * (normalized) Hse
+ +      -0.4919 * (normalized) D-Ac-OH-Orn
+ +      -0.481  * (normalized) D-OH-Asp
+ +      -0.2711 * (normalized) Gly
+ +      -0.4681 * (normalized) OH-Orn
+ +      -0.2035 * (normalized) Fo-OH-Orn
+ +      -0.4055 * (normalized) Ser
+ +      -0.0866 * (normalized) Thr
+ +       0.1917 * (normalized) Pro
+ +      -0.0767 * (normalized) Ala
+ +      -0.4465 * (normalized) OH-Asp
+ +      -0.0803 * (normalized) OH-His
+ +      -0.3213 * (normalized) Dab
+ +      -0.0107 * (normalized) D-Ala
+ +       0.5752 * (normalized) D-Asn
+ +       0      * (normalized) D-Asp
+ +      -0.3461 * (normalized) D-Gln
+ +      -0.2303 * (normalized) D-aThr
+ +       0.9081 * (normalized) D-Leu
+ +      -0.5694 * (normalized) D-Lys
+ +       0.5    * (normalized) D-Phe
+ +      -0.3611 * (normalized) D-Ser
+ +       0.5752 * (normalized) D-Tyr
+ +       0.5879 * (normalized) Gln
+ +       0.8162 * (normalized) Ile
+ +       1.4278 * (normalized) Leu
+ +      -0.3645 * (normalized) Lys
+ +       1.1563 * (normalized) NMe-Ala
+ +       0.5781 * (normalized) NMe-Phe
+ +       0.3628 * (normalized) Val
+ +      -0.3213 * (normalized) Orn
+ +       0      * (normalized) C4:0-OH(3)
+ -       0.431 
+
+Number of kernel evaluations: 2322 (83.17% cached)
+
+Classifier for classes: siderophore, protease inhibitor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.5291 * (normalized) Abu
+ +      -0.6051 * (normalized) Ac-OH-Orn
+ +       0.1014 * (normalized) Arg
+ +      -0.3143 * (normalized) Asp
+ +      -0.3464 * (normalized) D-Fo-OH-Orn
+ +      -0.4328 * (normalized) diOH-Bz
+ +      -0.8792 * (normalized) DMOG
+ +       0.8393 * (normalized) NMe-Tyr
+ +      -0.2014 * (normalized) D-Hse
+ +       0.7221 * (normalized) Hty
+ +      -0.0099 * (normalized) Glu
+ +      -0.0503 * (normalized) Hse
+ +      -0.4603 * (normalized) D-Ac-OH-Orn
+ +       0.1925 * (normalized) Ahp
+ +      -0.6724 * (normalized) D-OH-Asp
+ +      -0.323  * (normalized) Gly
+ +      -0.6745 * (normalized) OH-Orn
+ +       0.2504 * (normalized) O-Met
+ +      -0.2125 * (normalized) Fo-OH-Orn
+ +      -0.8248 * (normalized) Ser
+ +      -0.3253 * (normalized) Thr
+ +       1.4442 * (normalized) Tyr
+ +       1.2056 * (normalized) Pro
+ +       0.2504 * (normalized) NMe-Hty
+ +      -0.0191 * (normalized) Ala
+ +      -0.104  * (normalized) Asn
+ +      -0.7181 * (normalized) OH-Asp
+ +      -0.3438 * (normalized) Dab
+ +      -0.0422 * (normalized) D-Ala
+ +       0      * (normalized) D-Asp
+ +      -0.3949 * (normalized) D-Gln
+ +      -0.4461 * (normalized) D-aThr
+ +      -0.4173 * (normalized) D-Lys
+ +       0.2336 * (normalized) 3Me-Hty
+ +      -0.5934 * (normalized) D-Ser
+ +       0      * (normalized) Gln
+ +       0.2504 * (normalized) Hph
+ +       0.0493 * (normalized) Ile
+ +       0.3058 * (normalized) Leu
+ +      -0.6261 * (normalized) Lys
+ +       0.2336 * (normalized) NMe-Ala
+ +       0.0642 * (normalized) Phe
+ +       0.8527 * (normalized) Val
+ +       0.0197 * (normalized) NMe-Leu
+ +      -0.2699 * (normalized) Orn
+ +       0.1051 * (normalized) e-Tyr
+ +       0.7858 * (normalized) CO
+ +       0.6127 * (normalized) NFo-Dpr
+ +       0.5076 * (normalized) v-Tyr
+ +       0.5291 * (normalized) Sta
+ -       0.12  
+
+Number of kernel evaluations: 3520 (88.14% cached)
+
+Classifier for classes: siderophore, antiatherogenic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.2047 * (normalized) Ac-OH-Orn
+ +      -0.0764 * (normalized) Asp
+ +      -0.1749 * (normalized) D-Fo-OH-Orn
+ +      -0.0839 * (normalized) diOH-Bz
+ +      -0.2469 * (normalized) DMOG
+ +      -0.0115 * (normalized) D-Hse
+ +       0      * (normalized) Glu
+ +      -0.0029 * (normalized) Hse
+ +      -0.1941 * (normalized) D-Ac-OH-Orn
+ +      -0.2584 * (normalized) D-OH-Asp
+ +      -0.1242 * (normalized) Gly
+ +      -0.1931 * (normalized) OH-Orn
+ +      -0.0475 * (normalized) Fo-OH-Orn
+ +      -0.2171 * (normalized) Ser
+ +      -0.1161 * (normalized) Thr
+ +       0.2601 * (normalized) Ala
+ +      -0.0247 * (normalized) Asn
+ +      -0.1239 * (normalized) OH-Asp
+ +      -0.0089 * (normalized) OH-His
+ +      -0.0548 * (normalized) Dab
+ +      -0.0326 * (normalized) D-Ala
+ +      -0.0572 * (normalized) D-Asp
+ +      -0.0949 * (normalized) D-Gln
+ +      -0.2204 * (normalized) D-aThr
+ +      -0.2473 * (normalized) D-Lys
+ +      -0.1259 * (normalized) D-Ser
+ +       0      * (normalized) Gln
+ +      -0.2244 * (normalized) Lys
+ +       1      * (normalized) Phe
+ +      -0.0162 * (normalized) Val
+ +      -0.0858 * (normalized) Orn
+ +       0      * (normalized) C4:0-OH(3)
+ -       0.7533
+
+Number of kernel evaluations: 1233 (85.77% cached)
+
+Classifier for classes: siderophore, antitumor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0929 * (normalized) D-bOH-Val
+ +      -0.5233 * (normalized) Ac-OH-Orn
+ +      -0.0405 * (normalized) Arg
+ +      -0.1985 * (normalized) Asp
+ +       0.0929 * (normalized) bbMe2-O-Met
+ +       0.0929 * (normalized) bOH-Val
+ +      -0.8719 * (normalized) D-Fo-OH-Orn
+ +      -0.4226 * (normalized) diOH-Bz
+ +      -0.7893 * (normalized) DMOG
+ +       0.1124 * (normalized) NMe-Tyr
+ +       0.1682 * (normalized) Hmp
+ +       0.1405 * (normalized) dhAbu
+ +      -0.1207 * (normalized) D-Hse
+ +       0.0929 * (normalized) D-t-Leu
+ +       0.0929 * (normalized) D-N2Me-Asn
+ +       0      * (normalized) Hiv
+ +      -0.0302 * (normalized) Hse
+ +      -0.4835 * (normalized) D-Ac-OH-Orn
+ +       0.3026 * (normalized) Met
+ +      -0.6313 * (normalized) D-OH-Asp
+ +      -0.1213 * (normalized) Gly
+ +      -0.6094 * (normalized) OH-Orn
+ +       0.5161 * (normalized) O-Met
+ +      -0.1353 * (normalized) Fo-OH-Orn
+ +      -0.718  * (normalized) Ser
+ +      -0.3204 * (normalized) Thr
+ +       0.0929 * (normalized) t-Leu
+ +       0.25   * (normalized) Trp
+ +       0.3948 * (normalized) Tyr
+ +       1.2776 * (normalized) Pro
+ +       0.4262 * (normalized) 3Me-Pro
+ +       0.0089 * (normalized) Ala
+ +       0.485  * (normalized) Asn
+ +       0.0702 * (normalized) NMe-Gly
+ +      -0.5557 * (normalized) OH-Asp
+ +       0.0929 * (normalized) D-N2Me-bOH-Asn
+ +      -0.0171 * (normalized) OH-His
+ +      -0.3738 * (normalized) Dab
+ +      -0.0451 * (normalized) D-Ala
+ +       0.0929 * (normalized) D-Asn
+ +      -0.003  * (normalized) D-Asp
+ +      -0.1087 * (normalized) D-Gln
+ +      -0.3586 * (normalized) D-aThr
+ +       0.0755 * (normalized) Aib
+ +      -0.7897 * (normalized) D-Lys
+ +       0.792  * (normalized) D-Pro
+ +      -0.4581 * (normalized) D-Ser
+ +       0.0005 * (normalized) Gln
+ +       0.3509 * (normalized) Ile
+ +       0.7579 * (normalized) Leu
+ +      -0.5969 * (normalized) Lys
+ +       0.1124 * (normalized) NMe-Ala
+ +       0.0929 * (normalized) bMe-Ile
+ +       0.6587 * (normalized) NMe-Phe
+ +       0.2809 * (normalized) OMe-Thr
+ +       1.2582 * (normalized) Phe
+ +       0.3531 * (normalized) Val
+ +       0.136  * (normalized) NMe-Leu
+ +       0.224  * (normalized) NMe-OMe-Tyr
+ +       0.487  * (normalized) NMe-Val
+ +       0.2809 * (normalized) OH-Asn
+ +       0.2809 * (normalized) 4Me-Pro
+ +      -0.3022 * (normalized) Orn
+ +       0.0929 * (normalized) bMe-Gln
+ +       0.5161 * (normalized) bOMe-Asp
+ +       0.5469 * (normalized) Dap
+ +       0.3365 * (normalized) Ibu
+ +       0.3365 * (normalized) Map
+ +       0.2809 * (normalized) Br-Tyr
+ +       0.5469 * (normalized) Dil
+ +       0.6375 * (normalized) Ala-Thz
+ -       0.211 
+
+Number of kernel evaluations: 2122 (92.269% cached)
+
+Classifier for classes: siderophore, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.2126 * (normalized) Ac-OH-Orn
+ +       0.4019 * (normalized) Arg
+ +      -0.1214 * (normalized) Asp
+ +      -0.1024 * (normalized) D-Fo-OH-Orn
+ +      -0.1174 * (normalized) diOH-Bz
+ +      -0.3707 * (normalized) DMOG
+ +       0      * (normalized) D-Cit
+ +      -0.0937 * (normalized) D-Hse
+ +      -0.0234 * (normalized) Hse
+ +      -0.1928 * (normalized) D-Ac-OH-Orn
+ +      -0.2623 * (normalized) D-OH-Asp
+ +       0.2525 * (normalized) Dpr
+ +      -0.0877 * (normalized) Gly
+ +      -0.2865 * (normalized) OH-Orn
+ +      -0.254  * (normalized) Fo-OH-Orn
+ +      -0.3388 * (normalized) Ser
+ +      -0.2215 * (normalized) Thr
+ +       0.3333 * (normalized) Pro
+ +      -0.0644 * (normalized) Ala
+ +      -0.0399 * (normalized) Asn
+ +      -0.1612 * (normalized) OH-Asp
+ +      -0.0152 * (normalized) OH-His
+ +      -0.1278 * (normalized) Dab
+ +      -0.0213 * (normalized) D-Ala
+ +      -0.0211 * (normalized) D-Asp
+ +       0.505  * (normalized) D-aIle
+ +      -0.1156 * (normalized) D-Gln
+ +      -0.1687 * (normalized) D-aThr
+ +       0.104  * (normalized) D-Leu
+ +      -0.371  * (normalized) D-Lys
+ +       0.8851 * (normalized) D-Phe
+ +      -0.2287 * (normalized) D-Ser
+ +       0      * (normalized) Gln
+ +       0.5    * (normalized) Ile
+ +      -0.2594 * (normalized) Lys
+ +      -0.0306 * (normalized) Val
+ +      -0.1654 * (normalized) Orn
+ +       0.3851 * (normalized) dv-Tyr
+ +       0.505  * (normalized) k-Arg
+ +       0.8009 * (normalized) NFo-Dpr
+ +       0.3851 * (normalized) NAc-Dpr
+ +       0.505  * (normalized) v-OH-Tyr
+ +       0.801  * (normalized) v-Tyr
+ -       0.6285
+
+Number of kernel evaluations: 1444 (91.609% cached)
+
+Classifier for classes: siderophore, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1757 * (normalized) Ac-OH-Orn
+ +       0.1283 * (normalized) Arg
+ +      -0.0784 * (normalized) Asp
+ +       0.3103 * (normalized) D-CysA
+ +      -0.1175 * (normalized) D-Fo-OH-Orn
+ +      -0.0922 * (normalized) diOH-Bz
+ +      -0.2379 * (normalized) DMOG
+ +      -0.0341 * (normalized) D-Hse
+ +       0.3103 * (normalized) NMe-Gln
+ +       0.0216 * (normalized) D-t-Leu
+ +       0.1853 * (normalized) D-Val
+ +       0      * (normalized) Glu
+ +      -0.0085 * (normalized) Hse
+ +      -0.1536 * (normalized) D-Ac-OH-Orn
+ +      -0.2059 * (normalized) D-OH-Asp
+ +      -0.1019 * (normalized) Gly
+ +      -0.1865 * (normalized) OH-Orn
+ +      -0.0953 * (normalized) Fo-OH-Orn
+ +      -0.2033 * (normalized) Ser
+ +      -0.1072 * (normalized) Thr
+ +       0.0491 * (normalized) t-Leu
+ +       0.5402 * (normalized) Pro
+ +       0.0986 * (normalized) Ala
+ +      -0.0258 * (normalized) Asn
+ +      -0.1062 * (normalized) OH-Asp
+ +      -0.0095 * (normalized) OH-His
+ +      -0.0704 * (normalized) Dab
+ +      -0.0214 * (normalized) D-Ala
+ +      -0.0371 * (normalized) D-Asp
+ +      -0.0829 * (normalized) D-Gln
+ +      -0.1502 * (normalized) D-aThr
+ +      -0.2378 * (normalized) D-Lys
+ +      -0.1439 * (normalized) D-Ser
+ +       0.3103 * (normalized) D-Trp
+ +       0      * (normalized) Gln
+ +      -0.1967 * (normalized) Lys
+ +       1.5684 * (normalized) aMe-Cys
+ +       0.0647 * (normalized) bMe-Ile
+ +       0.3498 * (normalized) NMe-Ile
+ +       0.3333 * (normalized) Phe
+ +      -0.0322 * (normalized) Val
+ +       0.3474 * (normalized) NMe-Val
+ +      -0.0654 * (normalized) Orn
+ +       0.3103 * (normalized) Br-Phe
+ +       1      * (normalized) MeOx-Ile
+ +       0.174  * (normalized) NMe-OH-Ile
+ -       0.7626
+
+Number of kernel evaluations: 1877 (88.251% cached)
+
+Classifier for classes: siderophore, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0535 * (normalized) Ac-OH-Orn
+ +      -0.0112 * (normalized) Asp
+ +      -0.1004 * (normalized) D-Fo-OH-Orn
+ +       0      * (normalized) diOH-Bz
+ +      -0.0177 * (normalized) D-Ac-OH-Orn
+ +      -0.1088 * (normalized) D-OH-Asp
+ +      -0.0286 * (normalized) Gly
+ +       0      * (normalized) OH-Orn
+ +      -0.1004 * (normalized) Fo-OH-Orn
+ +      -0.0243 * (normalized) Ser
+ +      -0.0399 * (normalized) Thr
+ +       0.1173 * (normalized) Ala
+ +      -0.0051 * (normalized) OH-Asp
+ +       0      * (normalized) Dab
+ +      -0.017  * (normalized) D-Ala
+ +       0      * (normalized) D-Asp
+ +      -0.0053 * (normalized) D-Glu
+ +      -0.1088 * (normalized) D-aThr
+ +      -0.0757 * (normalized) D-Ser
+ +       0.2    * (normalized) Leu
+ +       0.1226 * (normalized) Lys
+ +       0.2    * (normalized) NMe-Leu
+ +       0      * (normalized) Orn
+ +       1      * (normalized) CO
+ -       0.9997
+
+Number of kernel evaluations: 1207 (74.648% cached)
+
+Classifier for classes: surfactant, protease inhibitor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.5306 * (normalized) Abu
+ +       0.0272 * (normalized) Arg
+ +      -0.5518 * (normalized) Asp
+ +      -1      * (normalized) C10:0-OH(3)
+ +       0.7028 * (normalized) NMe-Tyr
+ +       0.5911 * (normalized) Hty
+ +      -0.2635 * (normalized) Glu
+ +       0.3696 * (normalized) Ahp
+ +      -0.5    * (normalized) Ser
+ +      -0.1521 * (normalized) Thr
+ +       1.1791 * (normalized) Tyr
+ +       0.7206 * (normalized) Pro
+ +      -0.1093 * (normalized) Ala
+ +      -0.4952 * (normalized) D-Asn
+ +      -0.8301 * (normalized) D-Leu
+ +       0.6142 * (normalized) D-Lys
+ +       0.212  * (normalized) 3Me-Hty
+ +      -0.5    * (normalized) D-Phe
+ +      -0.4952 * (normalized) D-Tyr
+ +      -0.7737 * (normalized) Gln
+ +      -0.5039 * (normalized) Ile
+ +      -1.2628 * (normalized) Leu
+ +      -0.8125 * (normalized) NMe-Ala
+ +      -0.7134 * (normalized) NMe-Phe
+ +       0.3811 * (normalized) Val
+ +       0.1099 * (normalized) e-Tyr
+ +       0.6686 * (normalized) CO
+ +       0.4589 * (normalized) NFo-Dpr
+ +       0.349  * (normalized) v-Tyr
+ +       0.5306 * (normalized) Sta
+ +       0.1913
+
+Number of kernel evaluations: 847 (94.57% cached)
+
+Classifier for classes: surfactant, antiatherogenic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.2327 * (normalized) Asp
+ +      -0.4854 * (normalized) C10:0-OH(3)
+ +      -0.1647 * (normalized) Glu
+ +      -0.3463 * (normalized) Ser
+ +      -0.4268 * (normalized) Thr
+ +      -0.0679 * (normalized) Pro
+ +       0.4927 * (normalized) Ala
+ +      -0.2038 * (normalized) D-Asn
+ +      -0.4721 * (normalized) D-Leu
+ +      -0.45   * (normalized) D-Phe
+ +      -0.2038 * (normalized) D-Tyr
+ +      -0.1947 * (normalized) Gln
+ +      -0.2471 * (normalized) Ile
+ +      -0.4031 * (normalized) Leu
+ +      -0.5363 * (normalized) NMe-Ala
+ +      -0.2682 * (normalized) NMe-Phe
+ +       1      * (normalized) Phe
+ +      -0.1268 * (normalized) Val
+ -       0.4277
+
+Number of kernel evaluations: 126 (89.376% cached)
+
+Classifier for classes: surfactant, antitumor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.1303 * (normalized) D-bOH-Val
+ +      -0.7128 * (normalized) Asp
+ +       0.1303 * (normalized) bbMe2-O-Met
+ +      -1      * (normalized) C10:0-OH(3)
+ +       0.1303 * (normalized) bOH-Val
+ +       0.4974 * (normalized) NMe-Tyr
+ +       0.2487 * (normalized) Hmp
+ +       0.0993 * (normalized) dhAbu
+ +       0.1303 * (normalized) D-t-Leu
+ +       0.1303 * (normalized) D-N2Me-Asn
+ +      -0.5119 * (normalized) Glu
+ +       0.4425 * (normalized) Gly
+ +       0.4215 * (normalized) O-Met
+ +      -0.3288 * (normalized) Ser
+ +      -0.1349 * (normalized) Thr
+ +       0.1303 * (normalized) t-Leu
+ +       0.25   * (normalized) Trp
+ +       0.3907 * (normalized) Tyr
+ +       1.3953 * (normalized) Pro
+ +       0.464  * (normalized) 3Me-Pro
+ +       0.1166 * (normalized) Ala
+ +       0.6849 * (normalized) Asn
+ +       0.0496 * (normalized) NMe-Gly
+ +       0.1303 * (normalized) D-N2Me-bOH-Asn
+ +       0.0434 * (normalized) D-Ala
+ +      -0.4722 * (normalized) D-Asn
+ +       0.0652 * (normalized) D-aThr
+ +       0.0766 * (normalized) Aib
+ +      -1.0179 * (normalized) D-Leu
+ +      -0.5    * (normalized) D-Phe
+ +       0.4329 * (normalized) D-Pro
+ +       0.0326 * (normalized) D-Ser
+ +      -0.6025 * (normalized) D-Tyr
+ +      -0.8861 * (normalized) Gln
+ +      -0.0669 * (normalized) Ile
+ +      -0.9627 * (normalized) Leu
+ +      -1.0991 * (normalized) NMe-Ala
+ +       0.1303 * (normalized) bMe-Ile
+ +      -0.1334 * (normalized) NMe-Phe
+ +       0.1985 * (normalized) OMe-Thr
+ +       1.2692 * (normalized) Phe
+ +      -0.0964 * (normalized) Val
+ +       0.1379 * (normalized) NMe-Leu
+ +       0.5687 * (normalized) NMe-Val
+ +       0.1985 * (normalized) OH-Asn
+ +       0.1985 * (normalized) 4Me-Pro
+ +       0.1303 * (normalized) bMe-Gln
+ +       0.4215 * (normalized) bOMe-Asp
+ +       0.4443 * (normalized) Dap
+ +       0.4974 * (normalized) Ibu
+ +       0.4974 * (normalized) Map
+ +       0.1985 * (normalized) Br-Tyr
+ +       0.4443 * (normalized) Dil
+ +       0.6399 * (normalized) Ala-Thz
+ +       0.1433
+
+Number of kernel evaluations: 671 (87.47% cached)
+
+Classifier for classes: surfactant, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.5    * (normalized) Arg
+ +      -0.3442 * (normalized) Asp
+ +      -0.5468 * (normalized) C10:0-OH(3)
+ +      -0.2564 * (normalized) Glu
+ +       0.2092 * (normalized) Dpr
+ +      -0.3867 * (normalized) Ser
+ +      -0.4941 * (normalized) Thr
+ +       0.2455 * (normalized) Pro
+ +      -0.0185 * (normalized) Ala
+ +      -0.2635 * (normalized) D-Asn
+ +       0.4185 * (normalized) D-aIle
+ +      -0.5495 * (normalized) D-Leu
+ +       0.4068 * (normalized) D-Phe
+ +      -0.2635 * (normalized) D-Tyr
+ +      -0.2486 * (normalized) Gln
+ +      -0.1668 * (normalized) Ile
+ +      -0.4267 * (normalized) Leu
+ +      -0.5109 * (normalized) NMe-Ala
+ +      -0.2555 * (normalized) NMe-Phe
+ +      -0.1608 * (normalized) Val
+ +       0.4068 * (normalized) dv-Tyr
+ +       0.4185 * (normalized) k-Arg
+ +       0.7472 * (normalized) NFo-Dpr
+ +       0.4069 * (normalized) NAc-Dpr
+ +       0.4185 * (normalized) v-OH-Tyr
+ +       0.7473 * (normalized) v-Tyr
+ -       0.3573
+
+Number of kernel evaluations: 274 (89.079% cached)
+
+Classifier for classes: surfactant, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.1414 * (normalized) Arg
+ +      -0.2114 * (normalized) Asp
+ +       0.2829 * (normalized) D-CysA
+ +      -0.4035 * (normalized) C10:0-OH(3)
+ +       0.2829 * (normalized) NMe-Gln
+ +       0.0196 * (normalized) D-t-Leu
+ +       0.169  * (normalized) D-Val
+ +      -0.1294 * (normalized) Glu
+ +      -0.3072 * (normalized) Ser
+ +      -0.2943 * (normalized) Thr
+ +       0.0448 * (normalized) t-Leu
+ +       0.4399 * (normalized) Pro
+ +       0.1841 * (normalized) Ala
+ +      -0.2461 * (normalized) D-Asn
+ +      -0.4004 * (normalized) D-Leu
+ +      -0.4126 * (normalized) D-Phe
+ +       0.2829 * (normalized) D-Trp
+ +      -0.2461 * (normalized) D-Tyr
+ +      -0.1955 * (normalized) Gln
+ +      -0.1941 * (normalized) Ile
+ +      -0.3501 * (normalized) Leu
+ +       1.3343 * (normalized) aMe-Cys
+ +      -0.4137 * (normalized) NMe-Ala
+ +       0.0588 * (normalized) bMe-Ile
+ +       0.2956 * (normalized) NMe-Ile
+ +      -0.2068 * (normalized) NMe-Phe
+ +       0.3333 * (normalized) Phe
+ +      -0.1135 * (normalized) Val
+ +       0.2976 * (normalized) NMe-Val
+ +       0.2829 * (normalized) Br-Phe
+ +       1      * (normalized) MeOx-Ile
+ +       0.1479 * (normalized) NMe-OH-Ile
+ -       0.5193
+
+Number of kernel evaluations: 239 (92.081% cached)
+
+Classifier for classes: surfactant, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0699 * (normalized) Asp
+ +      -0.142  * (normalized) C10:0-OH(3)
+ +      -0.0534 * (normalized) Glu
+ +      -0.0902 * (normalized) Ser
+ +      -0.1631 * (normalized) Thr
+ +      -0.0165 * (normalized) Pro
+ +       0.1682 * (normalized) Ala
+ +      -0.0495 * (normalized) D-Asn
+ +      -0.1347 * (normalized) D-Leu
+ +      -0.1093 * (normalized) D-Phe
+ +      -0.0495 * (normalized) D-Tyr
+ +      -0.1067 * (normalized) Gln
+ +      -0.0801 * (normalized) Ile
+ +      -0.0747 * (normalized) Leu
+ +       0.5    * (normalized) Lys
+ +      -0.159  * (normalized) NMe-Ala
+ +      -0.0795 * (normalized) NMe-Phe
+ +      -0.0465 * (normalized) Val
+ +       0.2    * (normalized) NMe-Leu
+ +       1      * (normalized) CO
+ -       0.8357
+
+Number of kernel evaluations: 69 (86.145% cached)
+
+Classifier for classes: protease inhibitor, antiatherogenic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.144  * (normalized) Abu
+ +      -0.0417 * (normalized) Arg
+ +      -0.2944 * (normalized) NMe-Tyr
+ +      -0.309  * (normalized) Hty
+ +       0      * (normalized) Glu
+ +      -0.0698 * (normalized) Ahp
+ +      -0.0302 * (normalized) O-Met
+ +      -0.1611 * (normalized) Thr
+ +      -0.3403 * (normalized) Tyr
+ +      -0.3444 * (normalized) Pro
+ +      -0.0302 * (normalized) NMe-Hty
+ +       0.4384 * (normalized) Ala
+ +      -0.0446 * (normalized) D-Lys
+ +      -0.0144 * (normalized) 3Me-Hty
+ +      -0.0161 * (normalized) Gln
+ +      -0.0302 * (normalized) Hph
+ +      -0.2191 * (normalized) Leu
+ +      -0.0144 * (normalized) NMe-Ala
+ +      -0.0071 * (normalized) NMe-Ile
+ +       0.9767 * (normalized) Phe
+ +      -0.3226 * (normalized) Val
+ +      -0.0437 * (normalized) e-Tyr
+ +      -0.1281 * (normalized) CO
+ +      -0.1802 * (normalized) NFo-Dpr
+ +      -0.1365 * (normalized) v-Tyr
+ +      -0.0957 * (normalized) Sta
+ -       0.8087
+
+Number of kernel evaluations: 437 (82.659% cached)
+
+Classifier for classes: protease inhibitor, antitumor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.3901 * (normalized) Abu
+ +      -0.162  * (normalized) Arg
+ +      -0.6256 * (normalized) NMe-Tyr
+ +       0.2481 * (normalized) Hmp
+ +       0.1559 * (normalized) dhAbu
+ +      -0.9887 * (normalized) Hty
+ +       0      * (normalized) Glu
+ +       0.3333 * (normalized) Hiv
+ +       0.192  * (normalized) Met
+ +      -0.5156 * (normalized) Ahp
+ +       0.312  * (normalized) Gly
+ +       0.3507 * (normalized) O-Met
+ +       0.1354 * (normalized) Ser
+ +      -0.0014 * (normalized) Thr
+ +       0.25   * (normalized) Trp
+ +      -1.2486 * (normalized) Tyr
+ +       1.1007 * (normalized) Pro
+ +       0.3669 * (normalized) 3Me-Pro
+ +      -0.0886 * (normalized) NMe-Hty
+ +      -0.1581 * (normalized) Ala
+ +       0.7337 * (normalized) Asn
+ +       0.078  * (normalized) NMe-Gly
+ +       0      * (normalized) D-Ala
+ +       0.142  * (normalized) Aib
+ +      -0.252  * (normalized) D-Lys
+ +      -0.1634 * (normalized) 3Me-Hty
+ +       0.8616 * (normalized) D-Pro
+ +       0      * (normalized) Gln
+ +      -0.0886 * (normalized) Hph
+ +       1.2368 * (normalized) Ile
+ +       0.63   * (normalized) Leu
+ +       0.3328 * (normalized) NMe-Ala
+ +      -0.5    * (normalized) NMe-Ile
+ +       0.8564 * (normalized) NMe-Phe
+ +       0.3119 * (normalized) OMe-Thr
+ +       1.452  * (normalized) Phe
+ +       0.0107 * (normalized) Val
+ +       0.2556 * (normalized) NMe-Leu
+ +       0.9655 * (normalized) NMe-Val
+ +       0.3119 * (normalized) OH-Asn
+ +       0.3119 * (normalized) 4Me-Pro
+ +       0.4394 * (normalized) bOMe-Asp
+ +       0.6713 * (normalized) Dap
+ +      -0.3401 * (normalized) e-Tyr
+ +       0.4962 * (normalized) Ibu
+ +       0.4962 * (normalized) Map
+ +       0.3119 * (normalized) Br-Tyr
+ +      -0.576  * (normalized) CO
+ +       0.6713 * (normalized) Dil
+ +      -0.6802 * (normalized) NFo-Dpr
+ +      -0.3401 * (normalized) v-Tyr
+ +       0.4349 * (normalized) Ala-Thz
+ +      -0.3901 * (normalized) Sta
+ -       0.346 
+
+Number of kernel evaluations: 1223 (92.445% cached)
+
+Classifier for classes: protease inhibitor, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1618 * (normalized) Abu
+ +       0.3485 * (normalized) Arg
+ +      -0.1634 * (normalized) NMe-Tyr
+ +      -0.1869 * (normalized) Hty
+ +       0      * (normalized) Glu
+ +      -0.0142 * (normalized) Ahp
+ +       0.2554 * (normalized) Dpr
+ +      -0.0393 * (normalized) Thr
+ +      -0.3744 * (normalized) Tyr
+ +      -0.4639 * (normalized) Pro
+ +      -0.0032 * (normalized) NMe-Hty
+ +      -0.0731 * (normalized) Ala
+ +       0.5107 * (normalized) D-aIle
+ +       0.25   * (normalized) D-Leu
+ +      -0.0502 * (normalized) D-Lys
+ +       1.5589 * (normalized) D-Phe
+ +      -0.0047 * (normalized) Gln
+ +       0.4749 * (normalized) Ile
+ +      -0.2295 * (normalized) Leu
+ +      -0.0027 * (normalized) NMe-Ala
+ +      -0.0274 * (normalized) NMe-Ile
+ +      -0.0047 * (normalized) Phe
+ +      -0.5326 * (normalized) Val
+ +      -0.0089 * (normalized) NMe-Leu
+ +       0.5592 * (normalized) dv-Tyr
+ +      -0.5062 * (normalized) e-Tyr
+ +       0.5107 * (normalized) k-Arg
+ +      -0.3531 * (normalized) CO
+ +       0.3054 * (normalized) NFo-Dpr
+ +       0.3063 * (normalized) NAc-Dpr
+ +       0.5107 * (normalized) v-OH-Tyr
+ +       0.5587 * (normalized) v-Tyr
+ +      -0.1476 * (normalized) Sta
+ -       0.6445
+
+Number of kernel evaluations: 794 (90.95% cached)
+
+Classifier for classes: protease inhibitor, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.066  * (normalized) Abu
+ +       0.1186 * (normalized) Arg
+ +       0.3773 * (normalized) D-CysA
+ +      -0.1339 * (normalized) NMe-Tyr
+ +       0.3773 * (normalized) NMe-Gln
+ +       0.0266 * (normalized) D-t-Leu
+ +       0.225  * (normalized) D-Val
+ +      -0.2566 * (normalized) Hty
+ +      -0.0955 * (normalized) Ahp
+ +      -0.007  * (normalized) O-Met
+ +       0.0621 * (normalized) Thr
+ +       0.0595 * (normalized) t-Leu
+ +      -0.5137 * (normalized) Tyr
+ +       0.1099 * (normalized) Pro
+ +      -0.007  * (normalized) NMe-Hty
+ +       0.2289 * (normalized) Ala
+ +      -0.007  * (normalized) D-Lys
+ +       0.3773 * (normalized) D-Trp
+ +      -0.007  * (normalized) Hph
+ +       0      * (normalized) Ile
+ +      -0.2132 * (normalized) Leu
+ +       1.6497 * (normalized) aMe-Cys
+ +       0      * (normalized) NMe-Ala
+ +       0.0797 * (normalized) bMe-Ile
+ +       0.0915 * (normalized) NMe-Ile
+ +       0.3015 * (normalized) Phe
+ +      -0.2613 * (normalized) Val
+ +       0      * (normalized) NMe-Leu
+ +       0.2601 * (normalized) NMe-Val
+ +       0.3773 * (normalized) Br-Phe
+ +       1      * (normalized) MeOx-Ile
+ +      -0.0707 * (normalized) e-Tyr
+ +      -0.1472 * (normalized) CO
+ +      -0.141  * (normalized) NFo-Dpr
+ +       0.1296 * (normalized) NMe-OH-Ile
+ +      -0.0703 * (normalized) v-Tyr
+ +      -0.066  * (normalized) Sta
+ -       0.8252
+
+Number of kernel evaluations: 646 (90.211% cached)
+
+Classifier for classes: protease inhibitor, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) Abu
+ +      -0.3063 * (normalized) Arg
+ +      -0.0985 * (normalized) Hty
+ +       0      * (normalized) Glu
+ +      -0.0286 * (normalized) O-Met
+ +       0      * (normalized) Thr
+ +      -0.0114 * (normalized) Tyr
+ +      -0.0076 * (normalized) Pro
+ +      -0.0286 * (normalized) NMe-Hty
+ +       0.1954 * (normalized) Ala
+ +      -0.1354 * (normalized) D-Lys
+ +      -0.0084 * (normalized) 3Me-Hty
+ +      -0.0286 * (normalized) Hph
+ +      -0.0492 * (normalized) Ile
+ +       0.1542 * (normalized) Leu
+ +       0.5    * (normalized) Lys
+ +      -0.0084 * (normalized) NMe-Ala
+ +      -0.207  * (normalized) Val
+ +       0.1803 * (normalized) NMe-Leu
+ +       0.252  * (normalized) CO
+ +       0      * (normalized) NFo-Dpr
+ +      -0.0007 * (normalized) Sta
+ -       1.0302
+
+Number of kernel evaluations: 427 (80.277% cached)
+
+Classifier for classes: antiatherogenic, antitumor
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0192 * (normalized) D-bOH-Val
+ +       0.0192 * (normalized) bbMe2-O-Met
+ +       0.0192 * (normalized) bOH-Val
+ +       0.0065 * (normalized) NMe-Tyr
+ +       0.0498 * (normalized) Hmp
+ +       0.0358 * (normalized) dhAbu
+ +       0.0192 * (normalized) D-t-Leu
+ +       0.0192 * (normalized) D-N2Me-Asn
+ +       0.1588 * (normalized) Met
+ +       0.1435 * (normalized) Gly
+ +       0.1598 * (normalized) O-Met
+ +       0.1425 * (normalized) Ser
+ +       0.2983 * (normalized) Thr
+ +       0.0192 * (normalized) t-Leu
+ +       0      * (normalized) Tyr
+ +       0.5177 * (normalized) Pro
+ +       0.1712 * (normalized) 3Me-Pro
+ +      -0.3998 * (normalized) Ala
+ +       0.3335 * (normalized) Asn
+ +       0.0179 * (normalized) NMe-Gly
+ +       0.0192 * (normalized) D-N2Me-bOH-Asn
+ +       0.0064 * (normalized) D-Ala
+ +       0.0192 * (normalized) D-Asn
+ +       0.0096 * (normalized) D-aThr
+ +       0.0482 * (normalized) Aib
+ +       0.3326 * (normalized) D-Pro
+ +       0.0048 * (normalized) D-Ser
+ +       0.0064 * (normalized) Gln
+ +       0.2967 * (normalized) Ile
+ +       0.2139 * (normalized) Leu
+ +       0.0065 * (normalized) NMe-Ala
+ +       0.0192 * (normalized) bMe-Ile
+ +       0.2752 * (normalized) NMe-Phe
+ +       0.0717 * (normalized) OMe-Thr
+ +      -0.0714 * (normalized) Phe
+ +       0.0667 * (normalized) Val
+ +       0.0868 * (normalized) NMe-Leu
+ +       0.093  * (normalized) NMe-OMe-Tyr
+ +       0.1081 * (normalized) NMe-Val
+ +       0.0717 * (normalized) OH-Asn
+ +       0.0717 * (normalized) 4Me-Pro
+ +       0.0192 * (normalized) bMe-Gln
+ +       0.1598 * (normalized) bOMe-Asp
+ +       0.1427 * (normalized) Dap
+ +       0.0996 * (normalized) Ibu
+ +       0.0996 * (normalized) Map
+ +       0.0717 * (normalized) Br-Tyr
+ +       0.1427 * (normalized) Dil
+ +       0.1167 * (normalized) Ala-Thz
+ +       0.6916
+
+Number of kernel evaluations: 245 (91.575% cached)
+
+Classifier for classes: antiatherogenic, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.5    * (normalized) Arg
+ +       0.1696 * (normalized) Dpr
+ +       0.3333 * (normalized) Pro
+ +      -0.5322 * (normalized) Ala
+ +       0.3391 * (normalized) D-aIle
+ +       0.0788 * (normalized) D-Leu
+ +       0.6728 * (normalized) D-Phe
+ +       0.5    * (normalized) Ile
+ +      -1      * (normalized) Phe
+ +       0.1728 * (normalized) dv-Tyr
+ +       0.3391 * (normalized) k-Arg
+ +       0.488  * (normalized) NFo-Dpr
+ +       0.1728 * (normalized) NAc-Dpr
+ +       0.3391 * (normalized) v-OH-Tyr
+ +       0.488  * (normalized) v-Tyr
+ +       0.0035
+
+Number of kernel evaluations: 84 (81.081% cached)
+
+Classifier for classes: antiatherogenic, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.1447 * (normalized) Arg
+ +       0.2894 * (normalized) D-CysA
+ +       0.2894 * (normalized) NMe-Gln
+ +       0.0201 * (normalized) D-t-Leu
+ +       0.1729 * (normalized) D-Val
+ +       0.0965 * (normalized) Thr
+ +       0.0458 * (normalized) t-Leu
+ +       0.5262 * (normalized) Pro
+ +      -0.2579 * (normalized) Ala
+ +       0.2894 * (normalized) D-Trp
+ +       1.6108 * (normalized) aMe-Cys
+ +       0.0602 * (normalized) bMe-Ile
+ +       0.3584 * (normalized) NMe-Ile
+ +      -0.6334 * (normalized) Phe
+ +       0.358  * (normalized) NMe-Val
+ +       0.2894 * (normalized) Br-Phe
+ +       1      * (normalized) MeOx-Ile
+ +       0.178  * (normalized) NMe-OH-Ile
+ -       0.7379
+
+Number of kernel evaluations: 55 (89.758% cached)
+
+Classifier for classes: antiatherogenic, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.2    * (normalized) Leu
+ +       0.5    * (normalized) Lys
+ +      -0.3333 * (normalized) Phe
+ +       0.2    * (normalized) NMe-Leu
+ +       1      * (normalized) CO
+ -       0.8889
+
+Number of kernel evaluations: 3 (0% cached)
+
+Classifier for classes: antitumor, antithrombotic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0022 * (normalized) D-bOH-Val
+ +       0.5    * (normalized) Arg
+ +      -0.0022 * (normalized) bbMe2-O-Met
+ +      -0.0022 * (normalized) bOH-Val
+ +      -0.0424 * (normalized) NMe-Tyr
+ +      -0.0577 * (normalized) Hmp
+ +      -0.0561 * (normalized) dhAbu
+ +      -0.0022 * (normalized) D-t-Leu
+ +      -0.0022 * (normalized) D-N2Me-Asn
+ +      -0.0539 * (normalized) Hiv
+ +      -0.0599 * (normalized) Met
+ +       0.2353 * (normalized) Dpr
+ +      -0.1416 * (normalized) Gly
+ +      -0.1978 * (normalized) O-Met
+ +      -0.0477 * (normalized) Ser
+ +      -0.3333 * (normalized) Thr
+ +      -0.0022 * (normalized) t-Leu
+ +      -0.25   * (normalized) Trp
+ +      -0.1104 * (normalized) Tyr
+ +      -0.453  * (normalized) Pro
+ +      -0.1515 * (normalized) 3Me-Pro
+ +      -0.0639 * (normalized) Ala
+ +      -0.2506 * (normalized) Asn
+ +      -0.028  * (normalized) NMe-Gly
+ +      -0.0022 * (normalized) D-N2Me-bOH-Asn
+ +      -0.0007 * (normalized) D-Ala
+ +      -0.0022 * (normalized) D-Asn
+ +       0.4707 * (normalized) D-aIle
+ +      -0.0011 * (normalized) D-aThr
+ +      -0.0491 * (normalized) Aib
+ +       0.0996 * (normalized) D-Leu
+ +       0.8473 * (normalized) D-Phe
+ +      -0.3352 * (normalized) D-Pro
+ +      -0.0006 * (normalized) D-Ser
+ +      -0.0007 * (normalized) Gln
+ +      -0.125  * (normalized) Ile
+ +      -0.2988 * (normalized) Leu
+ +      -0.0424 * (normalized) NMe-Ala
+ +      -0.0022 * (normalized) bMe-Ile
+ +      -0.3222 * (normalized) NMe-Phe
+ +      -0.1121 * (normalized) OMe-Thr
+ +      -0.4437 * (normalized) Phe
+ +      -0.1296 * (normalized) Val
+ +      -0.0885 * (normalized) NMe-Leu
+ +      -0.0731 * (normalized) NMe-OMe-Tyr
+ +      -0.2397 * (normalized) NMe-Val
+ +      -0.1121 * (normalized) OH-Asn
+ +      -0.1121 * (normalized) 4Me-Pro
+ +      -0.0022 * (normalized) bMe-Gln
+ +      -0.1978 * (normalized) bOMe-Asp
+ +      -0.2204 * (normalized) Dap
+ +       0.3471 * (normalized) dv-Tyr
+ +      -0.1155 * (normalized) Ibu
+ +       0.4707 * (normalized) k-Arg
+ +      -0.1155 * (normalized) Map
+ +      -0.1121 * (normalized) Br-Tyr
+ +      -0.2204 * (normalized) Dil
+ +       0.7457 * (normalized) NFo-Dpr
+ +       0.3475 * (normalized) NAc-Dpr
+ +       0.4707 * (normalized) v-OH-Tyr
+ +       0.746  * (normalized) v-Tyr
+ +      -0.2021 * (normalized) Ala-Thz
+ -       0.5169
+
+Number of kernel evaluations: 542 (92.898% cached)
+
+Classifier for classes: antitumor, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0097 * (normalized) D-bOH-Val
+ +       0.2112 * (normalized) Arg
+ +      -0.0097 * (normalized) bbMe2-O-Met
+ +       0.4224 * (normalized) D-CysA
+ +      -0.0097 * (normalized) bOH-Val
+ +      -0.0216 * (normalized) NMe-Tyr
+ +      -0.0511 * (normalized) Hmp
+ +      -0.0292 * (normalized) dhAbu
+ +       0.4224 * (normalized) NMe-Gln
+ +       0.0225 * (normalized) D-t-Leu
+ +      -0.0097 * (normalized) D-N2Me-Asn
+ +       0.2494 * (normalized) D-Val
+ +      -0.1875 * (normalized) Hiv
+ +      -0.0982 * (normalized) Met
+ +      -0.1532 * (normalized) Gly
+ +      -0.1258 * (normalized) O-Met
+ +      -0.0602 * (normalized) Ser
+ +      -0.2078 * (normalized) Thr
+ +       0.0555 * (normalized) t-Leu
+ +      -0.1659 * (normalized) Trp
+ +       0      * (normalized) Tyr
+ +      -0.233  * (normalized) Pro
+ +      -0.0769 * (normalized) 3Me-Pro
+ +       0.1853 * (normalized) Ala
+ +      -0.1866 * (normalized) Asn
+ +      -0.0146 * (normalized) NMe-Gly
+ +      -0.0097 * (normalized) D-N2Me-bOH-Asn
+ +      -0.0032 * (normalized) D-Ala
+ +      -0.0097 * (normalized) D-Asn
+ +      -0.0048 * (normalized) D-aThr
+ +      -0.033  * (normalized) Aib
+ +      -0.21   * (normalized) D-Pro
+ +      -0.0024 * (normalized) D-Ser
+ +       0.4224 * (normalized) D-Trp
+ +      -0.0032 * (normalized) Gln
+ +      -0.1489 * (normalized) Ile
+ +      -0.2268 * (normalized) Leu
+ +       1.5921 * (normalized) aMe-Cys
+ +      -0.0216 * (normalized) NMe-Ala
+ +       0.0868 * (normalized) bMe-Ile
+ +       0.237  * (normalized) NMe-Ile
+ +      -0.2361 * (normalized) NMe-Phe
+ +      -0.0584 * (normalized) OMe-Thr
+ +      -0.127  * (normalized) Phe
+ +      -0.2267 * (normalized) Val
+ +      -0.0594 * (normalized) NMe-Leu
+ +      -0.0806 * (normalized) NMe-OMe-Tyr
+ +       0.08   * (normalized) NMe-Val
+ +      -0.0584 * (normalized) OH-Asn
+ +      -0.0584 * (normalized) 4Me-Pro
+ +      -0.0097 * (normalized) bMe-Gln
+ +       0.4224 * (normalized) Br-Phe
+ +      -0.1258 * (normalized) bOMe-Asp
+ +      -0.0886 * (normalized) Dap
+ +       1      * (normalized) MeOx-Ile
+ +      -0.1022 * (normalized) Ibu
+ +      -0.1022 * (normalized) Map
+ +      -0.0584 * (normalized) Br-Tyr
+ +      -0.0886 * (normalized) Dil
+ +       0.1181 * (normalized) NMe-OH-Ile
+ +      -0.1751 * (normalized) Ala-Thz
+ -       0.7472
+
+Number of kernel evaluations: 612 (92.692% cached)
+
+Classifier for classes: antitumor, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.01   * (normalized) D-bOH-Val
+ +      -0.01   * (normalized) bbMe2-O-Met
+ +      -0.01   * (normalized) bOH-Val
+ +      -0.0034 * (normalized) NMe-Tyr
+ +      -0.0179 * (normalized) Hmp
+ +      -0.0133 * (normalized) dhAbu
+ +      -0.01   * (normalized) D-t-Leu
+ +      -0.01   * (normalized) D-N2Me-Asn
+ +      -0.0124 * (normalized) Met
+ +      -0.0653 * (normalized) Gly
+ +      -0.0717 * (normalized) O-Met
+ +      -0.0257 * (normalized) Ser
+ +      -0.1355 * (normalized) Thr
+ +      -0.01   * (normalized) t-Leu
+ +      -0.1016 * (normalized) Trp
+ +       0      * (normalized) Tyr
+ +      -0.1706 * (normalized) Pro
+ +      -0.0556 * (normalized) 3Me-Pro
+ +       0.1293 * (normalized) Ala
+ +      -0.1152 * (normalized) Asn
+ +      -0.0066 * (normalized) NMe-Gly
+ +      -0.01   * (normalized) D-N2Me-bOH-Asn
+ +      -0.0033 * (normalized) D-Ala
+ +      -0.01   * (normalized) D-Asn
+ +      -0.005  * (normalized) D-aThr
+ +      -0.0179 * (normalized) Aib
+ +      -0.0764 * (normalized) D-Pro
+ +      -0.0025 * (normalized) D-Ser
+ +      -0.0033 * (normalized) Gln
+ +      -0.0459 * (normalized) Ile
+ +       0.0982 * (normalized) Leu
+ +       0.5    * (normalized) Lys
+ +      -0.0034 * (normalized) NMe-Ala
+ +      -0.01   * (normalized) bMe-Ile
+ +      -0.1025 * (normalized) NMe-Phe
+ +      -0.0265 * (normalized) OMe-Thr
+ +      -0.1175 * (normalized) Phe
+ +      -0.0277 * (normalized) Val
+ +       0.1678 * (normalized) NMe-Leu
+ +      -0.0325 * (normalized) NMe-OMe-Tyr
+ +      -0.0399 * (normalized) NMe-Val
+ +      -0.0265 * (normalized) OH-Asn
+ +      -0.0265 * (normalized) 4Me-Pro
+ +      -0.01   * (normalized) bMe-Gln
+ +      -0.0717 * (normalized) bOMe-Asp
+ +      -0.0529 * (normalized) Dap
+ +      -0.0359 * (normalized) Ibu
+ +      -0.0359 * (normalized) Map
+ +      -0.0265 * (normalized) Br-Tyr
+ +       1      * (normalized) CO
+ +      -0.0529 * (normalized) Dil
+ +      -0.0439 * (normalized) Ala-Thz
+ -       0.8848
+
+Number of kernel evaluations: 249 (89.026% cached)
+
+Classifier for classes: antithrombotic, antiinflammatory
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.3429 * (normalized) Arg
+ +       0.3141 * (normalized) D-CysA
+ +       0.3141 * (normalized) NMe-Gln
+ +       0.0219 * (normalized) D-t-Leu
+ +       0.1875 * (normalized) D-Val
+ +      -0.0992 * (normalized) Dpr
+ +       0.1047 * (normalized) Thr
+ +       0.0497 * (normalized) t-Leu
+ +       0.2094 * (normalized) Pro
+ +       0.2041 * (normalized) Ala
+ +      -0.1984 * (normalized) D-aIle
+ +      -0.0636 * (normalized) D-Leu
+ +      -0.54   * (normalized) D-Phe
+ +       0.3141 * (normalized) D-Trp
+ +      -0.5    * (normalized) Ile
+ +       1.2188 * (normalized) aMe-Cys
+ +       0.0656 * (normalized) bMe-Ile
+ +       0.2714 * (normalized) NMe-Ile
+ +       0.3333 * (normalized) Phe
+ +       0.2703 * (normalized) NMe-Val
+ +       0.3141 * (normalized) Br-Phe
+ +       1      * (normalized) MeOx-Ile
+ +      -0.0399 * (normalized) dv-Tyr
+ +      -0.1984 * (normalized) k-Arg
+ +      -0.2945 * (normalized) NFo-Dpr
+ +      -0.0401 * (normalized) NAc-Dpr
+ +       0.1355 * (normalized) NMe-OH-Ile
+ +      -0.1984 * (normalized) v-OH-Tyr
+ +      -0.2946 * (normalized) v-Tyr
+ -       0.3953
+
+Number of kernel evaluations: 128 (90.34% cached)
+
+Classifier for classes: antithrombotic, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1259 * (normalized) Arg
+ +      -0.0297 * (normalized) Dpr
+ +      -0.0839 * (normalized) Pro
+ +       0.1881 * (normalized) Ala
+ +      -0.0593 * (normalized) D-aIle
+ +      -0.0188 * (normalized) D-Leu
+ +      -0.3068 * (normalized) D-Phe
+ +      -0.1259 * (normalized) Ile
+ +       0.2    * (normalized) Leu
+ +       0.5    * (normalized) Lys
+ +       0.2    * (normalized) NMe-Leu
+ +      -0.0593 * (normalized) k-Arg
+ +       1      * (normalized) CO
+ +      -0.0752 * (normalized) NFo-Dpr
+ +      -0.0593 * (normalized) v-OH-Tyr
+ +      -0.0752 * (normalized) v-Tyr
+ -       0.8457
+
+Number of kernel evaluations: 68 (84.368% cached)
+
+Classifier for classes: antiinflammatory, calmodulin antagonist
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0418 * (normalized) Arg
+ +      -0.0835 * (normalized) D-CysA
+ +      -0.0835 * (normalized) NMe-Gln
+ +      -0.0058 * (normalized) D-t-Leu
+ +      -0.0498 * (normalized) D-Val
+ +      -0.0278 * (normalized) Thr
+ +      -0.0132 * (normalized) t-Leu
+ +      -0.1957 * (normalized) Pro
+ +       0.1007 * (normalized) Ala
+ +      -0.0835 * (normalized) D-Trp
+ +       0.2    * (normalized) Leu
+ +       0.5    * (normalized) Lys
+ +      -0.4965 * (normalized) aMe-Cys
+ +      -0.0175 * (normalized) bMe-Ile
+ +      -0.1104 * (normalized) NMe-Ile
+ +      -0.14   * (normalized) Phe
+ +       0.2    * (normalized) NMe-Leu
+ +      -0.1106 * (normalized) NMe-Val
+ +      -0.0835 * (normalized) Br-Phe
+ +      -0.4199 * (normalized) MeOx-Ile
+ +       1      * (normalized) CO
+ +      -0.0545 * (normalized) NMe-OH-Ile
+ -       0.4688
+
+Number of kernel evaluations: 45 (82.49% cached)
+
+
+
+Time taken to build model: 1.21 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         638               88.1215 %
+Incorrectly Classified Instances        86               11.8785 %
+Kappa statistic                          0.8146
+Mean absolute error                      0.1497
+Root mean squared error                  0.2653
+Relative absolute error                124.4451 %
+Root relative squared error            108.5022 %
+Total Number of Instances              724     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.956     0.101      0.916     0.956     0.936      0.935    antibiotic
+                 0.5       0          1         0.5       0.667      0.862    immunomodulating
+                 0.912     0.064      0.784     0.912     0.843      0.94     toxin
+                 0.917     0          1         0.917     0.957      0.982    siderophore
+                 0.625     0.003      0.833     0.625     0.714      0.898    surfactant
+                 0.658     0.004      0.893     0.658     0.758      0.966    protease inhibitor
+                 0         0          0         0         0          0.552    antiatherogenic
+                 0.467     0.01       0.667     0.467     0.549      0.812    antitumor
+                 0.583     0.003      0.778     0.583     0.667      0.894    antithrombotic
+                 0.875     0.001      0.875     0.875     0.875      0.922    antiinflammatory
+                 0         0          0         0         0          0.481    calmodulin antagonist
+Weighted Avg.    0.881     0.068      0.877     0.881     0.875      0.932
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   j   k   <-- classified as
+ 370   0  10   0   2   0   0   4   0   1   0 |   a = antibiotic
+   2   5   2   0   0   0   0   1   0   0   0 |   b = immunomodulating
+  10   0 134   0   0   2   0   1   0   0   0 |   c = toxin
+   1   0   5  66   0   0   0   0   0   0   0 |   d = siderophore
+   3   0   3   0  10   0   0   0   0   0   0 |   e = surfactant
+   5   0   6   0   0  25   0   0   2   0   0 |   f = protease inhibitor
+   3   0   0   0   0   0   0   0   0   0   0 |   g = antiatherogenic
+   9   0   7   0   0   0   0  14   0   0   0 |   h = antitumor
+   1   0   4   0   0   0   0   0   7   0   0 |   i = antithrombotic
+   0   0   0   0   0   0   0   1   0   7   0 |   j = antiinflammatory
+   0   0   0   0   0   1   0   0   0   0   0 |   k = calmodulin antagonist
+
