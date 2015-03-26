@@ -27,7 +27,7 @@ def get_peptide(i) :
 	Permits to get peptides'list without unknown activity
 '''
 def get_list_peptides() :
-	liste = [['activity','id','composition']]
+	liste = [['activity','id','composition','link']]
 	for i in range(1174) : 
 		json_data = get_peptide(i)
 		json_struct = json.loads(json_data)
@@ -36,9 +36,12 @@ def get_list_peptides() :
 				if (('activity' in json_struct['peptides'][0]['general']) and (len(json_struct['peptides'][0]['general']['activity']) == 1 ) and (json_struct['peptides'][0]['general']['activity'][0] != 'unknown')) :
 					if 'id' in json_struct['peptides'][0]['general'] :
 						if 'composition' in json_struct['peptides'][0]['structure'] :
-							composition = json_struct['peptides'][0]['structure']['composition']
-							composition = "'" + composition.replace(', ',';') + "'"
-							liste.append([json_struct['peptides'][0]['general']['activity'][0], json_struct['peptides'][0]['general']['id'],composition])
+							if 'graph' in json_struct['peptides'][0]['structure'] :
+								composition = json_struct['peptides'][0]['structure']['composition']
+								composition = "'" + composition.replace(', ',';') + "'"
+								lien = json_struct['peptides'][0]['structure']['graph']
+								lien = lien.replace(', ',';')
+								liste.append([json_struct['peptides'][0]['general']['activity'][0], json_struct['peptides'][0]['general']['id'], composition, lien])
 	return liste
 
 '''
@@ -81,14 +84,15 @@ def create_csv(mylist,filename) :
 
 
 if __name__ == "__main__" :
-	monomers = get_monomers()
+	#monomers = get_monomers()
 	#print monomers
-	print 'get monomers'
+	#print 'get monomers'
 	peptides_norine = get_list_peptides()
 	print 'get peptides'
+	create_csv(peptides_norine,'peptides_tmp.csv')
 	#print peptides_norine
-	peptides_count = add_cpt(peptides_norine,monomers)
+	#peptides_count = add_cpt(peptides_norine,monomers)
 	print 'get peptides count'
 	#print peptides_count
-	create_csv(peptides_count,'peptides_final.csv')
+	#create_csv(peptides_count,'peptides_tmp.csv')
 
