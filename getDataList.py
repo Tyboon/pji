@@ -30,7 +30,7 @@ def get_list_peptides() :
 	# Header
 	liste = [['activity','id','composition','link']]
 	# For all peptides in ddb
-	for i in range(400,403) :  #1174 peptides
+	for i in range(1174) :  #1174 peptides
 		print i
 		json_data = get_peptide(i)
 		json_struct = json.loads(json_data)
@@ -41,7 +41,7 @@ def get_list_peptides() :
 				if ('activity' in json_struct['peptides'][0]['general']) :
 						#Test if there is only 1 activity, or 2 with 'surfactant', and different of 'unknown'
 						activity = json_struct['peptides'][0]['general']['activity']
-						if (((len(activity) == 1) and (activity[0] != 'unknown')) or ((len(activity) == 2) and (((activity[0]=='surfactant') or (activity[1]=='surfactant')) and ('unknown' not in activity )))) :
+						if (((len(activity) == 1) and (activity[0] != 'unknown') and (activity[0] != 'surfactant')) or ((len(activity) == 2) and (((activity[0]=='surfactant') or (activity[1]=='surfactant')) and ('unknown' not in activity )))) :
 							# If there is 'surfactant' remove it from the activity list
 							if 'surfactant' in activity :
 								activity.remove('surfactant')
@@ -79,11 +79,31 @@ def add_cpt(peptides,monomers) :
 	
 	#ajout des donnees
 	for p in peptides :
-		if p != peptides[0]:
+		if p != peptides[0] :
 			for m in monomers:
 				p.append(nb_occ(m,p[2]))
 	
 	return peptides
+
+def add_cpt_clusters(peptides, clusters) :
+	len_m = len(peptides[0])
+	#ajout de l'entete
+	for c in clusters :
+		peptides[0].append(c[0])
+
+	#ajout des donnees
+	for p in peptides :
+		if p != peptides[0] :
+			for c in clusters :
+				p.append(nb_occ_clust(c,p, peptides[0], len_m))
+	return peptides
+		
+def nb_occ_clust(cluster, pep, header, len_m) :
+	cpt = 0
+	for i in range(4,len_m) :
+		if header[i] in cluster :
+			cpt += pep[i]
+	return cpt
 
 
 '''
@@ -119,19 +139,22 @@ def read_cluster(myfile) :
 					for t in tab :
 						l.append(t.rstrip())
 					liste.append(l)
-	print liste
+	#print liste
 	return liste
 
 if __name__ == "__main__" :
-	#monomers = get_monomers()
+	monomers = get_monomers()
 	#print monomers
-	#print 'get monomers'
-	#peptides_norine = get_list_peptides()
+	print 'get monomers'
+	peptides_norine = get_list_peptides()
 	print 'get peptides'
 	#create_csv(peptides_norine,'peptides_tmp.csv')
 	#print peptides_norine
-	#peptides_count = add_cpt(peptides_norine,monomers)
+	peptides_count = add_cpt(peptides_norine,monomers)
 	print 'get peptides count'
 	#print peptides_count
 	#create_csv(peptides_count,'peptides_tmp.csv')
 	clusters =  read_cluster('data/mono_cluster.csv')
+	peptides_clust = add_cpt_clusters(peptides_count, clusters)
+	create_csv(peptides_clust,'peptides_clust.csv')
+	print 'get petides clust'
