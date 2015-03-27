@@ -1,0 +1,12 @@
+# Chromophores non siderophore
+ChrD;ChrA;ChrAct
+# Sidérophores
+ChrI;ChrP;OH-Asp;D-OH-Asp;OH-His;Ac-OH-Orn;D-Fo-OH-Orn;D-OH-Orn;D-Ac-OH-Orn;D-OH-cOrn;OH-Orn;NAc-Fo-OH-Orn;Fo-OH-Orn;OH-cOrn
+# Peptaibols (antibiotiques)
+NAc-Dpr;Ac-Ser;Ac-Ival;Ac-Val;Ac-Trp;Ac-Phe;Ac-Aib;NAc-Leu
+Ivalol;Leuol;Valol;Ileol;Pheol;Trpol;Serol;OAc-Leuol
+Aib;Ival;4OH-Pro;Et-Nva
+# Hpg et dérivés (antibio)
+Hpg;D-OH-dHpg;Cl2-Hpg;NMe-Hpg;Cl-Hpg;OH-dHpg;D-Hpg
+# Sucres (antibio)
+2OMe-Rha;Ara;Aco;D-Gal;D-Ara;Ere;Glc;Oli;D-Glc;bD-Gal;U4oxo-Van;Rha;D-Man;4oxo-Van;Act;Lyx;Ria;Van
