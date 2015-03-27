@@ -105,24 +105,23 @@ def create_csv(mylist,filename) :
 def read_cluster(myfile) :
 	with open(myfile,'r') as f:
 		liste = []
-   	for line in f:
+   		for line in f:
 			line = line.lstrip()
 			#on filtre les lignes d'infos
 			if line : 
 				if line[0]=='#' :
-					line = line.rstrip()
+					line = line.strip()
 					l = []
 					l.append(line[1:len(line)])
 				else : 
-					line = line.rstrip()
+					#line = line.rstrip()
 					tab = line.split(';')
 					for t in tab :
-						l.append(t)
+						l.append(t.rstrip())
 					liste.append(l)
 	print liste
 	return liste
 
- 
 if __name__ == "__main__" :
 	#monomers = get_monomers()
 	#print monomers
@@ -135,4 +134,4 @@ if __name__ == "__main__" :
 	print 'get peptides count'
 	#print peptides_count
 	#create_csv(peptides_count,'peptides_tmp.csv')
-	read_cluster('data/mono_cluster.csv')
+	clusters =  read_cluster('data/mono_cluster.csv')
