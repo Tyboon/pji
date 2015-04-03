@@ -2,10 +2,12 @@ import urllib2
 import csv
 import json
 
-'''
-	Permits to get monomers'list
-'''
+
 def get_monomers() :
+	'''
+	Permits to get monomers list
+	'''
+
 	url = 'http://bioinfo.lifl.fr/norine/rest/monomers/flat/json'
 	response = urllib2.urlopen(url).read()
 	json_struct = json.loads(response)
@@ -15,18 +17,21 @@ def get_monomers() :
 			list_monomers.append(i['code'])
 	return list_monomers
 
-'''
-	Permits to get a peptide description in Json file
-'''
+
 def get_peptide(i) :
+	'''
+	Permits to get a peptide description in Json file
+	'''
+
 	url = 'http://bioinfo.lifl.fr/norine/rest/id/json/NOR'+`i`
 	response = urllib2.urlopen(url).read()
 	return response
 
-'''
-	Permits to get peptides'list without unknown activity
-'''
 def get_list_peptides() :
+	'''
+	Permits to get peptides'list without unknown activity
+	'''
+
 	# Header
 	liste = [['activity','id','composition','link']]
 	# For all peptides in ddb
@@ -60,19 +65,21 @@ def get_list_peptides() :
 										liste.append([activity[0], json_struct['peptides'][0]['general']['id'], composition, lien])
 	return liste
 
-'''
-	Counts the number of occurancies of a monomer in a peptide
-'''
 def nb_occ(monom, pep) :
+	'''
+	Counts the number of occurancies of a monomer in a peptide
+	'''
+
 	occ = 0
 	list_p = pep.split(';')
 	occ = list_p.count(monom)
 	return occ
 
-'''
-	Add to the peptides list the monomers counter
-'''
 def add_cpt(peptides,monomers) :
+	'''
+	Add to the peptides list the monomers counter
+	'''
+
 	#ajout de l'entete
 	for m in monomers:
 		peptides[0].append(m)
@@ -85,7 +92,11 @@ def add_cpt(peptides,monomers) :
 	
 	return peptides
 
+
 def add_cpt_clusters(peptides, clusters) :
+	'''
+	Add to the peptides list the cluster counter
+	'''
 	len_m = len(peptides[0])
 	#ajout de l'entete
 	for c in clusters :
@@ -97,8 +108,12 @@ def add_cpt_clusters(peptides, clusters) :
 			for c in clusters :
 				p.append(nb_occ_clust(c,p, peptides[0], len_m))
 	return peptides
-		
+
+
 def nb_occ_clust(cluster, pep, header, len_m) :
+	'''
+	Counts number of occurancies of cluster 
+	'''
 	cpt = 0
 	for i in range(4,len_m) :
 		if header[i] in cluster :
@@ -106,10 +121,34 @@ def nb_occ_clust(cluster, pep, header, len_m) :
 	return cpt
 
 
-'''
-	Creates csv from a list
-'''
+def select_activity(peptides_clust, N):
+	'''
+	Select only peptides whose activity counter over N 
+	'''
+
+	activities = list(set([row[0] for row in peptides_clust]))
+	peptides_act =list([row[0] for row in peptides_clust]) 
+	count_act = []
+	for a in activities :
+		count_act.append((a,peptides_act.count(a)))
+	list_count = []
+	for c in count_act :
+		if c[1] >= 20 :
+			list_count.append(c[0])
+	print list_count
+	
+	list_ceil = []
+	for p in peptides_clust :
+		if p[0] in list_count:
+			list_ceil.append(p)
+	return list_ceil
+	
+
 def create_csv(mylist,filename) :
+	'''
+	Creates csv from a list
+	'''
+
 	csv_file = open(filename, "wb")
 	try :
 		writer = csv.writer(csv_file)
@@ -119,10 +158,23 @@ def create_csv(mylist,filename) :
 		csv_file.close()
 
 
-'''
-	Permits to read the cluster file
-'''
+def read_csv(filename) :
+	'''
+	Creates list from a csv
+	'''
+	l = []
+	with open(filename, 'rb') as csvfile:
+		reader = csv.reader(csvfile, delimiter=',')
+		for row in reader :
+			l.append(row)
+	return l
+
+
 def read_cluster(myfile) :
+	'''
+	Permits to read the cluster file
+	'''
+
 	with open(myfile,'r') as f:
 		liste = []
    		for line in f:
@@ -143,18 +195,25 @@ def read_cluster(myfile) :
 	return liste
 
 if __name__ == "__main__" :
-	monomers = get_monomers()
+	#monomers = get_monomers()
 	#print monomers
-	print 'get monomers'
-	peptides_norine = get_list_peptides()
-	print 'get peptides'
+	#print 'get monomers'
+	#peptides_norine = get_list_peptides()
+	#print 'get peptides'
 	#create_csv(peptides_norine,'peptides_tmp.csv')
 	#print peptides_norine
-	peptides_count = add_cpt(peptides_norine,monomers)
-	print 'get peptides count'
+	#peptides_count = add_cpt(peptides_norine,monomers)
+	#print 'get peptides count'
 	#print peptides_count
 	#create_csv(peptides_count,'peptides_tmp.csv')
-	clusters =  read_cluster('data/mono_cluster.csv')
-	peptides_clust = add_cpt_clusters(peptides_count, clusters)
-	create_csv(peptides_clust,'peptides_clust.csv')
+	#clusters =  read_cluster('data/mono_cluster.csv')
+	#peptides_clust = add_cpt_clusters(peptides_count, clusters)
+	#create_csv(peptides_clust,'peptides_clust.csv')
 	print 'get petides clust'
+	####################
+	peptides_clust = read_csv('peptides_clust.csv')
+	print 'get peptides'
+	#print peptides_clust
+	peptides_ceil = select_activity(peptides_clust, 20)
+	create_csv(peptides_ceil, 'peptides_clust_ceil.csv')
+
