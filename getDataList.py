@@ -121,13 +121,13 @@ def nb_occ_clust(cluster, pep, header, len_m) :
 	return cpt
 
 
-def select_activity(peptides_clust, N):
+def select_activity(peptides, N):
 	'''
 	Select only peptides whose activity counter over N 
 	'''
 
-	activities = list(set([row[0] for row in peptides_clust]))
-	peptides_act =list([row[0] for row in peptides_clust]) 
+	activities = list(set([row[0] for row in peptides]))
+	peptides_act =list([row[0] for row in peptides]) 
 	count_act = []
 	for a in activities :
 		count_act.append((a,peptides_act.count(a)))
@@ -138,11 +138,33 @@ def select_activity(peptides_clust, N):
 	print list_count
 	
 	list_ceil = []
-	for p in peptides_clust :
+	for p in peptides :
 		if p[0] in list_count:
 			list_ceil.append(p)
 	return list_ceil
 	
+def add_cpt_link(peptides,N) :
+	'''
+	Add to peptides list the link counter
+	'''
+	len_p = len(peptides[0])
+	# Ajout de l'entete
+	for i in range(1,N+1) :
+		lien = 'Lien : ' + `i`
+		peptides[0].append(lien)
+	
+	# Ajout des compteurs ,pour chaque peptide
+	for p in peptides :
+		if p != peptides[0] :
+			links_cpt = []
+			links = p[3]
+			links = links.split('@')
+			links = links[1:len(links)]
+			for link in links :
+				links_cpt.append(len(link.split(',')))
+			for i in range(1,N+1) :
+				p.append(links_cpt.count(i))
+	return peptides
 
 def create_csv(mylist,filename) :
 	'''
@@ -214,6 +236,6 @@ if __name__ == "__main__" :
 	peptides_clust = read_csv('peptides_clust.csv')
 	print 'get peptides'
 	#print peptides_clust
-	peptides_ceil = select_activity(peptides_clust, 20)
-	create_csv(peptides_ceil, 'peptides_clust_ceil.csv')
+	peptides_link = add_cpt_link(peptides_clust, 5)
+	create_csv(peptides_link, 'peptides_clust_link.csv')
 
