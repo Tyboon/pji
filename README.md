@@ -21,7 +21,15 @@ Emilie Allart
 	utilisation de la fonction count
 	composition mise entre quote
 
-TODO : 
+07 avril : 
 	comptage en cluster
 	comptage en lien 
-	presence de n lien ou non
+	activité au dessus d'un seuil
+
+TODO : 
+	install de liblinear
+https://github.com/bwaldvogel/liblinear-weka/blob/master/src/main/java/weka/classifiers/functions/LibLINEAR.java#L56
+	install de weka
+	faire doc d'install
+	reorganiser le code
+	faire le rapport
