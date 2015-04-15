@@ -175,6 +175,8 @@ def create_csv(mylist,filename) :
 	try :
 		writer = csv.writer(csv_file)
 		for line in mylist :
+				#mettre uniquement pour monomers 
+				#line  = [line] 
 				writer.writerow((line))
 	finally :
 		csv_file.close()
@@ -217,25 +219,27 @@ def read_cluster(myfile) :
 	return liste
 
 if __name__ == "__main__" :
-	#monomers = get_monomers()
-	#print monomers
-	#print 'get monomers'
-	#peptides_norine = get_list_peptides()
-	#print 'get peptides'
-	#create_csv(peptides_norine,'peptides_tmp.csv')
-	#print peptides_norine
-	#peptides_count = add_cpt(peptides_norine,monomers)
-	#print 'get peptides count'
+	monomers = get_monomers()
+	print monomers
+	#create_csv(monomers,'monomers.csv')
+	print 'get monomers'
+	peptides_norine = get_list_peptides()
+	print 'get peptides'
+	create_csv(peptides_norine,'file/peptides_tmp.csv')
+	print peptides_norine
+	peptides_count = add_cpt(peptides_norine,monomers)
+	print 'get peptides count'
 	#print peptides_count
-	#create_csv(peptides_count,'peptides_tmp.csv')
-	#clusters =  read_cluster('data/mono_cluster.csv')
-	#peptides_clust = add_cpt_clusters(peptides_count, clusters)
-	#create_csv(peptides_clust,'peptides_clust.csv')
+	create_csv(peptides_count,'file/peptides_monomers.csv')
+	clusters =  read_cluster('data/mono_cluster.csv')
+	peptides_clust = add_cpt_clusters(peptides_count, clusters)
+	create_csv(peptides_clust,'file/peptides_clust.csv')
 	print 'get petides clust'
 	####################
-	peptides_clust = read_csv('peptides_clust.csv')
-	print 'get peptides'
+	#peptides_clust = read_csv('peptides_clust.csv')
+	#print 'get peptides'
 	#print peptides_clust
 	peptides_link = add_cpt_link(peptides_clust, 5)
-	create_csv(peptides_link, 'peptides_clust_link.csv')
+	create_csv(peptides_link, 'file/peptides_clust_link.csv')
+	print 'get peptides clust link'
 
