@@ -1,0 +1,15 @@
+Installation des outils nécessaire 
+
+Emilie Allart 
+4 avril 2015
+
+Installation de PyWeka pour l'utilisation de weka en python 
+
+Suivre les instructions a cette adresse :
+	http://pythonhosted.org/python-weka-wrapper/install.html
+
+
+Installation de LibLinear :
+	ajout des 2 modules via 
+		https://github.com/ninjin/liblinear/tree/master/python
+	et intégration au code 
