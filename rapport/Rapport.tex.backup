@@ -68,8 +68,13 @@
 
       \paragraph
       \\
-      ~~\\
+      ~~\\Au cours de la première année de master informatique, il est demandé d'effectuer un projet dans un laboratoire de recherche.
+      J'ai donc effectué le mien au sein de l'équipe Bonsai, une équipe orientée bioinformatique faisant partie de CRISTAL. 
+      Encadrée par Maude Pupin et Laurent Noé, j'ai travaillé sur le thème de : ' Rechercher les meilleurs critères pour la prédestination de l'activité d'un peptide'.
+      Il s'agit donc d'analyser des peptides (petites protéines) dont nous connaissons déjà l'activité (antibiotique, anticancéreux, toxine, ...)  et de voir quelles informations sur elle auraient pu nous faire prédire son activité.
+      Par exemple, ... TODO (chercher un exmeple pour illustrer)
       
+      Le but est de pouvoir par la suite, connaissant ces critères, prédire l'activité d'un peptide. Ainsi, nous pourrons trouver de nouvelles molécules avec des capacités thérapeutiques intéressantes, qui pourrait être synthétisées plus facilement. Trouver de nouveaux médicaments efficaces donc.
      
       \addcontentsline{toc}{section}{Introduction}
       \newpage
@@ -166,20 +171,40 @@
 	\paragraph{Comptage en lien}
 	    Traitement de l'attribut lien de chaque peptides
 	    Comptage de lien (de 1 à 5) pour chaque peptides.
-	    Ajout aux données
+	    Ajout aux donnée
 	
 	\paragraph{Recupération au dessus d'un seuil}
-	    Comptage du nombre de pe
+	    Comptage du nombre de peptide ayant une certaine activité pour chaque activité.
+	    Si le nombre de peptide possédant l'activité est inférieur au seuil, nous les enlevons de la base de données.
    
-    \section{Critères}
-	
+   
+    \section{Choix des critères}
+	  Comme vu précédemment, il est possible de faire différents traitements sur les données.
+	  Ces traitements permettent de préparer les peptides pour voir si un critère apporte des connaissance sur ceuc-ci ou non.
+	  Donc un critère dans le cadre de ce projet, peut être la quantité et l'apparition de monomères, de même pour les clusters, ou encore le possession d'un certain nombre de lien. 
+	  
+	  Une fois que les données seront traitées par le programme, sur différents critères, nous pourrons comparer leur utilitées en analysant la fiabilité de chaque prédiction
 	 
-     \section{mesures de qualité récupérées}
-    
+     \section{Lancement des méthodes d'apprentissage}
+	  
+	  Une fois les données prêtes, il ne reste plus qu'à les analyser et voir si nous en tirons beaucoup d'information.
+	  Pour ce fqire, nous avons utilisé 3 méthodes d'apprentissage comme cité précédement :
+	  le naïveBayes, le SMO et le LibLinear. 
+	  
+	  Pour nous faire nous avons utiliser un wrapper weka permettant de continuer à travailler sur python.
+	  Cependant, il a fallu installer une extension pour le LibLinear qui n'est pas implémenté de base. Pour se faire une librairie est ajoutée permettant de l'utiliser également.
+	  
+	  ce programme de lancement se décompose en fonction, chacune lancant une méthode, prenant en entrée le fichier contenant les données et donnant en sortie les mesures de robustesse à analyser.
+	  
+	  
+     \section{mesures de robustesse}
+	  
+	  Nous obtenons ainsi un ensemble de mesures de robustesse qu'il faut comparer pour voir quel critère ou quel combinaison de critère est la plus efficace pour obtenir des informations sur un peptide.
 	 
   \chapter{Résultats}
 
-   
+	  TODO : tableau comparatif
+	  conclusion tirée de celui-ci
     
   \section*{Conclusion}
      

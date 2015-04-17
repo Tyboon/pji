@@ -2,17 +2,17 @@
 \contentsline {section}{Introduction}{2}
 \contentsline {chapter}{\numberline {1}Cahier des charges et contexte}{3}
 \contentsline {section}{\numberline {1.1}Contexte}{3}
-\contentsline {subsection}{\numberline {1.1.1}Norine}{3}
+\contentsline {subsection}{\numberline {1.1.1}NRPs}{3}
 \contentsline {paragraph}{}{3}
-\contentsline {subsection}{\numberline {1.1.2}Peptides}{3}
+\contentsline {subsection}{\numberline {1.1.2}Norine}{3}
 \contentsline {paragraph}{}{3}
 \contentsline {subsection}{\numberline {1.1.3}Probl\IeC {\'e}matique}{3}
 \contentsline {section}{\numberline {1.2}Cahier des charges}{3}
 \contentsline {subsection}{\numberline {1.2.1}r\IeC {\'e}cup\IeC {\'e}ration des donn\IeC {\'e}es}{3}
 \contentsline {paragraph}{}{3}
-\contentsline {subsection}{\numberline {1.2.2}Utilisation de weka}{3}
-\contentsline {paragraph}{}{3}
-\contentsline {paragraph}{Naive Bayes}{3}
+\contentsline {subsection}{\numberline {1.2.2}Utilisation de weka}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{Naive Bayes}{4}
 \contentsline {paragraph}{SMO}{4}
 \contentsline {paragraph}{LibLinear}{4}
 \contentsline {subsection}{\numberline {1.2.3}Analyse des mesures de robustesse}{4}
