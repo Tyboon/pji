@@ -1,6 +1,7 @@
 import urllib2
 import csv
 import json
+import sys
 
 
 def get_monomers() :
@@ -218,6 +219,49 @@ def read_cluster(myfile) :
 	#print liste
 	return liste
 
+def load_peptides (peptidesFile) :
+	'''
+		load the base bdd or Norine by default
+	'''
+	if peptidesFile == "NORINE" :
+		list_init = get_list_peptides() #act, id, compo, lien
+	else :
+		try :
+			list_init = read_csv(peptidesFile) # ajout 1 activite, surfactant
+		except IOError :
+			print "fichier %s inexistant" % (peptidesFile)
+			sys.exit(2)
+	return list_init
+	
+def load_monomers (monomersFile) :
+	'''
+		load monomers from monomersFile, or from Norine if it's not precised
+	'''
+	if monomersFile == "NORINE" :
+		list_monomers = get_monomers()
+	else :
+		try :
+			list_monomers = read_csv(monomersFile)
+		except IOError :
+			print "file %s doesn't exist" % (monomersFile)
+			sys.exit(2)
+	return list_monomers
+
+def load_clusters (clustersFile) :
+	'''
+		load clusters from clustersFile or data/mono_cluster.csv if it's not precised
+	'''
+	if clustersFile == "NORINE" :
+		list_clusters = read_cluster('data/mono_cluster.csv')
+	else :
+		try :
+			list_monomers = read_cluster(clustersFile)
+		except IOError :
+			print "file %s doesn't exist" % (clustersFile)
+			sys.exit(2)
+	return list_clusters
+	
+'''	
 if __name__ == "__main__" :
 	monomers = get_monomers()
 	print monomers
@@ -242,4 +286,4 @@ if __name__ == "__main__" :
 	peptides_link = add_cpt_link(peptides_clust, 5)
 	create_csv(peptides_link, 'file/peptides_clust_link.csv')
 	print 'get peptides clust link'
-
+'''
