@@ -1,6 +1,20 @@
 # pji
 Emilie Allart
 
+Finition programme : 
+	OK ajout de données par d'autre ou utilisation de Norine 
+	~ lancement apprentissage selon différents critères 
+	~ comparatif des sorties
+
+Rapport : 
+	Ajout illustrations
+	Compléter par endroit (peut être confu)
+	Ajout des références
+	Parler d'avantage de l'apprentissage (peut-être une sous partie?)
+	Comparaison des sorties et analyses
+	Conclusion et Remerciements
+
+	
 4/02 : analyse de bdd norine avec REST
 	generation de peptides.csv
 	generation de monomeres.csv
@@ -26,10 +40,4 @@ Emilie Allart
 	comptage en lien 
 	activité au dessus d'un seuil
 
-TODO : 
-	install de liblinear
-https://github.com/bwaldvogel/liblinear-weka/blob/master/src/main/java/weka/classifiers/functions/LibLINEAR.java#L56
-	install de weka
-	faire doc d'install
-	reorganiser le code
-	faire le rapport
+
