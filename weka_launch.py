@@ -1,6 +1,7 @@
 import weka.core.jvm as jvm
 from weka.classifiers import Classifier
 from weka.core.converters import Loader
+import time
 
 from weka.filters import Filter
 from weka.classifiers import FilteredClassifier
@@ -12,14 +13,13 @@ from weka.classifiers import PredictionOutput, KernelClassifier, Kernel
 from liblinear import *
 from liblinearutil import *
 
-def runBayes(file) :
-	jvm.start()
+def runBayes(file,bound) :
 
 	loader = Loader(classname="weka.core.converters.CSVLoader")
 	data = loader.load_file(file)
 	data.class_is_first()
 
-	remove = Filter(classname="weka.filters.unsupervised.attribute.Remove", options=["-R", "1-3"])
+	remove = Filter(classname="weka.filters.unsupervised.attribute.Remove", options=["-R", bound])
 	cls = Classifier(classname="weka.classifiers.bayes.NaiveBayes")
 
 	fc = FilteredClassifier()
@@ -29,21 +29,18 @@ def runBayes(file) :
 	evl = Evaluation(data)
 	evl.crossvalidate_model(cls, data, 10, Random(1))
 
-	print(evl.percent_correct)
-	print(evl.summary())
+	#print(evl.percent_correct)
+	#print(evl.summary())
 	print(evl.class_details())
-
-	jvm.stop()
-
+	return evl.class_details()
 	
-def runSMO(file) :
-	jvm.start()
+def runSMO(file,bound) :
 
 	loader = Loader(classname="weka.core.converters.CSVLoader")
 	data = loader.load_file(file)
 	data.class_is_first()
 
-	remove = Filter(classname="weka.filters.unsupervised.attribute.Remove", options=["-R", "1-3"])
+	remove = Filter(classname="weka.filters.unsupervised.attribute.Remove", options=["-R", bound])
 	
 	cls = KernelClassifier(classname="weka.classifiers.functions.SMO", options=["-C", "1.0","-L","0.001","-P","1.0E-12","-N","0"])
 	kernel = Kernel(classname="weka.classifiers.functions.supportVector.PolyKernel", options=["-C", "250007","-E","1.0"])
@@ -55,12 +52,10 @@ def runSMO(file) :
 
 	print(pout.buffer_content())
 
-	print(evl.percent_correct)
-	print(evl.summary())
+	#print(evl.percent_correct)
+	#print(evl.summary())
 	print(evl.class_details())
-
-
-	jvm.stop()
+	return evl.class_details()
 
 def runLibLinear(file) :
 
@@ -74,15 +69,24 @@ def runLibLinear(file) :
 	p_label, p_acc, p_val = predict(y, x, m)
 	ACC, MSE, SCC = evaluations(y, p_label)
 
-	jvm.stop()
+def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.csv'  bound = "%d-%d" % (1,3)
 
-if  __name__ == "__main__" :
-	print('run Bayes')
-	#runBayes('file/peptides_monomers.csv')
+	result = ""
+	try :
+		jvm.start()
+		print('run Bayes')
+		resB = runBayes(fileG, bound)
 
-	print('run SMO')
-	#runSMO('file/peptides_monomers.csv')	
+		print('run SMO')
+		resS = runSMO(fileG, bound)	
 
-	print('run liblinear')
-	runLibLinear('test.train')
-	
+		print('run liblinear')
+		resL = runLibLinear('test.train') #TODO
+
+		result = "BAYES \n %s \n SMO \n %s \n LibLinear \n %s" % (resB, resS, resL)
+
+	except Exception, e:
+		print (traceback.format_exc())
+	finally :
+		jvm.stop()
+		return result

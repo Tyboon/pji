@@ -4,6 +4,26 @@ from weka_launch import *
 from sys import argv
 import getopt
 
+def usage() :
+	
+	print ""
+	print "	learn c cl mc : "
+	print "applied learning method on a base containing just cluster digits, another containine cluster and link associated digits and the last containing monomer and cluster digits"
+	
+	print ""
+	print "	compare : "
+	print "compare all analyses stocked since the beginning, return a sorted list from the better to the worst digit"
+	
+	print ""
+	print "	show cl : "
+	print "show the result of the learning method on the cl digits"
+	print ""
+	
+	print "	exit : "
+	print "quit the program "
+	print ""
+	
+
 def main(argv) :
 	peptidesFile = 'NORINE'
 	monomersFile = 'NORINE'
@@ -69,6 +89,10 @@ if  __name__ == "__main__" :
 	peptides_link = add_cpt_link(peptides_clust,5)
 	bound_links = len(peptides_link[0])
 
+	fileG = "file/peptides_all.csv"
+
+	create_csv(peptides_link, fileG)
+
 	print "Data ready to be analyse" 
 	
 	print bound_init, bound_mono, bound_clust, bound_links
@@ -76,18 +100,37 @@ if  __name__ == "__main__" :
 	################################################################
 	#####################	LEARNING METHOD  #######################
 	################################################################
-	
 	print "Choose what you want to do :" 
-	print "> search c cl mc : "
-	print "applied learning method on a base containing just cluster digits, another containine cluster and link associated digits and the last containing monomer and cluster digits"
-	print "> compare : "
-	print "compare all analyses stocked since the beginning, return a sorted list from the better to the worst digit"
-	print "> show cl : "
-	print "show the result of the learning method on the cl digits"
-	print "> exit : "
-	print "quit the program "
+	usage()
+	rep = raw_input('> ')
+	dic = dict()
 
+	while ( rep != 'quit' ) :
+		words = rep.split(' ')
+		
+		if ( words[0] == 'learn' ) :
+			print 'learn'
+			for w in words[1:] : # if several learning todo
+				bound = bounding(w, bound_init, bound_mono, bound_clust) # info useless
+				l = learning(fileG, bound) 
+				dic[w] = l # map [ key = digit, value = learning result]
+		
+		elif (words[0] == 'compare') :
+			print 'compare'
 
+		elif (words[0] == 'show') :
+			print 'show'
+			for w in words[1:] :
+				print dict[w]
+
+		elif (words[0] == 'help') :
+			usage()
+		else :
+			print "error try again" 
+		rep = raw_input('> ')
+	print "program ending"
+	exit()
+	
 
 	################################################################
 	#####################	COMPARE RESULTS  #######################

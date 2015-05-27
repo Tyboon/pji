@@ -260,7 +260,30 @@ def load_clusters (clustersFile) :
 			print "file %s doesn't exist" % (clustersFile)
 			sys.exit(2)
 	return list_clusters
-	
+
+
+def bounding (digit,bound_init, bound_mono, bound_clust) :
+	'''
+		give the bound of data useless that we could remove
+	'''
+	bound = ""
+	if digit == 'm' :
+		bound = "1-%d,%d-last" % (bound_init-1, bound_mono)
+	elif digit == 'c' :
+		bound = "1-%d,%d-last" % (bound_mono-1, bound_clust)
+	elif digit == 'l' :
+		bound = "1-%d" % (bound_clust-1)
+	elif digit == 'mc' or digit == 'cm' :
+		bound = "1-%d,%d-last" % (bound_init-1, bound_clust)
+	elif digit == 'ml' or digit == 'lm' :
+		bound = "1-%d,%d-%d" % (bound_init-1, bound_mono, bound_clust-1)
+	elif digit == 'lc' or digit == 'cl' :
+		bound = "1-%d" % (bound_mono-1)
+	else : # mcl
+		bound = "1-%d" % (bound_init-1)
+	return bound
+
+
 '''	
 if __name__ == "__main__" :
 	monomers = get_monomers()
