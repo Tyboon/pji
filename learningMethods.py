@@ -14,7 +14,6 @@ from liblinear import *
 from liblinearutil import *
 
 def runBayes(file,bound) :
-
 	loader = Loader(classname="weka.core.converters.CSVLoader")
 	data = loader.load_file(file)
 	data.class_is_first()
@@ -22,17 +21,17 @@ def runBayes(file,bound) :
 	remove = Filter(classname="weka.filters.unsupervised.attribute.Remove", options=["-R", bound])
 	cls = Classifier(classname="weka.classifiers.bayes.NaiveBayes")
 
-	fc = FilteredClassifier()
-	fc.filter = remove
-	fc.classifier = cls
+	remove.inputformat(data)
+	filtered = remove.filter(data)
 
-	evl = Evaluation(data)
-	evl.crossvalidate_model(cls, data, 10, Random(1))
+	evl = Evaluation(filtered)
+	evl.crossvalidate_model(cls, filtered, 10, Random(1))
 
-	#print(evl.percent_correct)
-	#print(evl.summary())
-	print(evl.class_details())
-	return evl.class_details()
+	print(evl.percent_correct)
+	print(evl.summary())
+	result = evl.class_details()
+	print(result)
+	return result
 	
 def runSMO(file,bound) :
 
@@ -47,8 +46,11 @@ def runSMO(file,bound) :
 	cls.kernel = kernel
 	pout = PredictionOutput(classname="weka.classifiers.evaluation.output.prediction.PlainText")
 
-	evl = Evaluation(data)
-	evl.crossvalidate_model(cls, data, 10, Random(1),pout)
+	remove.inputformat(data)
+	filtered = remove.filter(data)
+
+	evl = Evaluation(filtered)
+	evl.crossvalidate_model(cls, filtered, 10, Random(1),pout)
 
 	print(pout.buffer_content())
 
@@ -74,16 +76,16 @@ def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.
 	result = ""
 	try :
 		jvm.start()
-		print('run Bayes')
+		print('BAYES')
 		resB = runBayes(fileG, bound)
 
-		print('run SMO')
+		print('SMO')
 		resS = runSMO(fileG, bound)	
 
-		print('run liblinear')
+		print('LIBLINEAR')
 		resL = runLibLinear('test.train') #TODO
 
-		result = "BAYES \n %s \n SMO \n %s \n LibLinear \n %s" % (resB, resS, resL)
+		result = "BAYES %s  SMO  %s  LIBLINEAR %s" % (resB, resS, resL)
 
 	except Exception, e:
 		print (traceback.format_exc())
