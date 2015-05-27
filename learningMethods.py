@@ -1,4 +1,3 @@
-import weka.core.jvm as jvm
 from weka.classifiers import Classifier
 from weka.core.converters import Loader
 import time
@@ -52,12 +51,13 @@ def runSMO(file,bound) :
 	evl = Evaluation(filtered)
 	evl.crossvalidate_model(cls, filtered, 10, Random(1),pout)
 
-	print(pout.buffer_content())
+	#print(pout.buffer_content())
 
 	#print(evl.percent_correct)
 	#print(evl.summary())
-	print(evl.class_details())
-	return evl.class_details()
+	result = evl.class_details()
+	print(result)
+	return result
 
 def runLibLinear(file) :
 
@@ -70,12 +70,13 @@ def runLibLinear(file) :
 	m = load_model('model_')
 	p_label, p_acc, p_val = predict(y, x, m)
 	ACC, MSE, SCC = evaluations(y, p_label)
+	result = "%s %s %s" % (ACC, MSE, SCC)
+	return result
 
 def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.csv'  bound = "%d-%d" % (1,3)
 
 	result = ""
 	try :
-		jvm.start()
 		print('BAYES')
 		resB = runBayes(fileG, bound)
 
@@ -90,5 +91,4 @@ def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.
 	except Exception, e:
 		print (traceback.format_exc())
 	finally :
-		jvm.stop()
 		return result

@@ -107,19 +107,19 @@ def bounding (digit,bound_init, bound_mono, bound_clust) :
 	'''
 	bound = ""
 	if digit == 'm' :
-		bound = "1-%d,%d-last" % (bound_init-1, bound_mono)
+		bound = "2-%d,%d-last" % (bound_init, bound_mono+1)
 	elif digit == 'c' :
-		bound = "1-%d,%d-last" % (bound_mono-1, bound_clust)
+		bound = "2-%d,%d-last" % (bound_mono, bound_clust+1)
 	elif digit == 'l' :
-		bound = "1-%d" % (bound_clust-1)
+		bound = "2-%d" % (bound_clust)
 	elif digit == 'mc' or digit == 'cm' :
-		bound = "1-%d,%d-last" % (bound_init-1, bound_clust)
+		bound = "2-%d,%d-last" % (bound_init, bound_clust+1)
 	elif digit == 'ml' or digit == 'lm' :
-		bound = "1-%d,%d-%d" % (bound_init-1, bound_mono, bound_clust-1)
+		bound = "2-%d,%d-%d" % (bound_init, bound_mono+1, bound_clust)
 	elif digit == 'lc' or digit == 'cl' :
-		bound = "1-%d" % (bound_mono-1)
+		bound = "2-%d" % (bound_mono)
 	else : # mcl
-		bound = "1-%d" % (bound_init-1)
+		bound = "2-%d" % (bound_init)
 	return bound
 
 

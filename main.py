@@ -1,6 +1,9 @@
-from getDataList import *
-from weka_launch import *
+from importNorine import *
+from dataTreatment import *
+from fileGestion import *
+from learningMethods import *
 
+import weka.core.jvm as jvm
 from sys import argv
 import getopt
 
@@ -24,7 +27,7 @@ def usage() :
 	print ""
 	
 
-def main(argv) :
+def start(argv) :
 	peptidesFile = 'NORINE'
 	monomersFile = 'NORINE'
 	clustersFile = 'NORINE'
@@ -34,6 +37,7 @@ def main(argv) :
 		print 'main -p <peptideFile> -m <monomerFile> -c <clusterFile>'
 		sys.exit(2)
 	for opt, arg in opts :
+		print "coucou"
 		if opt == '-h' :
 			print 'main -p <peptideFile> -m <monomerFile> -c <clusterFile>'
 			sys.exit()
@@ -43,12 +47,12 @@ def main(argv) :
 			monomersFile = arg
 		elif opt in ("-c", "--clust") :
 			clustersFile = arg
-		return peptidesFile, monomersFile, clustersFile
+	return peptidesFile, monomersFile, clustersFile
 
 if  __name__ == "__main__" :
 	##################### ANALYSE ARGUMENTS #######################
-	peptidesFile, monomersFile, clustersFile = main(argv[1:])
-
+	
+	peptidesFile, monomersFile, clustersFile = start(argv[1:])
 	print peptidesFile, monomersFile, clustersFile
 
 	##################### LOADING PEPTIDES #########################
@@ -105,6 +109,7 @@ if  __name__ == "__main__" :
 	rep = raw_input('> ')
 	dic = dict()
 
+	jvm.start()
 	while ( rep != 'quit' ) :
 		words = rep.split(' ')
 		
@@ -120,14 +125,15 @@ if  __name__ == "__main__" :
 
 		elif (words[0] == 'show') :
 			print 'show'
-			for w in words[1:] :
-				print dict[w]
+			for k, v in dic.items() :
+				print ("The search {} give us  : {}".format(k,v))
 
 		elif (words[0] == 'help') :
 			usage()
 		else :
 			print "error try again" 
 		rep = raw_input('> ')
+	jvm.stop()
 	print "program ending"
 	exit()
 	

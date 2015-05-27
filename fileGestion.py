@@ -1,4 +1,5 @@
 import csv
+from importNorine import *
 
 def create_csv(mylist,filename) :
 	'''
