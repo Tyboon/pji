@@ -1,9 +1,7 @@
-from importNorine import *
 from dataTreatment import *
 from fileGestion import *
-from learningMethods import *
+from learningMethods import * 
 
-import weka.core.jvm as jvm
 from sys import argv
 import getopt
 
@@ -18,7 +16,7 @@ def usage() :
 	print "compare all analyses stocked since the beginning, return a sorted list from the better to the worst digit"
 	
 	print ""
-	print "	show cl : "
+	print "	show  : "
 	print "show the result of the learning method on the cl digits"
 	print ""
 	
@@ -27,17 +25,19 @@ def usage() :
 	print ""
 	
 
-def start(argv) :
+def main(argv) :
 	peptidesFile = 'NORINE'
 	monomersFile = 'NORINE'
 	clustersFile = 'NORINE'
+	selectActivity = -1 
+	default = False
 	try :
-		opts, args = getopt.getopt(argv,"hp:m:c:",["pep=","mono=","clust="])
+		opts, args = getopt.getopt(argv,"hp:m:c:s:d",["pep=","mono=","clust=","ceil="])
 	except getopt.GetOptError :
-		print 'main -p <peptideFile> -m <monomerFile> -c <clusterFile>'
+		print 'main [-p <peptideFile> -m <monomerFile> -c <clusterFile> -d -s <ceil_activite>]'
+		print 'by default data from Norine are used, -d = one activity without surfactant'
 		sys.exit(2)
 	for opt, arg in opts :
-		print "coucou"
 		if opt == '-h' :
 			print 'main -p <peptideFile> -m <monomerFile> -c <clusterFile>'
 			sys.exit()
@@ -47,18 +47,25 @@ def start(argv) :
 			monomersFile = arg
 		elif opt in ("-c", "--clust") :
 			clustersFile = arg
-	return peptidesFile, monomersFile, clustersFile
+		elif opt == '-d' :
+		   default = True
+		elif opt in ("-s","--ceil") :
+			selectActivity = int(float(arg))
+		else :
+			print 'main -p <peptideFile> -m <monomerFile> -c <clusterFile>'
+			sys.exit()
+	return peptidesFile, monomersFile, clustersFile, default, selectActivity
 
 if  __name__ == "__main__" :
 	##################### ANALYSE ARGUMENTS #######################
-	
-	peptidesFile, monomersFile, clustersFile = start(argv[1:])
-	print peptidesFile, monomersFile, clustersFile
+	peptidesFile, monomersFile, clustersFile, default, selectActivity = main(argv[1:])
+
+	print peptidesFile, monomersFile, clustersFile, default, selectActivity
 
 	##################### LOADING PEPTIDES #########################
 	print "Hi, let's start with %s base" % (peptidesFile)
 
-	list_init = load_peptides(peptidesFile)  # charge soit norine soit le csv bdd
+	list_init = load_peptides(peptidesFile,default, selectActivity)  # charge soit norine soit le csv bdd, option par defaut et seuil activite
 	bound_init = len(list_init[0])
 
 	print "peptides loaded"
@@ -109,7 +116,6 @@ if  __name__ == "__main__" :
 	rep = raw_input('> ')
 	dic = dict()
 
-	jvm.start()
 	while ( rep != 'quit' ) :
 		words = rep.split(' ')
 		
@@ -125,15 +131,14 @@ if  __name__ == "__main__" :
 
 		elif (words[0] == 'show') :
 			print 'show'
-			for k, v in dic.items() :
-				print ("The search {} give us  : {}".format(k,v))
+			for w in words[1:] :
+				print dict[w]
 
 		elif (words[0] == 'help') :
 			usage()
 		else :
 			print "error try again" 
 		rep = raw_input('> ')
-	jvm.stop()
 	print "program ending"
 	exit()
 	

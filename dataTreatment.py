@@ -67,7 +67,7 @@ def select_activity(peptides, N):
 		count_act.append((a,peptides_act.count(a)))
 	list_count = []
 	for c in count_act :
-		if c[1] >= 20 :
+		if c[1] >= N :
 			list_count.append(c[0])
 	print list_count
 	
@@ -76,7 +76,37 @@ def select_activity(peptides, N):
 		if p[0] in list_count:
 			list_ceil.append(p)
 	return list_ceil
-	
+
+def select_default(peptides) :
+	'''
+		Select peptides with only one activity or 2 whose one is surfactant
+	'''
+	doublon = dict()
+	for p in peptides	: #detail par composition
+		compo = p[2]
+		if compo in doublon :
+			doublon[compo].append(p)
+		else :
+			doublon[compo] = []
+			doublon[compo].append(p)
+	for k in doublon.keys() :
+		len_k = len(doublon[k])
+		if len_k >= 3 : #plus de 2 activites
+			for v in doublon[k] :
+				peptides.remove(v)
+		elif len_k == 2 : #2 activites
+			l = doublon[k]
+			if l[0][0] == 'surfactant' :
+				peptides.remove(l[0])
+			elif l[1][0] == 'surfactant' :
+				peptides.remove(l[1])
+			else :
+				peptides.remove(l[0])
+				peptides.remove(l[1])
+		else :
+			pass
+	return peptides
+
 def add_cpt_link(peptides,N) :
 	'''
 	Add to peptides list the link counter
@@ -107,19 +137,19 @@ def bounding (digit,bound_init, bound_mono, bound_clust) :
 	'''
 	bound = ""
 	if digit == 'm' :
-		bound = "2-%d,%d-last" % (bound_init, bound_mono+1)
+		bound = "1-%d,%d-last" % (bound_init-1, bound_mono)
 	elif digit == 'c' :
-		bound = "2-%d,%d-last" % (bound_mono, bound_clust+1)
+		bound = "1-%d,%d-last" % (bound_mono-1, bound_clust)
 	elif digit == 'l' :
-		bound = "2-%d" % (bound_clust)
+		bound = "1-%d" % (bound_clust-1)
 	elif digit == 'mc' or digit == 'cm' :
-		bound = "2-%d,%d-last" % (bound_init, bound_clust+1)
+		bound = "1-%d,%d-last" % (bound_init-1, bound_clust)
 	elif digit == 'ml' or digit == 'lm' :
-		bound = "2-%d,%d-%d" % (bound_init, bound_mono+1, bound_clust)
+		bound = "1-%d,%d-%d" % (bound_init-1, bound_mono, bound_clust-1)
 	elif digit == 'lc' or digit == 'cl' :
-		bound = "2-%d" % (bound_mono)
+		bound = "1-%d" % (bound_mono-1)
 	else : # mcl
-		bound = "2-%d" % (bound_init)
+		bound = "1-%d" % (bound_init-1)
 	return bound
 
 

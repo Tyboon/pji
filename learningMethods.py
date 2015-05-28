@@ -1,3 +1,4 @@
+import weka.core.jvm as jvm
 from weka.classifiers import Classifier
 from weka.core.converters import Loader
 import time
@@ -20,11 +21,12 @@ def runBayes(file,bound) :
 	remove = Filter(classname="weka.filters.unsupervised.attribute.Remove", options=["-R", bound])
 	cls = Classifier(classname="weka.classifiers.bayes.NaiveBayes")
 
-	remove.inputformat(data)
-	filtered = remove.filter(data)
+	fc = FilteredClassifier()
+	fc.filter = remove
+	fc.classifier = cls
 
-	evl = Evaluation(filtered)
-	evl.crossvalidate_model(cls, filtered, 10, Random(1))
+	evl = Evaluation(data)
+	evl.crossvalidate_model(cls, data, 10, Random(1))
 
 	print(evl.percent_correct)
 	print(evl.summary())
@@ -45,19 +47,15 @@ def runSMO(file,bound) :
 	cls.kernel = kernel
 	pout = PredictionOutput(classname="weka.classifiers.evaluation.output.prediction.PlainText")
 
-	remove.inputformat(data)
-	filtered = remove.filter(data)
+	evl = Evaluation(data)
+	evl.crossvalidate_model(cls, data, 10, Random(1),pout)
 
-	evl = Evaluation(filtered)
-	evl.crossvalidate_model(cls, filtered, 10, Random(1),pout)
-
-	#print(pout.buffer_content())
+	print(pout.buffer_content())
 
 	#print(evl.percent_correct)
 	#print(evl.summary())
-	result = evl.class_details()
-	print(result)
-	return result
+	print(evl.class_details())
+	return evl.class_details()
 
 def runLibLinear(file) :
 
@@ -70,13 +68,15 @@ def runLibLinear(file) :
 	m = load_model('model_')
 	p_label, p_acc, p_val = predict(y, x, m)
 	ACC, MSE, SCC = evaluations(y, p_label)
-	result = "%s %s %s" % (ACC, MSE, SCC)
-	return result
+
+def changeFile(file,bound) :
+	pass
 
 def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.csv'  bound = "%d-%d" % (1,3)
 
 	result = ""
 	try :
+		jvm.start()
 		print('BAYES')
 		resB = runBayes(fileG, bound)
 
@@ -86,9 +86,10 @@ def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.
 		print('LIBLINEAR')
 		resL = runLibLinear('test.train') #TODO
 
-		result = "BAYES %s  SMO  %s  LIBLINEAR %s" % (resB, resS, resL)
+		result = "BAYES \n %s \n SMO \n %s \n LibLinear \n %s" % (resB, resS, resL)
 
 	except Exception, e:
 		print (traceback.format_exc())
 	finally :
+		jvm.stop()
 		return result

@@ -1,4 +1,6 @@
 import csv
+from dataTreatment import select_activity
+from dataTreatment import select_default
 from importNorine import *
 
 def create_csv(mylist,filename) :
@@ -53,7 +55,7 @@ def read_cluster(myfile) :
 	#print liste
 	return liste
 
-def load_peptides (peptidesFile) :
+def load_peptides (peptidesFile, default, selectActivity) :
 	'''
 		load the base bdd or Norine by default
 	'''
@@ -62,6 +64,10 @@ def load_peptides (peptidesFile) :
 	else :
 		try :
 			list_init = read_csv(peptidesFile) # ajout 1 activite, surfactant
+			if default :
+				list_init = select_default(list_init)
+			if selectActivity > 0 :
+				list_init = select_activity(list_init, selectActivity)
 		except IOError :
 			print "fichier %s inexistant" % (peptidesFile)
 			sys.exit(2)
