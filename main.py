@@ -5,6 +5,8 @@ from learningMethods import *
 from sys import argv
 import getopt
 
+import weka.core.jvm as jvm
+
 def usage() :
 	
 	print ""
@@ -111,6 +113,7 @@ if  __name__ == "__main__" :
 	################################################################
 	#####################	LEARNING METHOD  #######################
 	################################################################
+	jvm.start()
 	print "Choose what you want to do :" 
 	usage()
 	rep = raw_input('> ')
@@ -124,6 +127,7 @@ if  __name__ == "__main__" :
 			for w in words[1:] : # if several learning todo
 				bound = bounding(w, bound_init, bound_mono, bound_clust) # info useless
 				l = learning(fileG, bound) 
+				print l
 				dic[w] = l # map [ key = digit, value = learning result]
 		
 		elif (words[0] == 'compare') :
@@ -131,8 +135,15 @@ if  __name__ == "__main__" :
 
 		elif (words[0] == 'show') :
 			print 'show'
-			for w in words[1:] :
-				print dict[w]
+			for k,v in dic.itmes() :
+				print ("The search {} give us : {}".format(k,v))
+
+		elif (words[0] == 'stock'):
+			if len(words) < 2 :
+				print 'usage : stock outputFile'
+			else :
+				stock_csv(words[1], dic)
+				print "%s created" % (words[1])
 
 		elif (words[0] == 'help') :
 			usage()
@@ -140,6 +151,7 @@ if  __name__ == "__main__" :
 			print "error try again" 
 		rep = raw_input('> ')
 	print "program ending"
+	jvm.stop()
 	exit()
 	
 

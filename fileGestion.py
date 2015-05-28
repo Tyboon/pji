@@ -18,6 +18,15 @@ def create_csv(mylist,filename) :
 	finally :
 		csv_file.close()
 
+def stock_csv(filename, dic) :
+	'''
+	Create csv from a dictionnary of LM
+	'''
+	file_ = open(filename, "w")
+	for k in dic.keys() :
+		file_.write(dic[k])
+	file_close()
+
 
 def read_csv(filename) :
 	'''
@@ -95,7 +104,7 @@ def load_clusters (clustersFile) :
 		list_clusters = read_cluster('data/mono_cluster.csv')
 	else :
 		try :
-			list_monomers = read_cluster(clustersFile)
+			list_clusters = read_cluster(clustersFile)
 		except IOError :
 			print "file %s doesn't exist" % (clustersFile)
 			sys.exit(2)
