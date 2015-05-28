@@ -27,7 +27,7 @@ def usage() :
 	print ""
 	
 
-def main(argv) :
+def start(argv) :
 	peptidesFile = 'NORINE'
 	monomersFile = 'NORINE'
 	clustersFile = 'NORINE'
@@ -60,7 +60,7 @@ def main(argv) :
 
 if  __name__ == "__main__" :
 	##################### ANALYSE ARGUMENTS #######################
-	peptidesFile, monomersFile, clustersFile, default, selectActivity = main(argv[1:])
+	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
 
 	print peptidesFile, monomersFile, clustersFile, default, selectActivity
 
@@ -113,12 +113,12 @@ if  __name__ == "__main__" :
 	################################################################
 	#####################	LEARNING METHOD  #######################
 	################################################################
-	jvm.start()
 	print "Choose what you want to do :" 
 	usage()
 	rep = raw_input('> ')
 	dic = dict()
 
+	jvm.start()
 	while ( rep != 'quit' ) :
 		words = rep.split(' ')
 		
@@ -127,7 +127,6 @@ if  __name__ == "__main__" :
 			for w in words[1:] : # if several learning todo
 				bound = bounding(w, bound_init, bound_mono, bound_clust) # info useless
 				l = learning(fileG, bound) 
-				print l
 				dic[w] = l # map [ key = digit, value = learning result]
 		
 		elif (words[0] == 'compare') :
@@ -135,7 +134,7 @@ if  __name__ == "__main__" :
 
 		elif (words[0] == 'show') :
 			print 'show'
-			for k,v in dic.itmes() :
+			for k, v in dic.items() :
 				print ("The search {} give us : {}".format(k,v))
 
 		elif (words[0] == 'stock'):
@@ -154,9 +153,3 @@ if  __name__ == "__main__" :
 	jvm.stop()
 	exit()
 	
-
-	################################################################
-	#####################	COMPARE RESULTS  #######################
-	################################################################
-
-

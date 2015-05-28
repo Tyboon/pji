@@ -27,13 +27,12 @@ def runBayes(file,bound) :
 	evl.crossvalidate_model(cls, filtered, 10, Random(1))
 
 	print(evl.percent_correct)
-	print(evl.summary())
+	#print(evl.summary())
 	result = evl.class_details()
 	print(result)
 	return result
 	
 def runSMO(file,bound) :
-
 	loader = Loader(classname="weka.core.converters.CSVLoader")
 	data = loader.load_file(file)
 	data.class_is_first()
@@ -48,34 +47,28 @@ def runSMO(file,bound) :
 	remove.inputformat(data)
 	filtered = remove.filter(data)
 
-	evl.Evaluation(filtered)
+	evl = Evaluation(filtered)
 	evl.crossvalidate_model(cls, filtered, 10, Random(1), pout)
+
 	#print(pout.buffer_content())
 
-	#print(evl.percent_correct)
+	print(evl.percent_correct)
 	#print(evl.summary())
 	
 	result = evl.class_details()
 	print(result)
-	print('SMO ended')
 	return result
 
 def runLibLinear(file) :
 
-	y,x  = svm_read_problem(file)
-	prob = problem(y,x)
-	param = parameter('-c 4 -B 1')
-
-	m = train(prob, param)
-	save_model('model_', m)
 	m = load_model('model_')
 	p_label, p_acc, p_val = predict(y, x, m)
 	ACC, MSE, SCC = evaluations(y, p_label)
+	result = "%s %s %s" % (ACC, MSE, SCC)
+	return result
 
-def changeFile(file,bound) :
-	pass
 
-def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.csv'  bound = "%d-%d" % (1,3)
+def learning(fileG, bound = "%d-%d" % (2,4)) :
 
 	result = ""
 	try :
@@ -86,10 +79,9 @@ def learning(fileG, bound = "%d-%d" % (1,3)) : #fileG = 'file/peptides_monomers.
 		resS = runSMO(fileG, bound)	
 	
 		print('LIBLINEAR')
-		resL = runLibLinear('test.train') #TODO
+		#resL = runLibLinear('test.train') #TODO
 
-		result = "BAYES  %s SMO %s LibLinear %s" % (resB, resS, resL)
-
+		result = "BAYES  %s SMO %s LibLinear " % (resB, resS)
 	except Exception, e:
 		print (traceback.format_exc())
 	finally :
