@@ -149,7 +149,7 @@ def bounding (digit,bound_init, bound_mono, bound_clust) :
 	elif digit == 'lc' or digit == 'cl' :
 		bound = "2-%d" % (bound_mono)
 	else : # mcl
-		bound = "-%d" % (bound_init)
+		bound = "2-%d" % (bound_init)
 	return bound
 
 
