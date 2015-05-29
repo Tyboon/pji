@@ -1,5 +1,4 @@
 \documentclass[a4paper,10pt]{report}
-\usepackage[francais]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{array}
@@ -7,6 +6,7 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{color}
+\usepackage{hyperref}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -92,7 +92,7 @@
       C'est pourquoi, encadrée par Maude Pupin et Laurent Noé, j'ai travaillé sur le thème de : \textit{Rechercher les meilleurs critères pour la prediction de l'activité d'un peptide}.
       Ceci rejoint une étude menée auparavant par l'équipe, intitulée \textit{A new fingerprint to predict nonribosomal peptides acitvity}, qui étudie la décomposition d'un NRP en monomères (sous-ensemble) pour prédire son activité.
      
-      Nous allons donc étudier les peptides de la base Norine et d'essayer de trouver de nouveaux critères pour améliorer la prédiction de l'activité d'un peptide. De plus, une automatisation du programme permettra aux personnes le souhaitant d'utiliser leur base d'apprentissage.
+      Nous allons donc étudier les peptides de la base Norine et essayer de trouver de nouveaux critères pour améliorer la prédiction de l'activité d'un peptide. De plus, une automatisation du programme permettra aux personnes le souhaitant d'utiliser leur base d'apprentissage.
       ~~\\Le but est de pouvoir par la suite prédire l'activité d'un peptide inconnu, avec pour information sa composition en monomères et sa structure. Et d'améliorer potentiellement les résulats par rapport à la précédente recherche.
      
      
@@ -120,12 +120,7 @@
 	
 	
     
-            
-      …
-      Dans la figure~\ref{image1} page~\pageref{image1}, on peut voir .... !!! 
- 
-      
-	~\\ 
+ 	~\\ 
 	Les bactéries et les champignons comportent des peptides synthétisés par une voie indépendante du ribosome. 
 	Ils ne suivent pas la voie classique allant de la transcription de l'ADN, à la traduction de l'ARN en peptide sur le ribosome.
 	Ils utilisent une voie alternative utilisant des NRPSs (ou non-ribosomal peptide synthetase) qui sont des complexes multi-enzimatiques organisés en module.
@@ -135,7 +130,7 @@
 
       \subsection{Monomère}
 	
-	~~\\Pour mieux comprendre les NRPs, une décomposition en monomères a été mise en place. 
+	~~\\Pour mieux comprendre les NRPs, une décomposition en monomères a été mise en place. (cf figure 1.1) 
 	Comme dit auparavant, un NRP est un assemblage d'acides aminés mais aussi de lipides et glucides, que nous  appelons monomères (les unités de base) . 
 	Un NRP a la spécificité d'être de petite taille (2 à 50 monomères) et d'être fort diversifié car il existe plus de 500 monomères comptant les 21 acides aminés et tous leur(s) dérivés.
 	Ainsi, on peut décrire un NRP par l'ensemble des monomères qui le composent et en tirer des informations. 
@@ -165,7 +160,7 @@
 	Le NRP ne contient pas seulement des liaisons peptidiques, mais également des liaisons non-peptidiques. Cela engendre donc l'apparition possible de structures cycliques (partielles ou non) et de ramifications sur la structure primaire de la molécule. 
 	
 	Grâce à la structure du NRP (graphe), on peut décrire les liens entre les monomères et analyser l'effet qu'ils ont sur l'activité du peptide.
-	C'est pourquoi, dans le projet, l'arité de chaque monomère, c'est-à-dire le nombre de liaisons que possède un monomère, est étudier.
+	C'est pourquoi, dans le projet, l'arité de chaque monomère, c'est-à-dire le nombre de liaisons que possède un monomère, est étudié.
 	
 	On peut décrire cette structure par une description linéaire qui liste les monomères dans un ordre, permettant d'identifier un monomère par sa position, et à la suite, à l'aide de symboles '@', se trouve les liens qui existent entre eux
 	
@@ -208,7 +203,7 @@
 	 \begin{minipage}[c]{\textwidth}
 	    \centering
 	     \includegraphics[scale =0.7]{image/Norine.png}
-	      \caption{Capture de la descritpion d'un peptide sur Norine}
+	      \caption{Capture de la description d'un peptide sur Norine}
 	 \end{minipage}
 	 
 	  \paragraph{}
@@ -216,13 +211,14 @@
 	  \\Norine (NOnRibosomal peptides with INE) est une plateforme contenant la première base de données entièrement dédiée aux peptides non ribosomiques, elle répertorie 1174 NRPs et pas moins de 528 monomères. Elle fournit aussi les outils permettant le traitement de ces NRPs. 
 	  Le site est organisé en plusieurs parties, une partie 'peptide' présente pour un peptide donné son nom, ses synonymes, les activités biologiques, sa formule moléculaire, sa formule monomérique , etc...; une autre partie 'structure' où l'on retrouve les peptides classés par type (cyclique, linéaire, double cyclique, ...), qui donne la structure monomérique des peptides.
 	  On peut également trouver la description des monomères. 
+	  Voici ci-dessus le résultat rendu pour une recherche sur la vancomycin.
 	
 	
 	
       \section{Problématique}
 	
 	\paragraph{}
-	  Les NRPS , bien que fort intéressants, sont difficile à produire et à analyser. On ne peut donc pas utiliser les méthodes habituelle d'analyse de forme 3D ou de leur reaction physico-chimique.
+	  Les NRPSs , bien que fort intéressants, sont difficile à produire et à analyser. On ne peut donc pas utiliser les méthodes habituelles d'analyse de forme 3D ou de leur reaction physico-chimique.
 	  C'est pourquoi le but de l'étude précédente est de donner des modèles de prediction informatique permettant de prédire l'activité d'un peptide.
 	  Ces modèles se basaient uniquement sur l'empreinte monomérique du peptide, c'est-à-dire un comptage de chaque monomère pour voir lesquels sont présents et en déterminer d'après l'apprentissage quel 'schéma' ils suivent.
 
@@ -241,7 +237,8 @@
 	    \caption{Schéma des étapes à suivre}
 	  \end{figure}
 	
-	 
+	  \\ Ce schéma énonce le principe du projet, tout d'abord nous prélevons les données de Norine ou nous joignons des fichiers de données, puis nous créons nos empreintes.  
+	  Ces empreintes sont ensuite analysées par des méthodes d'apprentissage, nous donnant ainsi de métriques de qualité que nous comparons pour voir quelles empreintes apportent de bonnes connaissances.
 	  
    
   \chapter{Mise en oeuvre}
@@ -287,16 +284,9 @@
 	    
 	   \begin{figure}[h]
 	    \includegraphics[scale = 0.5]{image/vanco_monoB.jpeg}
+	    \caption{Schéma montrant la création des empreintes en monomères}
 	    \end{figure}
 	
-	  \begin{flushleft}
-	  \begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
-	    Asn & bOH-Cl-Tyr & NMe-Leu & Hpg & ..... & D-Glc & Van & Dhpg  \\\hline
-	    1 & 2 & 1 & 2 & 0 ... 0 & 1 & 1 & 1 \\\hline
-	  \end{tabular}
-	  \captionof{table}{Représentation des liens entre les monomères composant la vancomycin}
-	  \label{table00}
-	 \end{flushleft}
 	    
 	\paragraph{Empreinte en cluster}
 	~\\
@@ -330,7 +320,7 @@
 	  Pour cela, nous avons utilisé des librairies python et une extension pour LibLinear qui n'est pas implémentée de base.
 	  
 	  ~\\Le Naïve Bayes repose sur le théorème de Bayes, il possède une phase d'entrainement et une phase de test.
-	  Puis l'on fait de l'apprentissage probabiliste sur l'ensemble des peptides, ainsi lorsque l'on teste à quelle activité appartient un nouveau peptide, on conserve la classe qui a la plus grande probabilité.  
+	  Puis, on fait de l'apprentissage probabiliste sur l'ensemble des peptides, ainsi lorsque l'on teste à quelle activité appartient un nouveau peptide, on conserve la classe qui a la plus grande probabilité.  
 	    
 	  Le SMO est une méthode d'apprentissage supervisé qui construit, au fur et à mesure de la lecture des données, une fonction objective via une descente de gradient.   
 	  LibLinear reste dans la même idée.
@@ -349,29 +339,37 @@
 	 \end{figure}
 	  
 	  ~\\
-	  Nous obtenons ainsi un ensemble de mesures de robustesse qu'il faut comparer pour voir quel critère ou quel combinaison de critère est la plus efficace pour obtenir des informations sur un peptide.
-	  Pour notre étude, nous utilisons la précision, la sensibilité, la F-measure et le ROC.
-	     
+	  Nous obtenons ainsi un ensemble de mesures de robustesse qu'il faut comparer pour voir quel critère ou quelel combinaison de critères est le/la plus efficace pour obtenir des informations sur un peptide.
+	  Pour notre étude, nous utilisons la précision, la sensibilité, l'acc, la F-measure et le ROC.
+	  
+	  \begin{figure}[!h]
+	    \begin{center}
+	      \leftskip -4cm
+	      \includegraphics[width=20cm]{image/measure.jpeg} \\
+	      \caption{Tableau résumant les différentes mesures}
+	    \end{center}
+	  \end{figure}
+	  
 	     \paragraph{Precision}\\
 	      
 	     ~\\ 
-	     La précision se calcule en divisant le nombre d'éléments bien classés par le nombre d'éléments en tout.
-	     Dans notre cas, elle se calcule en divisant le nombre de peptides bien classés par le nombre de peptides traités.
+	     Aussi appelée PPV (Positive Predictive Value), la précision se calcule en divisant le nombre d'éléments bien rangés dans une classe par le nombre d'éléments rangés dans cette classe.
+	     Dans notre cas, elle se calcule en divisant le nombre de peptides bien classés pour une activité par le nombre de peptides classés pour cette activité.
 	     Elle est la probabilité que les données soient bien triées, une mesure de la qualité de la classification. 
 	     Donc un taux élevé est attendu dans la recherche.
 	     \[ 
-	      précision = \frac{ elements correctement attribues à la classe i }{ nombre d'elements attribues a la classe i }
+	      précision = \frac{ TP }{ TP + FP }
 	     \]
 
 	     
 	     \paragraph{Sensibilité}
 	     
 	     ~\\
-	     La sensibilité se calcule en divisant le nombre d'éléments bien classés pour une classe donnée sur le nombre de données de cette classe. 
-	     Cela représente le nombre de peptides bien annotés pour une activité par rapport au nombre de peptides rangés dans cette activité.
+	     La sensibilité, que l'on appelle aussi recall ou TPR(True Positive Rate) se calcule en divisant le nombre d'éléments bien classés par le test pour une classe donnée sur le nombre de données qui devraient être dans cette classe. 
+	     Cela représente le nombre de peptides bien annotés pour une activité par rapport au nombre de peptides possédant cette activité.
 	     Elle prend une valeur entre 0 et 1, plus elle tend vers 1 plus la classification est bonne.
 	     \[
-	      sensibilite = \frac{ elements correctement attribues à la classe i }{ nombre d'elements appartenant a la classe i }
+	      sensibilite = \frac{ TP }{ TP + FN }
 	     \]
 
 	     \paragraph{F-measure}\\
@@ -382,9 +380,18 @@
 	     \]
 	     \paragraph{AUC ou ROC}\\
 		
-	     ~\\La courbe ROC est la courbe représentant les faux-positifs (valeur rangée dans une classe alors qu'elle n'en fait pas partie) en fonction des vrai positifs (valeur bien rangée).
+	     ~\\La courbe ROC est la courbe représentant le TPR (True Positif Rate) en fonction du FPR (False Positif Rate), elle permet de visualiser les données bien classées par rapport aux données mal classées.
+	     L'AUC, signifiant Area Under Curve, est égal à la probabilité qu'une donnée choisie au hasard ait plus de chance d'être classée positive que négative.
 	     
-	 
+	     \paragraph{ACC}
+	     
+	     ~\\Abbréviation pour Accuracy, elle permet de connaitre le ratio de données bien classées sur l'ensemble des données.
+	     C'est le nombre de peptides bien classés sur le nombre total des peptides.
+	     \[
+	      ACC = \frac{ TP + TN }{ P + N }
+	     \]
+	     
+	     
    \chapter{Résultats}
       
       \begin{figure}[!h]
@@ -393,14 +400,10 @@
 	      \caption{Schéma de l'avancée}
 	    \end{center}
 	 \end{figure}
-
-	  
-      \section{Résultats obtenus}
-	 
-	  
-	  Faire ces tableaux pour les meilleurs résultats
-	  Puis comparatif avec graphes ? 
-	  \paragraph{} [ht]
+      
+       \section{Comparaison avec les résultats précédents}
+      
+	  \paragraph{} 
 	   \begin{flushleft}
 	    \leftskip -3cm
 	    \begin{tabular}{|c||c|c|c|c||c|c|c|c||c|c|c|c|}\hline
@@ -418,7 +421,7 @@
 	  \end{flushleft}
 	  
 	  
-	  \begin{flushleft}
+	   \begin{flushleft}
 	    \leftskip -3cm
 	    \begin{tabular}{|c||c|c|c|c||c|c|c|c||c|c|c|c|}\hline
 	      {Activite} & \multicolumn{4}{c||}{Naive Bayes} & \multicolumn{4}{c||}{LibLinear} & \multicolumn{4}{c|}{SMO} \\\cline{2-13}
@@ -434,6 +437,16 @@
 	     \label{table 2}
 	  \end{flushleft}
 	  
+	 \\
+	 En partant des mêmes données que l'étude précédente, c'est-à-dire une seule activité en omettant les surfactants et avec un seuil d'activité à 20, nous pouvons voir que les résultats obtenus sur les empreintes monomériques sont similaires.
+	 Nous sommes donc partis pour notre étude sur les mêmes bases que la précédente.
+	 
+	 
+      \section{Résultats obtenus}
+	 
+	  Voici un résumé des meilleurs résultats obtenus lors de la recherche, les empreintes de clusters et des liens seuls n'étant pas représentatifs, ils ne sont pas présentés dans le document.
+	  Ayant rencontré des problèmes dans le lancement de LibLinear sur les données, les résultats ne sont pas présentés non plus.
+	
 	  \begin{flushleft}
 	    \leftskip -3cm
 	    \begin{tabular}{|c||c|c|c|c||c|c|c|c||c|c|c|c|}\hline
@@ -450,6 +463,8 @@
 	     \label{table 3}
 	  \end{flushleft}
 	  
+	  \\ Si nous comparons les résultats de l'empreinte monomères-liens aux résultats précédents, le SMO nous montre des résultats plus élevés. 
+	  D'après cela, l'association monomères-liens nous apporterait plus d'information pour la détermination de l'activité d'un peptide.
 
 	   \begin{flushleft}
 	    \leftskip -3cm
@@ -466,7 +481,9 @@
 	     \captionof{table}{Mesures de robustesse de l'apprentissage sur l'empreinte de monomères-clusters}
 	     \label{table 4}
 	  \end{flushleft}
-	  	  
+	  	
+	  \\ En ce qui concerne l'empreinte monomères-clusters, l'information est intéressante pour les deux premières classes qui sont les plus représentatives des données, mais nous apporte moins d'information par rapport aux précédents résultats sur les autres activités.
+	  Donc l'association monomères-clusters n'est pas vraiment intéressante pour la prédiction.
 	  	  
 	  \begin{flushleft}
 	    \leftskip -3cm
@@ -483,7 +500,8 @@
 	     \captionof{table}{Mesures de robustesse de l'apprentissage sur l'empreinte de clusters-liens}
 	     \label{table 5}
 	  \end{flushleft}
-	  
+	   
+	   \\ Il en va de même pour l'empreinte clusters-liens, on peut voir que l'apport d'information est plus faible par rapport aux précédentes empreintes, elle n'est donc pas à retenir. 
 	  
 	   \begin{flushleft}
 	    \leftskip -3cm
@@ -501,52 +519,91 @@
 	     \label{table 6}
 	  \end{flushleft}
 	  
+	  \\ Pour finir, l'empreinte comprenant l'ensemble des données apporte très peu d'information supplémentaire, cela doit être dû au peu d'information qu'apporte l'empreinte en cluster.
 
-
 	  
 	  
-	  Conclusion : quelles sont les meilleures combinaisons ... 
+	  \\ Par conséquent, l'étude a montré que l'empreinte monomères-liens pourrait être un bon critère pour la prédiction de l'activité d'un peptide.
+	     Pour s'en assurer, il faudra par la suite obtenir les résultats de la méthode LibLinear.
+	     
       
-      \section{Comparaison avec les résultats précédents}
-      
-	  TODO tableau et/ou graphe comparatif
-	  
-	  Conclusion : Avons-nous avancé depuis l'étude précédente? Quelles sont les meilleurs critère ou combinaison de critères pour déterminer l'activité d'un peptide ? 
-    
+     
   \section*{Conclusion}
      
     \phantomsection
     \addcontentsline{toc}{section}{Conclusion}
     \newpage
 
-    Pour rappel, notre problématique était de chercher des meilleurs critères pour déterminer l'activité d'un peptide. 
-    A savoir que le programme est conçu pour que toutes personnes le souhaitant puisse faire l'apprentissage sur ses données.
-    
-    TODO après résultats
+    Pour rappel, notre problématique était de chercher de meilleurs critères pour déterminer l'activité d'un peptide. 
+    A savoir que le programme est conçu pour que toute personne le souhaitant puisse faire l'apprentissage sur ses propres données.
+
    
-    En comparant, les résulats de l'étude effectuée sur les NRPs de Norine quelques années auparavant et les résultats que nous avons obtenus en combinant différentes connaissances sur ces NRPs, nous avons trouver des combinaisons de critères nous permettant d'apprendre avec plus de certitudes l'activité d'un NRP. 
-    Pour connaitre l'activité d'un NRP avec une certitude de ... minimum, il faut combiner .... 
+    En comparant, les résulats de l'étude effectuée sur les NRPs de Norine quelques années auparavant et les résultats que nous avons obtenus en combinant différentes connaissances sur ces NRPs, nous avons trouvé des combinaisons de critères nous permettant d'apprendre avec plus de certitudes l'activité d'un NRP. 
+    Pour connaitre l'activité d'un NRP avec d'avantage de précision, il faut combiner l'empreinte en monomères et l'empreinte en liens.
     
-    Nous avons donc pu aller au bout de ce projet, en trouvant une combinaison meilleur, ne reste plus qu'à analyser de nouveau NRP pour, qui sait, trouver un nouvel antibiotique ...  
+    Pour pouvoir achever ce projet, il faudra obtenir les résultats de LibLinear, ceci sera fait lors de mon stage d'été avec, en parallèle, l'insertion de ce programme à Norine.
+    
+    
     \newpage
-    
-    \section*{Glossaire}
-    
-    \phantomsection
-    \addcontentsline{toc}{section}{Glossaire}
-    \newpage
-    
-   
-    \newpage
+
    
     \section*{Références}
      \end{itemize}
-      \bibliographystyle{plain}
-      \bibliography{biblio.bib}
+
+      \paragraph{}
+      \begin{description}
+       \item [Mesures de robustesse de Wikipédia :]
+	\url{https://en.wikipedia.org/wiki/Receiver_operating_characteristic}
+	
+	\item [Norine :] 
+	  \url{http://bioinfo.lifl.fr/norine/}
+	
+	\item [Maude Pupin :]
+	  \url {http://www.lifl.fr/~pupin/research.html}
+	 
+	\item [NaiveBayes :]
+	  \url {http://en.wikipedia.org/wiki/Naive_Bayes_classifier}\\
+	  \url {https://weka.wikispaces.com/Programmatic+Use}
+	
+	\item [SMO :] 
+	  \url{https://weka.wikispaces.com/Optimizing+parameters}
+	
+	\item [Liblinear :]
+	  \utl {http://www.csie.ntu.edu.tw/~cjlin/liblinear/}
+	  
+	\end{description}
+	\begin{thebibliography}{9}
       
-      \cite{Art1, Art2, Art3}
+	\bibitem{Art1}
+	  S. Caboche, V. Leclère, M. Pupin, G. Kucherov, and P. Jacques
+	  \emph{\LaTeX : Diversity of Monomers in Nonribosomal Peptides : towards the Prediction of Origin and Biological Activity}
+	  Journal of Bacteriology,
+	  2010
+	 
+	\bibitem{Art2}
+	  A. Abdo, S. Caboche, V. Leclère, P. Jacques, and M. Pupin
+	  \emph{\LaTeX :A new fingerprint to predict nonribosomal peptides activity }
+	  J COmput Aided Mol Des,
+	  2012
+	  
+	 \bibitem{Art3}
+	 S. Caboche, M. Pupin, V. Leclère, A. Fontaine, P. Jacques, and G. Kucherov
+	 \emph{\LaTeX : NORINE : a database of nonribosomal peptides}
+	 Nucleic Acids Resaerch,
+	 2007
+	 
+	 \bibitem{Art4}
+	 Yoann DUFRESN, Valerie LECLERE, Philippe JACQUES, Laurent NOE, Maude PUPIN
+	 \emph{\LaTeX : Non Ribosomal Peptides : A monomeric puzzle}
+	 Conférence JOBIM,
+	 2013
+     \end{thebibliography}
+     
+     
     \phantomsection
     \addcontentsline{toc}{section}{Annexe}
     \newpage
+
+    
 
   \end{document}          
