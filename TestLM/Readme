@@ -1,0 +1,9 @@
+19/06
+
+Entrée csv : traduite en 2 listes
+
+Classifiers : LinearSVC, GaussianNB, SMO à voir libsvm? 
+
+Sortie : Toutes les mesures de distances un unique fichier test et train ... 
+	Modifier pour avoir les résultats de la crossvalidation !! 
+	
