@@ -1,6 +1,6 @@
 from sklearn import datasets
 from sklearn.multiclass import OneVsRestClassifier
-from sklearn.svm import LinearSVC
+from sklearn.svm import LinearSVC, SVC
 from sklearn import metrics
 from sklearn.cross_validation import cross_val_score, KFold, train_test_split
 from sklearn.naive_bayes import GaussianNB
@@ -9,10 +9,10 @@ from sklearn.metrics import classification_report
 import csv_io
 import numpy as np
 
-def launch_linearSVC(file = 'test.csv') : 
-	X = csv_io.read_csv(file, label = 0)
 
-	Y = np.array([x[0] for x in X])
+def launch_linearSVC(file = 'test.csv', bound) : 
+
+	X,Y = load(file, bound)
 	Y, d = numerize(Y)
 	print('Y : ')
 	print Y
@@ -23,8 +23,25 @@ def launch_linearSVC(file = 'test.csv') :
 	print X
 
 	X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.7, random_state = 0)
-	clf = GaussianNB()
+	#clf = GaussianNB()
+	#clf = SVC(kernel = 'linear')
+	#regC = 1.0  # SVM regularization parameter
+	#clf = SVC(kernel='rbf', gamma=0.01, C=regC)
+	clf = LinearSVC(loss = 'l2')
+	#clf = OneVsRestClassifier(LinearSVC(random_state = 0))
 	clf.fit(X_train, Y_train)
+	report(clf, X_test, Y_test, d)
+
+
+def load(file, bound) :
+	'''
+	Voir le chargement selon les bornes ou non 
+	'''
+	X = csv_io.read_csv(file, label = 0)
+	Y = np.array([x[0] for x in X])
+	return X, Y
+
+def report(clf, X_test, Y_test, d) :
 	Y_pred = clf.predict(X_test)
 	
 	l_val = sorted(d.values())
