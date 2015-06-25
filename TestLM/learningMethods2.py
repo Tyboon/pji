@@ -10,7 +10,7 @@ import csv_io
 import numpy as np
 
 
-def launch_linearSVC(file = 'test.csv', bound) : 
+def launch_linearSVC(file, bound) : 
 
 	X,Y = load(file, bound)
 	Y, d = numerize(Y)
