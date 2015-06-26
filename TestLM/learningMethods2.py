@@ -2,7 +2,7 @@ from sklearn import datasets
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import LinearSVC, SVC
 from sklearn import metrics
-from sklearn.cross_validation import cross_val_score, KFold, train_test_split
+from sklearn.cross_validation import cross_val_score, KFold, train_test_split, StratifiedKFold
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import classification_report
 
@@ -12,13 +12,11 @@ import numpy as np
 
 def launch_linearSVC(file, bound) : 
 
-	X,Y = load(file, bound)
-	Y, d = numerize(Y)
+	X, Y, d = load(file, bound)
 	print('Y : ')
 	print Y
 	print d
 
-	X = np.array([x[3:] for x in X])
 	print('X : ')
 	print X
 
@@ -39,7 +37,20 @@ def load(file, bound) :
 	'''
 	X = csv_io.read_csv(file, label = 0)
 	Y = np.array([x[0] for x in X])
-	return X, Y
+	Y, d = numerize(Y)
+	X = np.array([x[3:] for x in X])
+	return X, Y, d
+
+def stratified_cv(X, y, clf_class, shuffle=True, n_folds=10, **kwargs):
+    stratified_k_fold = StratifiedKFold(y, n_folds=n_folds) #shuffle = shuffle ?
+    y_pred = y.copy()
+    for ii, jj in stratified_k_fold:
+        X_train, X_test = X[ii], X[jj]
+        y_train = y[ii]
+        clf = clf_class(**kwargs)
+        clf.fit(X_train,y_train)
+        y_pred[jj] = clf.predict(X_test)
+    return y_pred
 
 def report(clf, X_test, Y_test, d) :
 	Y_pred = clf.predict(X_test)
