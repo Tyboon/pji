@@ -75,11 +75,12 @@ def load_peptides (peptidesFile, default, selectActivity) :
 			list_init = read_csv(peptidesFile) # ajout 1 activite, surfactant
 			if default :
 				list_init = select_default(list_init)
-			if selectActivity > 0 :
-				list_init = select_activity(list_init, selectActivity)
 		except IOError :
 			print "fichier %s inexistant" % (peptidesFile)
 			sys.exit(2)
+	if selectActivity > 0 :
+		list_init = select_activity(list_init, selectActivity)
+
 	return list_init
 	
 def load_monomers (monomersFile) :

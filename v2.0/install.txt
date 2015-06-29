@@ -1,0 +1,29 @@
+###################################################################
+Emilie Allart 
+17/06/2015
+
+###########  Installation de sklearn  
+
+Suivre les instructions à l'adresse http://scikit-learn.org/stable/install.html
+
+Pour linux : 
+
+	sudo apt-get install build-essential python-dev python-setuptools \
+                     python-numpy python-scipy \
+                     libatlas-dev libatlas3gf-base
+
+	sudo update-alternatives --set libblas.so.3 \
+    /usr/lib/atlas-base/atlas/libblas.so.3
+	sudo update-alternatives --set liblapack.so.3 \
+    /usr/lib/atlas-base/atlas/liblapack.so.3
+
+	sudo apt-get install python-matplotlib
+
+	# VOir si util -> sudo apt-get install gcc scipy
+
+	pip install --user --install-option="--prefix=" -U scikit-learn
+
+	sudo apt-get install python-sklearn
+
+	PB install : 
+		sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose

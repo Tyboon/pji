@@ -1,11 +1,12 @@
 from dataTreatment import *
 from fileGestion import *
-from learningMethods import * 
+#from learningMethods import * 
+from TestLM.learningMethods2 import *
 
 from sys import argv
 import getopt
 
-import weka.core.jvm as jvm
+#import weka.core.jvm as jvm
 
 def usage() :
 	
@@ -59,6 +60,7 @@ def start(argv) :
 	return peptidesFile, monomersFile, clustersFile, default, selectActivity
 
 if  __name__ == "__main__" :
+	'''
 	##################### ANALYSE ARGUMENTS #######################
 	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
 
@@ -113,6 +115,7 @@ if  __name__ == "__main__" :
 	################################################################
 	#####################	LEARNING METHOD  #######################
 	################################################################
+	
 	print "Choose what you want to do :" 
 	usage()
 	rep = raw_input('> ')
@@ -152,4 +155,13 @@ if  __name__ == "__main__" :
 	print "program ending"
 	jvm.stop()
 	exit()
+
+	'''
+	peptides_link = read_csv('file/peptides_all.csv')	
+	Y = np.array([x[0] for x in peptides_link])
+	Y = Y[1:] # delete header
+	X = peptides_link[1:] # delete header
+	X = np.array([x[4:] for x in X], dtype=float)
+	Y, d = numerize(Y)
+	reportBis(X, Y, d)
 	

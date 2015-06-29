@@ -19,16 +19,16 @@ def launch_linearSVC(file, bound) :
 
 	print('X : ')
 	print X
-
-	X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.7, random_state = 0)
+	reportBis(X, Y, d)
+	#X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.7, random_state = 0)
 	#clf = GaussianNB()
 	#clf = SVC(kernel = 'linear')
 	#regC = 1.0  # SVM regularization parameter
 	#clf = SVC(kernel='rbf', gamma=0.01, C=regC)
-	clf = LinearSVC(loss = 'l2')
+	#clf = LinearSVC(loss = 'l2')
 	#clf = OneVsRestClassifier(LinearSVC(random_state = 0))
-	clf.fit(X_train, Y_train)
-	report(clf, X_test, Y_test, d)
+	#clf.fit(X_train, Y_train)
+
 
 
 def load(file, bound) :
@@ -38,7 +38,7 @@ def load(file, bound) :
 	X = csv_io.read_csv(file, label = 0)
 	Y = np.array([x[0] for x in X])
 	Y, d = numerize(Y)
-	X = np.array([x[3:] for x in X])
+	X = np.array([x[1:] for x in X])
 	return X, Y, d
 
 def stratified_cv(X, y, clf_class, shuffle=True, n_folds=10, **kwargs):
@@ -63,6 +63,18 @@ def report(clf, X_test, Y_test, d) :
 	print l_key 
 	print l_val
 	print classification_report(Y_test, Y_pred, target_names = l_key)
+
+def reportBis(X, Y, d) :
+        l_val = sorted(d.values())
+        l_key = []
+        for v in l_val :
+                l_key.append(d.keys()[d.values().index(v)])
+	print 'SMO : '
+	print(metrics.classification_report(Y, stratified_cv(X,Y,SVC,kernel = 'linear'), target_names = l_key))	
+	print 'LibLinear : '
+	print(metrics.classification_report(Y, stratified_cv(X,Y,LinearSVC,loss ='l2'), target_names = l_key))
+	print 'Naive Bayes : '
+	print(metrics.classification_report(Y, stratified_cv(X,Y,GaussianNB), target_names = l_key))
 '''
 	#expected = OneVsRestClassifier(LinearSVC(random_state = 0)).fit(X,Y).predict(X)
 
