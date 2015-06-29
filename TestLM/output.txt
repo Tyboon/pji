@@ -1,31 +1,39 @@
-Sortie du programme actuel ... 
 
-TODO : CrossValidation pour le moment juste test sur 
-python LearningMethods2.py 
-Y : 
-[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 2 2 2
- 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
- 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3
- 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]
-{'siderophore': 3, 'antibiotic': 0, 'immunomodulating': 1, 'toxin': 2}
-X : 
-[[ 0.  0.  0. ...,  0.  0.  0.]
- [ 0.  0.  0. ...,  0.  0.  0.]
- [ 0.  0.  0. ...,  0.  0.  0.]
- ..., 
- [ 0.  0.  0. ...,  0.  0.  0.]
- [ 0.  0.  0. ...,  0.  0.  0.]
- [ 0.  0.  0. ...,  0.  0.  0.]]
-['antibiotic', 'immunomodulating', 'toxin', 'siderophore']
-[0, 1, 2, 3]
-/usr/lib/python2.7/dist-packages/sklearn/metrics/metrics.py:1905: UserWarning: The sum of true positives and false positives are equal to zero for some labels. Precision is ill defined for those labels [1]. The precision and recall are equal to zero for some labels. fbeta_score is ill defined for those labels [1]. 
-  average=None)
-                  precision    recall  f1-score   support
+###################################################################
+############### Sortie au 29 juin #################################
 
-      antibiotic       1.00      0.91      0.95        23
-immunomodulating       0.00      0.00      0.00         3
-           toxin       0.94      1.00      0.97        45
-     siderophore       0.93      1.00      0.96        25
+Traitement des données avec seuil à 20 et empreinte cluster-monomère-lien
 
-     avg / total       0.92      0.95      0.93        96
+SMO : 
+                    precision    recall  f1-score   support
+
+        antibiotic       0.95      0.97      0.96       481
+             toxin       0.89      0.90      0.90       147
+       siderophore       1.00      0.97      0.98        90
+         antitumor       0.74      0.52      0.61        33
+protease inhibitor       0.95      0.92      0.93        38
+
+       avg / total       0.94      0.94      0.94       789
+
+LibLinear : 
+                    precision    recall  f1-score   support
+
+        antibiotic       0.97      0.97      0.97       481
+             toxin       0.88      0.92      0.90       147
+       siderophore       1.00      0.97      0.98        90
+         antitumor       0.67      0.55      0.60        33
+protease inhibitor       0.87      0.89      0.88        38
+
+       avg / total       0.94      0.94      0.94       789
+
+Naive Bayes : 
+                    precision    recall  f1-score   support
+
+        antibiotic       0.98      0.81      0.88       481
+             toxin       0.77      0.84      0.80       147
+       siderophore       0.99      0.96      0.97        90
+         antitumor       0.15      0.36      0.21        33
+protease inhibitor       0.52      0.92      0.67        38
+
+       avg / total       0.89      0.82      0.84       789
 
