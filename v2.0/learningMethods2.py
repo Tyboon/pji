@@ -71,10 +71,14 @@ def reportBis(X, Y, d) :
                 l_key.append(d.keys()[d.values().index(v)])
 	print 'SMO : '
 	print(metrics.classification_report(Y, stratified_cv(X,Y,SVC,kernel = 'linear'), target_names = l_key))	
+	print(cross_val_score(SVC(kernel='linear'), X, Y, scoring='roc_auc', cv = StratifiedKFold(Y, n_folds=10) ))
 	print 'LibLinear : '
 	print(metrics.classification_report(Y, stratified_cv(X,Y,LinearSVC,loss ='l2'), target_names = l_key))
+	print(cross_val_score(LinearSVC(loss='l2'), X, Y, scoring='roc_auc', cv = StratifiedKFold(Y, n_folds=10)))
 	print 'Naive Bayes : '
 	print(metrics.classification_report(Y, stratified_cv(X,Y,GaussianNB), target_names = l_key))
+	print(cross_val_score(GaussianNB(), X, Y, scoring='roc_auc', cv = StratifiedKFold(Y, n_folds=10)))
+
 '''
 	#expected = OneVsRestClassifier(LinearSVC(random_state = 0)).fit(X,Y).predict(X)
 
