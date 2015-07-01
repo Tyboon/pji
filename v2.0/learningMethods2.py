@@ -74,7 +74,7 @@ def reportBis(X, Y, d) :
 	print(metrics.classification_report(Y, stratified_cv(X,Y,SVC,kernel = 'linear'), target_names = l_key))	
 	scores = cross_val_score(SVC(kernel='linear'), X, Y, cv = 10 )
 	print("Accuracy : %0.3f " % (scores.mean()))
-	metrics.roc_auc_score(Y, Y, average=None)
+	#metrics.roc_auc_score(Y, Y, average=None)
 	##### LIBLIN #####
 	print 'LibLinear : '
 	print(metrics.classification_report(Y, stratified_cv(X,Y,LinearSVC,loss ='l2'), target_names = l_key))

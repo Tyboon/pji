@@ -60,7 +60,6 @@ def start(argv) :
 	return peptidesFile, monomersFile, clustersFile, default, selectActivity
 
 if  __name__ == "__main__" :
-	'''
 	##################### ANALYSE ARGUMENTS #######################
 	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
 
@@ -156,12 +155,3 @@ if  __name__ == "__main__" :
 	jvm.stop()
 	exit()
 
-	'''
-	peptides_link = read_csv('file/peptides_all.csv')	
-	Y = np.array([x[0] for x in peptides_link])
-	Y = Y[1:] # delete header
-	X = peptides_link[1:] # delete header
-	X = np.array([x[4:] for x in X], dtype=float)
-	Y, d = numerize(Y)
-	reportBis(X, Y, d)
-	

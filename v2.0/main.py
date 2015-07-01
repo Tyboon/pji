@@ -59,12 +59,80 @@ def start(argv) :
 	return peptidesFile, monomersFile, clustersFile, default, selectActivity
 
 if  __name__ == "__main__" :
+	'''		
+	##################### ANALYSE ARGUMENTS #######################
+	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
 
+	print peptidesFile, monomersFile, clustersFile, default, selectActivity
+
+	##################### LOADING PEPTIDES #########################
+	print "Hi, let's start with %s base" % (peptidesFile)
+
+	list_init = load_peptides(peptidesFile,default, selectActivity)  # charge soit norine soit le csv bdd, option par defaut et seuil activite
+	bound_init = len(list_init[0])
+
+	print "peptides loaded"
+
+	#################### LOADING MONOMERS #########################
+	print "Now, loading monomers from %s" % (monomersFile)
+
+	list_monomers = load_monomers(monomersFile) # charge soit les monomeres de norine soit du csv si precise
+
+	print "monomers loaded"
+
+	#################### LOADING CLUSTERS ##########################
+	print "Now loading clusters from %s" % (clustersFile)
+
+	list_clusters = load_clusters(clustersFile)
+	
+	print "clusters loaded"
+
+	################################################################
+	######  GENERATE FULL LIST PEPTIDES (MONO, LINK, CLUST)	#######
+	################################################################
+	
+	print "create monomers count"
+	peptides_mono = add_cpt(list_init, list_monomers)
+	bound_mono = len(peptides_mono[0])
+
+	print "create clusters count"
+	peptides_clust = add_cpt_clusters(peptides_mono, list_clusters)
+	bound_clust = len(peptides_clust[0])
+
+	print "create links count"
+	peptides_link = add_cpt_link(peptides_clust,5)
+	bound_links = len(peptides_link[0])
+
+	fileG = "../file/peptides_all.csv"
+
+	create_csv(peptides_link, fileG)
+
+	print "Data ready to be analyse" 
+	
+	print bound_init, bound_mono, bound_clust, bound_links
+	
+	print list_init[0]
+	print peptides_mono[0]
+	print peptides_clust[0]
+	print peptides_link[0]
+	'''
+	
 	peptides_link = read_csv('../file/peptides_all.csv')	
 	Y = np.array([x[0] for x in peptides_link])
 	Y = Y[1:] # delete header
+	#print X[0][3]
+	#print X[0][532]
+	#print X[0][537]
+	#print X[0][541]
+	
 	X = peptides_link[1:] # delete header
-	X = np.array([x[4:] for x in X], dtype=float)
+	#X = np.array([x[4:] for x in X], dtype=float)
 	Y, d = numerize(Y)
-	reportBis(X, Y, d)
+	#reportBis(X, Y, d)
+	
+	XM = np.array([x[4:532] for x in X], dtype=float)
+	reportBis(XM,Y,d)
+	#X_MC = np.array([x[4:537] for x in X], dtype=float)
+	#X_ML = np.array([x[4:532]+x[537:] for x in X], dtype=float)
+	#reportBis(X_MC, Y, d)	
 	

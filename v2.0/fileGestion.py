@@ -102,7 +102,7 @@ def load_clusters (clustersFile) :
 		load clusters from clustersFile or data/mono_cluster.csv if it's not precised
 	'''
 	if clustersFile == "NORINE" :
-		list_clusters = read_cluster('data/mono_cluster.csv')
+		list_clusters = read_cluster('../data/mono_cluster.csv')
 	else :
 		try :
 			list_clusters = read_cluster(clustersFile)
