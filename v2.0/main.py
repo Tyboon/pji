@@ -131,8 +131,10 @@ if  __name__ == "__main__" :
 	#reportBis(X, Y, d)
 	
 	XM = np.array([x[4:532] for x in X], dtype=float)
-	reportBis(XM,Y,d)
-	#X_MC = np.array([x[4:537] for x in X], dtype=float)
-	#X_ML = np.array([x[4:532]+x[537:] for x in X], dtype=float)
-	#reportBis(X_MC, Y, d)	
+	X_MC = np.array([x[4:537] for x in X], dtype=float)
+	X_ML = np.array([x[4:532]+x[537:] for x in X], dtype=float)
+	#reportBis(XM,Y,d)
+	reportBis(X_MC, Y, d)
 	
+	reportBis(X_ML, Y, d)
+

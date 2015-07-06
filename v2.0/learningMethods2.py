@@ -3,7 +3,7 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import LinearSVC, SVC
 from sklearn import metrics
 from sklearn.cross_validation import cross_val_score, KFold, train_test_split, StratifiedKFold
-from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import GaussianNB, BernoulliNB, MultinomialNB
 from sklearn.metrics import classification_report
 
 import csv_io
@@ -69,6 +69,7 @@ def reportBis(X, Y, d) :
         l_key = []
         for v in l_val :
                 l_key.append(d.keys()[d.values().index(v)])
+	'''
 	##### SMO #####
 	print 'SMO : '
 	print(metrics.classification_report(Y, stratified_cv(X,Y,SVC,kernel = 'linear'), target_names = l_key))	
@@ -81,12 +82,17 @@ def reportBis(X, Y, d) :
 	#print(cross_val_score(LinearSVC(loss='l2'), X, Y, scoring='roc_auc', cv = StratifiedKFold(Y, n_folds=10)))
 	scores = cross_val_score(LinearSVC(loss = 'l2'), X, Y, cv = 10 )
 	print("Accuracy : %0.3f " % (scores.mean()))
+	'''
 	##### BAYES #####
-	print 'Naive Bayes : '
-	print(metrics.classification_report(Y, stratified_cv(X,Y,GaussianNB), target_names = l_key))
+	
 	#print(cross_val_score(GaussianNB(), X, Y, scoring='roc_auc', cv = StratifiedKFold(Y, n_folds=10)))
-	scores = cross_val_score(GaussianNB(), X, Y, cv = 10 )
-	print("Accuracy : %0.3f " % (scores.mean()))
+	print 'Naive Bayes MultinomialNB : '
+
+	print(metrics.classification_report(Y, stratified_cv(X,Y,MultinomialNB), target_names = l_key))
+	scores = cross_val_score(MultinomialNB(), X, Y, cv = 10 )
+        print("Accuracy : %0.3f " % (scores.mean()))
+
+
 '''
 	#expected = OneVsRestClassifier(LinearSVC(random_state = 0)).fit(X,Y).predict(X)
 
