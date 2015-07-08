@@ -20,15 +20,6 @@ def launch_linearSVC(file, bound) :
 	print('X : ')
 	print X
 	reportBis(X, Y, d)
-	#X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.7, random_state = 0)
-	#clf = GaussianNB()
-	#clf = SVC(kernel = 'linear')
-	#regC = 1.0  # SVM regularization parameter
-	#clf = SVC(kernel='rbf', gamma=0.01, C=regC)
-	#clf = LinearSVC(loss = 'l2')
-	#clf = OneVsRestClassifier(LinearSVC(random_state = 0))
-	#clf.fit(X_train, Y_train)
-
 
 
 def load(file, bound) :
@@ -65,54 +56,36 @@ def report(clf, X_test, Y_test, d) :
 	print classification_report(Y_test, Y_pred, target_names = l_key)
 
 def reportBis(X, Y, d) :
+	'''
+		Give scores for SMO, Liblinear and Bayes on data X with target Y
+	'''
+	# Prepare class name
         l_val = sorted(d.values())
         l_key = []
         for v in l_val :
                 l_key.append(d.keys()[d.values().index(v)])
-	'''
+
 	##### SMO #####
 	print 'SMO : '
 	print(metrics.classification_report(Y, stratified_cv(X,Y,SVC,kernel = 'linear'), target_names = l_key))	
 	scores = cross_val_score(SVC(kernel='linear'), X, Y, cv = 10 )
 	print("Accuracy : %0.3f " % (scores.mean()))
 	#metrics.roc_auc_score(Y, Y, average=None)
+
 	##### LIBLIN #####
 	print 'LibLinear : '
 	print(metrics.classification_report(Y, stratified_cv(X,Y,LinearSVC,loss ='l2'), target_names = l_key))
 	#print(cross_val_score(LinearSVC(loss='l2'), X, Y, scoring='roc_auc', cv = StratifiedKFold(Y, n_folds=10)))
 	scores = cross_val_score(LinearSVC(loss = 'l2'), X, Y, cv = 10 )
 	print("Accuracy : %0.3f " % (scores.mean()))
-	'''
+
 	##### BAYES #####
 	
-	#print(cross_val_score(GaussianNB(), X, Y, scoring='roc_auc', cv = StratifiedKFold(Y, n_folds=10)))
 	print 'Naive Bayes MultinomialNB : '
 
 	print(metrics.classification_report(Y, stratified_cv(X,Y,MultinomialNB), target_names = l_key))
 	scores = cross_val_score(MultinomialNB(), X, Y, cv = 10 )
         print("Accuracy : %0.3f " % (scores.mean()))
-
-
-'''
-	#expected = OneVsRestClassifier(LinearSVC(random_state = 0)).fit(X,Y).predict(X)
-
-	#print(metrics.classification_report(expected,Y))
-	#print(metrics.confusion_matrix(expected,Y))
-	clf = LinearSVC(random_state = 0)
-	k_fold = KFold(len(Y), 10, shuffle = True)
-	#cross_val_score(clf, X, Y, cv = cv, score_func = metrics.f1_score)
-
-	precisions =  cross_val_score(clf, X, Y, cv=k_fold, n_jobs = 1, scoring = 'precision')
-	print( 'Precision : ', precisions)
-	recalls = cross_val_score(clf, X, Y, cv=k_fold, n_jobs = 1, scoring = 'recall')
-	print('Recall : ', recalls)
-	f_measures = cross_val_score(clf, X, Y, cv=k_fold, n_jobs = 1, scoring = 'f1')  
-	print('F_measure : ', f_measures)
-	#aucs = cross_val_score(clf, X, Y, cv=k_fold, n_jobs = 1, scoring = 'roc_auc')
-	#print('Auc : ', aucs)
-	acc = cross_val_score(clf, X, Y, cv=k_fold, n_jobs = 1, scoring = 'accuracy') 
-   	print('Acc : ',acc)
-'''	
 
 	
 def numerize(Y) :

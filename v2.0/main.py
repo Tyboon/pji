@@ -117,7 +117,10 @@ if  __name__ == "__main__" :
 	print peptides_link[0]
 	'''
 	
+	# Chargement du csv sous forme de liste	
 	peptides_link = read_csv('../file/peptides_all.csv')	
+	
+	# Prélèvement des données X pour data et Y pour targets
 	Y = np.array([x[0] for x in peptides_link])
 	Y = Y[1:] # delete header
 	#print X[0][3]
@@ -126,15 +129,14 @@ if  __name__ == "__main__" :
 	#print X[0][541]
 	
 	X = peptides_link[1:] # delete header
-	#X = np.array([x[4:] for x in X], dtype=float)
+	X = np.array([x[4:] for x in X], dtype=float)
 	Y, d = numerize(Y)
-	#reportBis(X, Y, d)
+	reportBis(X, Y, d)
 	
-	XM = np.array([x[4:532] for x in X], dtype=float)
-	X_MC = np.array([x[4:537] for x in X], dtype=float)
-	X_ML = np.array([x[4:532]+x[537:] for x in X], dtype=float)
+	#XM = np.array([x[4:532] for x in X], dtype=float)
+	#X_MC = np.array([x[4:537] for x in X], dtype=float)
+	#X_ML = np.array([x[4:532]+x[537:] for x in X], dtype=float)
 	#reportBis(XM,Y,d)
-	reportBis(X_MC, Y, d)
-	
-	reportBis(X_ML, Y, d)
+	#reportBis(X_MC, Y, d)
+	#reportBis(X_ML, Y, d)
 
