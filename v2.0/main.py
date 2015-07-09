@@ -58,13 +58,9 @@ def start(argv) :
 			sys.exit()
 	return peptidesFile, monomersFile, clustersFile, default, selectActivity
 
-if  __name__ == "__main__" :
-	'''		
-	##################### ANALYSE ARGUMENTS #######################
-	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
 
-	print peptidesFile, monomersFile, clustersFile, default, selectActivity
-
+def loader(peptidesFile, monomersFile, clustersFile, default, selectActivity) :
+	
 	##################### LOADING PEPTIDES #########################
 	print "Hi, let's start with %s base" % (peptidesFile)
 
@@ -86,11 +82,10 @@ if  __name__ == "__main__" :
 	list_clusters = load_clusters(clustersFile)
 	
 	print "clusters loaded"
+	return list_init, list_monomers, list_clusters, bound_init
 
-	################################################################
-	######  GENERATE FULL LIST PEPTIDES (MONO, LINK, CLUST)	#######
-	################################################################
-	
+
+def create_full_list(list_init, list_mono, list_clusters) :
 	print "create monomers count"
 	peptides_mono = add_cpt(list_init, list_monomers)
 	bound_mono = len(peptides_mono[0])
@@ -102,41 +97,71 @@ if  __name__ == "__main__" :
 	print "create links count"
 	peptides_link = add_cpt_link(peptides_clust,5)
 	bound_links = len(peptides_link[0])
+	
+	return peptides_link, bound_mono, bound_clust, bound_links
 
+def launch_report(peptides_link, bi, bm, bc, bl) :
+	# Prelevement des donnees X pour data et Y pour targets
+	Y = np.array([x[0] for x in peptides_link])
+	Y = Y[1:] # delete header
+	X = peptides_link[1:] # delete header
+	Y, d = numerize(Y)
+	
+	XM = np.array([x[bi+1:bm] for x in X], dtype=float)
+	X_MC = np.array([x[bi+1:bc] for x in X], dtype=float)
+	X_ML = np.array([x[bi+1:bm]+x[bc+1:] for x in X], dtype=float)
+	X = np.array([x[bi+1:] for x in X], dtype=float)
+	
+	print('SCORE FOR MONOMERS')
+	reportBis(XM,Y,d)
+	print('SCORE FOR MONOMERS-CLUSTERS')
+	reportBis(X_MC, Y, d)
+	print('SCORE FOR MONOMERS-LINKS')
+	reportBis(X_ML, Y, d)
+	print('SCORE FOR ALL')
+	reportBis(X,Y,d)
+
+
+if  __name__ == "__main__" :
+	
+	##################### ANALYSE ARGUMENTS #######################
+	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
+
+	print peptidesFile, monomersFile, clustersFile, default, selectActivity
+	
+	################################################################
+		
+	###################### LOADING #################################
+
+	list_init, list_monomers, list_clusters, bound_init = loader(peptidesFile, monomersFile, clustersFile, default, selectActivity)
+
+	################################################################
+	
+	######  GENERATE FULL LIST PEPTIDES (MONO, LINK, CLUST)	#######
+	
+	peptides_link, bound_mono, bound_clust, bound_link = create_full_list(list_init, list_monomers, list_clusters)
+	
+	################################################################
+	
+	##################### GENERATE CSV #############################
+	
 	fileG = "../file/peptides_all.csv"
 
 	create_csv(peptides_link, fileG)
 
 	print "Data ready to be analyse" 
 	
-	print bound_init, bound_mono, bound_clust, bound_links
+	################################################################
 	
-	print list_init[0]
-	print peptides_mono[0]
-	print peptides_clust[0]
-	print peptides_link[0]
-	'''
+	##################### SCORING ##################################
 	
+	#bound_init, bound_mono, bound_clust, bound_link = 4, 531, 536, 541
 	# Chargement du csv sous forme de liste	
-	peptides_link = read_csv('../file/peptides_all.csv')	
+	#peptides_link = read_csv('../file/peptides_all.csv')	
 	
-	# Prélèvement des données X pour data et Y pour targets
-	Y = np.array([x[0] for x in peptides_link])
-	Y = Y[1:] # delete header
-	#print X[0][3]
-	#print X[0][532]
-	#print X[0][537]
-	#print X[0][541]
-	
-	X = peptides_link[1:] # delete header
-	X = np.array([x[4:] for x in X], dtype=float)
-	Y, d = numerize(Y)
-	reportBis(X, Y, d)
-	
-	#XM = np.array([x[4:532] for x in X], dtype=float)
-	#X_MC = np.array([x[4:537] for x in X], dtype=float)
-	#X_ML = np.array([x[4:532]+x[537:] for x in X], dtype=float)
-	#reportBis(XM,Y,d)
-	#reportBis(X_MC, Y, d)
-	#reportBis(X_ML, Y, d)
+	#print peptides_link[0][3]
+	#print peptides_link[0][531]
+	#print peptides_link[0][536]
+	#print peptides_link[0][541]
 
+	launch_report(peptides_link, bound_init, bound_mono, bound_clust, bound_link)

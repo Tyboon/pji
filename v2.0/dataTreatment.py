@@ -59,7 +59,6 @@ def select_activity(peptides, N):
 	'''
 	Select only peptides whose activity counter over N 
 	'''
-
 	activities = list(set([row[0] for row in peptides]))
 	peptides_act =list([row[0] for row in peptides]) 
 	count_act = []
@@ -69,7 +68,7 @@ def select_activity(peptides, N):
 	for c in count_act :
 		if c[1] >= N :
 			list_count.append(c[0])
-	print list_count
+	#print list_count
 	
 	list_ceil = []
 	for p in peptides :

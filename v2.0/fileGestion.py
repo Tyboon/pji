@@ -79,6 +79,7 @@ def load_peptides (peptidesFile, default, selectActivity) :
 			print "fichier %s inexistant" % (peptidesFile)
 			sys.exit(2)
 	if selectActivity > 0 :
+		print('GONE in SELECTACTIVITY')
 		list_init = select_activity(list_init, selectActivity)
 
 	return list_init

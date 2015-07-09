@@ -10,7 +10,7 @@ import csv_io
 import numpy as np
 
 
-def launch_linearSVC(file, bound) : 
+def launch_report(file, bound) : 
 
 	X, Y, d = load(file, bound)
 	print('Y : ')
@@ -43,17 +43,6 @@ def stratified_cv(X, y, clf_class, shuffle=True, n_folds=10, **kwargs):
         y_pred[jj] = clf.predict(X_test)
     return y_pred
 
-def report(clf, X_test, Y_test, d) :
-	Y_pred = clf.predict(X_test)
-	
-	l_val = sorted(d.values())
-	l_key = []
-	for v in l_val : 
-		l_key.append(d.keys()[d.values().index(v)])	
-
-	print l_key 
-	print l_val
-	print classification_report(Y_test, Y_pred, target_names = l_key)
 
 def reportBis(X, Y, d) :
 	'''
@@ -106,5 +95,5 @@ def numerize(Y) :
 
 if __name__ == "__main__" :
 
-	launch_linearSVC()
+	launch_report(argv[1:])
 	
