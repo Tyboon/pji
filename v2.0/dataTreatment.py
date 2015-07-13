@@ -1,11 +1,11 @@
 
-def nb_occ(monom, pep) :
+def nb_occ(monom, pep, sep = ';') :
 	'''
 	Counts the number of occurancies of a monomer in a peptide
 	'''
 
 	occ = 0
-	list_p = pep.split(';')
+	list_p = pep.split(sep)
 	occ = list_p.count(monom)
 	return occ
 

@@ -122,6 +122,7 @@ def launch_report(peptides_link, bi, bm, bc, bl) :
 	reportBis(X,Y,d)
 
 
+
 if  __name__ == "__main__" :
 	
 	##################### ANALYSE ARGUMENTS #######################
@@ -149,10 +150,8 @@ if  __name__ == "__main__" :
 
 	create_csv(peptides_link, fileG)
 
-	print "Data ready to be analyse" 
-	
+	print "Data ready to be analyse" 	
 	################################################################
-	
 	##################### SCORING ##################################
 	
 	#bound_init, bound_mono, bound_clust, bound_link = 4, 531, 536, 541
@@ -164,4 +163,6 @@ if  __name__ == "__main__" :
 	#print peptides_link[0][536]
 	#print peptides_link[0][541]
 
-	launch_report(peptides_link, bound_init, bound_mono, bound_clust, bound_link)
+	#launch_report(peptides_link, bound_init, bound_mono, bound_clust, bound_link)
+	clf1, clf2, clf3 = training(peptides_link)
+	predicting(clf1, d)

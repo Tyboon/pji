@@ -77,6 +77,24 @@ def reportBis(X, Y, d) :
         print("Accuracy : %0.3f " % (scores.mean()))
 
 	
+def training(data) :
+	Y = np.array([x[0] for x in data])
+        Y = Y[1:] # delete header
+        X = data[1:] # delete header
+        Y, d = numerize(Y)
+	clf_smo = SVC(kernel='linear')
+	clf_lib = LinearSVC(loss = 'l2')
+	clf_bayes = MultinomialNB()	
+	
+	clf_smo.fit(X,Y)
+	clf_lib.fit(X,Y)
+	clf_bayes(X,Y)
+	
+	return clf_smo, clf_lib, clf_bayes
+
+def predicting(clf, d) :
+	clf.predict(d)
+
 def numerize(Y) :
 	'''
 		Transform nominal target form to numeric form.
