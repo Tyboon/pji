@@ -124,7 +124,7 @@ def launch_report(peptides_link, bi, bm, bc, bl) :
 
 
 if  __name__ == "__main__" :
-	
+	'''
 	##################### ANALYSE ARGUMENTS #######################
 	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
 
@@ -165,4 +165,10 @@ if  __name__ == "__main__" :
 
 	#launch_report(peptides_link, bound_init, bound_mono, bound_clust, bound_link)
 	clf1, clf2, clf3 = training(peptides_link)
-	predicting(clf1, d)
+	'''	
+	monomers = read_csv('../data/monomers.csv')
+	clusters = read_cluster('../data/mono_cluster.csv') 
+	d = 'C10:0,Trp,D-Asn,Asp,Thr,Gly,Orn,Asp,D-Ala,Asp,Gly,D-Ser,3Me-Glu,Kyn@1@0,2@1,3@2,4@3,5,13@4,6@5,7@6,8@7,9@8,10@9,11@10,12@11,13@4,12'
+	d_ = dec2print(d, monomers, clusters, 5)
+	print d_
+	#predicting(clf1, d_)

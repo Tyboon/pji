@@ -3,7 +3,7 @@ from dataTreatment import select_activity
 from dataTreatment import select_default
 from importNorine import *
 
-def create_csv(mylist,filename) :
+def create_csv(mylist,filename, m = False) :
 	'''
 	Creates csv from a list
 	'''
@@ -12,8 +12,8 @@ def create_csv(mylist,filename) :
 	try :
 		writer = csv.writer(csv_file)
 		for line in mylist :
-				#mettre uniquement pour monomers 
-				#line  = [line] 
+				if m : #mettre uniquement pour monomers 
+					line  = [line] 
 				writer.writerow((line))
 	finally :
 		csv_file.close()

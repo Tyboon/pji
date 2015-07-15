@@ -35,7 +35,6 @@ def get_list_peptides() :
 	liste = [['activity','id','composition','link']]
 	# For all peptides in ddb
 	for i in range(1174) :  #1174 peptides
-		print i
 		json_data = get_peptide(i)
 		json_struct = json.loads(json_data)
 		if 'peptides' in json_struct :

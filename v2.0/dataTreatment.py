@@ -32,6 +32,7 @@ def add_cpt_clusters(peptides, clusters) :
 	Add to the peptides list the cluster counter
 	'''
 	len_m = len(peptides[0])
+	len_i = 4 #start of monomer counter
 	#ajout de l'entete
 	for c in clusters :
 		peptides[0].append(c[0])
@@ -40,16 +41,16 @@ def add_cpt_clusters(peptides, clusters) :
 	for p in peptides :
 		if p != peptides[0] :
 			for c in clusters :
-				p.append(nb_occ_clust(c,p, peptides[0], len_m))
+				p.append(nb_occ_clust(c,p, peptides[0],len_i, len_m))
 	return peptides
 
 
-def nb_occ_clust(cluster, pep, header, len_m) :
+def nb_occ_clust(cluster, pep, header, len_i, len_m) :
 	'''
 	Counts number of occurancies of cluster 
 	'''
 	cpt = 0
-	for i in range(4,len_m) :
+	for i in range(len_i,len_m) :
 		if header[i] in cluster :
 			cpt += pep[i]
 	return cpt
@@ -129,26 +130,27 @@ def add_cpt_link(peptides,N) :
 				p.append(links_cpt.count(i))
 	return peptides
 
-
-def bounding (digit,bound_init, bound_mono, bound_clust) :
+def dec2print(dec, monomers, clusters, N) :
 	'''
-		give the bound of data useless that we could remove
-	'''
-	bound = ""
-	if digit == 'm' :
-		bound = "2-%d,%d-last" % (bound_init, bound_mono+1)
-	elif digit == 'c' :
-		bound = "2-%d,%d-last" % (bound_mono, bound_clust+1)
-	elif digit == 'l' :
-		bound = "2-%d" % (bound_clust)
-	elif digit == 'mc' or digit == 'cm' :
-		bound = "2-%d,%d-last" % (bound_init, bound_clust+1)
-	elif digit == 'ml' or digit == 'lm' :
-		bound = "2-%d,%d-%d" % (bound_init, bound_mono+1, bound_clust)
-	elif digit == 'lc' or digit == 'cl' :
-		bound = "2-%d" % (bound_mono)
-	else : # mcl
-		bound = "2-%d" % (bound_init)
-	return bound
 
+	'''
+	dec_ = []
+	dec = dec.split('@')
+	d = dec[0]
+	header = []
+	links = dec[1:]
+	links_cpt = []
+	len_m = len(monomers)
+
+	for m in monomers : 
+		dec_.append(nb_occ(m,d))
+		header.append(m)
+	for c in clusters :
+		dec_.append(nb_occ_clust(c, dec_, header, 0, len_m))
+	for l in links : 
+		links_cpt.append(len(l.split(',')))
+	for i in range(1, N+1) :
+		dec_.append(links_cpt.count(i))
+	
+	return dec_
 
