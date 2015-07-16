@@ -1,3 +1,16 @@
+NOW : Ajout des fonctionnalités à l'interface mis en place sur Norine
+
+16/07
+
+Phase de chargement des NRP et monomères de Norine
+
+Phase d'apprentissage avec SMO et Liblinear
+Avec extériorisation des classifieurs et du dico de activités via pickle dans dossier data/pickle/ 
+
+Phase de prédiction : parse la décomposition en empreinte, importe les clf et dico, sortie sous forme de dico {'smo' : 'activité_prédit'; 'lib': ...}
+
+
+
 19/06
 
 Entrée csv : traduite en 2 listes
