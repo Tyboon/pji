@@ -61,7 +61,6 @@ def read_cluster(myfile) :
 					for t in tab :
 						l.append(t.rstrip())
 					liste.append(l)
-	#print liste
 	return liste
 
 def load_peptides (peptidesFile, default, selectActivity) :
@@ -81,7 +80,6 @@ def load_peptides (peptidesFile, default, selectActivity) :
 	if selectActivity > 0 :
 		print('GONE in SELECTACTIVITY')
 		list_init = select_activity(list_init, selectActivity)
-
 	return list_init
 	
 def load_monomers (monomersFile) :

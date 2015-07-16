@@ -1,31 +1,11 @@
 from dataTreatment import *
 from fileGestion import *
-from learningMethods2 import *
+from LM import *
 
 from sys import argv
 import getopt
 
 #import weka.core.jvm as jvm
-
-def usage() :
-	
-	print ""
-	print "	learn c cl mc : "
-	print "applied learning method on a base containing just cluster digits, another containine cluster and link associated digits and the last containing monomer and cluster digits"
-	
-	print ""
-	print "	compare : "
-	print "compare all analyses stocked since the beginning, return a sorted list from the better to the worst digit"
-	
-	print ""
-	print "	show  : "
-	print "show the result of the learning method on the cl digits"
-	print ""
-	
-	print "	exit : "
-	print "quit the program "
-	print ""
-	
 
 def start(argv) :
 	peptidesFile = 'NORINE'
@@ -124,14 +104,14 @@ def launch_report(peptides_link, bi, bm, bc, bl) :
 
 
 if  __name__ == "__main__" :
-	'''
+		
 	##################### ANALYSE ARGUMENTS #######################
 	peptidesFile, monomersFile, clustersFile, default, selectActivity = start(argv[1:])
 
 	print peptidesFile, monomersFile, clustersFile, default, selectActivity
 	
 	################################################################
-		
+
 	###################### LOADING #################################
 
 	list_init, list_monomers, list_clusters, bound_init = loader(peptidesFile, monomersFile, clustersFile, default, selectActivity)
@@ -145,18 +125,20 @@ if  __name__ == "__main__" :
 	################################################################
 	
 	##################### GENERATE CSV #############################
+	create_csv(list_monomers, '../data/monomers.csv', True)
 	
-	fileG = "../file/peptides_all.csv"
+	fileG = "../data/peptides_all.csv"
 
 	create_csv(peptides_link, fileG)
 
 	print "Data ready to be analyse" 	
 	################################################################
+	
 	##################### SCORING ##################################
 	
 	#bound_init, bound_mono, bound_clust, bound_link = 4, 531, 536, 541
 	# Chargement du csv sous forme de liste	
-	#peptides_link = read_csv('../file/peptides_all.csv')	
+	# peptides_link = read_csv('../file/peptides_all.csv')	
 	
 	#print peptides_link[0][3]
 	#print peptides_link[0][531]
@@ -164,11 +146,12 @@ if  __name__ == "__main__" :
 	#print peptides_link[0][541]
 
 	#launch_report(peptides_link, bound_init, bound_mono, bound_clust, bound_link)
-	clf1, clf2, clf3 = training(peptides_link)
-	'''	
+	
+	training(peptides_link)
+	'''
 	monomers = read_csv('../data/monomers.csv')
 	clusters = read_cluster('../data/mono_cluster.csv') 
 	d = 'C10:0,Trp,D-Asn,Asp,Thr,Gly,Orn,Asp,D-Ala,Asp,Gly,D-Ser,3Me-Glu,Kyn@1@0,2@1,3@2,4@3,5,13@4,6@5,7@6,8@7,9@8,10@9,11@10,12@11,13@4,12'
 	d_ = dec2print(d, monomers, clusters, 5)
-	print d_
-	#predicting(clf1, d_)
+	print predicting(d_)
+	'''

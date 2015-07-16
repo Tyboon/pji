@@ -37,30 +37,30 @@ def get_list_peptides() :
 	for i in range(1174) :  #1174 peptides
 		json_data = get_peptide(i)
 		json_struct = json.loads(json_data)
-		if 'peptides' in json_struct :
-			# If there is peptide description continue ... 
-			if (len(json_struct['peptides']) >= 1) :
-				# If there is activity description continue ...
-				if ('activity' in json_struct['peptides'][0]['general']) :
-						#Test if there is only 1 activity, or 2 with 'surfactant', and different of 'unknown'
-						activity = json_struct['peptides'][0]['general']['activity']
-						if (((len(activity) == 1) and (activity[0] != 'unknown') and (activity[0] != 'surfactant')) or ((len(activity) == 2) and (((activity[0]=='surfactant') or (activity[1]=='surfactant')) and ('unknown' not in activity )))) :
-							# If there is 'surfactant' remove it from the activity list
-							if 'surfactant' in activity :
-								activity.remove('surfactant')
-								print len(activity)
-							# If there is id continue ...
-							if 'id' in json_struct['peptides'][0]['general'] :
-								# If there is composition description continue ...
-								if 'composition' in json_struct['peptides'][0]['structure'] :
-									# If ther is link description continue ...
-									if 'graph' in json_struct['peptides'][0]['structure'] :
-										composition = json_struct['peptides'][0]['structure']['composition']
-										composition = "'" + composition.replace(', ',';') + "'"
-										lien = json_struct['peptides'][0]['structure']['graph']
-										lien = lien.replace(', ',';')
-										# Put activity, id, composition and link at the list
-										liste.append([activity[0], json_struct['peptides'][0]['general']['id'], composition, lien])
+		if ('norine' in json_struct) and (len(json_struct['norine']) >= 1) :
+			if 'peptide' in json_struct['norine'] :
+				# If there is peptide description continue ... 
+				if (len(json_struct['norine']['peptide']) >= 1) :
+					# If there is activity description continue ...
+					if ('activity' in json_struct['norine']['peptide'][0]['general']) :
+							#Test if there is only 1 activity, or 2 with 'surfactant', and different of 'unknown'
+							activity = json_struct['norine']['peptide'][0]['general']['activity']
+							if (((len(activity) == 1) and (activity[0] != 'unknown') and (activity[0] != 'surfactant')) or ((len(activity) == 2) and (((activity[0]=='surfactant') or (activity[1]=='surfactant')) and ('unknown' not in activity )))) :
+								# If there is 'surfactant' remove it from the activity list
+								if 'surfactant' in activity :
+									activity.remove('surfactant')
+								# If there is id continue ...
+								if 'id' in json_struct['norine']['peptide'][0]['general'] :
+									# If there is composition description continue ...
+									if 'composition' in json_struct['norine']['peptide'][0]['structure'] :
+										# If ther is link description continue ...
+										if 'graph' in json_struct['norine']['peptide'][0]['structure'] :
+											composition = json_struct['norine']['peptide'][0]['structure']['composition']
+											composition = "'" + composition.replace(', ',';') + "'"
+											lien = json_struct['norine']['peptide'][0]['structure']['graph']
+											lien = lien.replace(', ',';')
+											# Put activity, id, composition and link at the list
+											liste.append([activity[0], json_struct['norine']['peptide'][0]['general']['id'], composition, lien])
 	return liste
 
 

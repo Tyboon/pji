@@ -69,7 +69,6 @@ def select_activity(peptides, N):
 	for c in count_act :
 		if c[1] >= N :
 			list_count.append(c[0])
-	#print list_count
 	
 	list_ceil = []
 	for p in peptides :
@@ -132,7 +131,7 @@ def add_cpt_link(peptides,N) :
 
 def dec2print(dec, monomers, clusters, N) :
 	'''
-
+	Make print from graph decomposition of a NRP
 	'''
 	dec_ = []
 	dec = dec.split('@')
