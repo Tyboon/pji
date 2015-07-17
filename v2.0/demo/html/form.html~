@@ -1,0 +1,76 @@
+<body>
+<form id="formulaire" enctype="multipart/form-data" method="post">
+  <div class="formulaire">
+    <table class="vide">
+      <tr>
+	<td class="label">Enter a <b>name</b> for the sequences 
+	  <i>(optional) </i> : 
+	  <input type="text" name="seq_name" size="20" />
+	</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="formulaire">
+    <table class="vide">
+      <tr>
+	<td class="label"><b>Paste</b> your RNA sequences in FASTA
+	  format &nbsp;&nbsp;[<a href="#carnac/help.html#fasta">?</a>]
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <textarea name="sequence" rows="15" cols="40"></textarea>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  or
+	</td>
+      </tr>
+      <tr>
+	<td class="label">
+	  <b>upload</b> a file 
+	  <input type="file" value="file" name="file"/>
+	</td>
+      </tr> 
+      <tr>
+	<td><input id="ex1" type="submit" name="example" value="Example" /></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="formulaire">
+    <table class="vide">
+      <tr>
+	<td class="label">
+	  <input type="checkbox" name="GC" value="pourcentage GC" />
+	  Disable threshold correction according to GC%
+	  [<a href="#carnac/help.html#gccontent">?</a>]
+	</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="formulaire">
+    <table class="vide">
+      <tr>
+	<td class="label"> 
+	  Enter your <b>E-mail</b> address <i>(optional)</i>: 
+	  <input type="text" name="email" size="20" />
+	</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="center">
+    <input type="submit" id="reset" name="reset" value="Reset" /> 
+    <input type="submit" id="run" name="button" value="Run CARNAC" />
+    <input type="hidden" name="command" value="request" /> 
+  </div>
+  
+  <script src="/carnac/js/script.js" type="text/javascript">
+
+</form>
+</body>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link title="test" type="text/css" rel="stylesheet" href="carnac.css" />
+<title>
+CARNAC
+</title>
+</head>
+<body>
+<!-- script php incluant le menu-->
+
+<? $fichier = "../menu.html"; 
+    if (file_exists($fichier)) 
+    { 
+      $tableau = file($fichier); 
+      while(list($cle,$val) = each($tableau)) 
+      {
+         echo $val;
+      }
+    }
+?>
+
+<div class="bloc_droit">
+
+<div class="main">
+
+<div class="menu_haut">
+   <div class="titre">   
+   <h1><a href="#">CARNAC</a>::retrieve result with an ID</h1>
+   </div>    
+ 
+   <div class="menu_central">
+       <a href="index.php">home</a>
+    |  <a href="carnac.php">web server</a>
+    |  <a href="help.php">help</a>
+    |  <a href="examples.php">examples</a>
+    |  <a href="id.php">retrieve result with an ID</a>
+   </div>
+</div>
+
+<div class="main_haut">
+
+</div> 
+
+<div class="page">  
+
+
+    <div class="section">
+
+<div class="error">
+This is not a valid ID !
+</div>
+
+<div class="bande_formulaire">
+<form method="post" action="/cgi-bin/carnac/result.pl">
+The ID remains valid 24 hours after sequence submission. 
+<br />
+<br />
+<b>  Enter the ID :</b>  
+<input type="text" name="ident" size="20" />
+<input type="submit" value="Go" />
+</form>
+</div>
+
+  </div><!-- section -->
+      <div class="footer">
+         For questions about CARNAC or for bug reports, please contact    <a href="mailto: carnac@lifl.fr" style="color:rgb(0,0,160)"><b>carnac@lifl.fr</b></a>        
+    </div>    
+    
+   
+</div><!-- page -->
+<div class="main_bas">
+
+</div> 
+
+</div><!-- main -->
+   
+    <div class="copyright"> 
+      Copyright &copy; 2003 Laboratoire d'Informatique Fondamentale de Lille, Universit&eacute; des Sciences et Technologies de Lille
+    </div>
+ 
+</div><!-- bloc droit-->
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<ul id="menu">
+   	 <li class="onglet onglet_left" id="home">
+	    <a href="/carnac/carnac.php" class="mc aLoad">Carnac</a>
+	 </li>
+	 <li class="onglet" id="web_server">
+	    <a href="/carnac/form.php" class="mc aLoad" >web server</a>
+	 </li>
+	 <li class="onglet" id="help">
+	     <a href="/carnac/help.php" class="mc aLoad">help</a>
+	 </li>
+	 <li class="onglet" id="examples">
+	     <a href="/carnac/examples.php" class="mc aLoad">examples</a>
+	 </li>
+	 <li class="onglet onglet_right" id="id">
+	     <a href="/carnac/id.php" class="mc aLoad">retrieve result with an ID</a>
+	 </li>
+</ul>
