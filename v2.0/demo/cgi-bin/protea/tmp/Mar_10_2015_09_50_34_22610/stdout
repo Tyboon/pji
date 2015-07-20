@@ -1,0 +1,9 @@
+falling back to default value 1.00 for min_aln_score
+Computing pairwise sequences similarity....ok
+Clustering sequences slinked={ } ssingle={ 0 1 } sepsilon={ }
+Translating nucleic alignments...ok
+Building RFG (needle on amino acid sequences).......................................ok
+Building RFG...ok
+Computing and sorting best assignments...ok
+Computing zscore (full sum-of-pairs)...ok
+	Generating multiple alignment with best assignment (ClustalW)...done

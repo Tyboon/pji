@@ -1,0 +1,43 @@
+\documentclass[landscape,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\newlength{\marger}\newlength{\margeh}\newlength{\margeb}\newlength{\margegd}
+\setlength{\marger}{0cm}\setlength{\margeh}{0cm}\setlength{\margeb}{0cm}\setlength{\margegd}{4cm}\setlength{\parindent}{1cm}\setlength{\voffset}{-1in}\setlength{\topmargin}{.333\margeh}\setlength{\headheight}{.333\margeh}\setlength{\headsep}{.333\margeh}\setlength{\textheight}{\paperheight}
+
+
+\usepackage{supertabular}
+
+\addtolength{\textheight}{-2cm}\addtolength{\textheight}{-\margeh}\addtolength{\textheight}{-\margeb}\setlength{\hoffset}{-1in}\addtolength{\hoffset}{\margegd}\setlength{\oddsidemargin}{\marger}\setlength{\evensidemargin}{0pt}\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-2\margegd}\addtolength{\textwidth}{-\marger}
+
+\begin{document}
+\tt
+\vspace*{\fill}
+\begin{center}
+\begin{tabular}{rl}
+Id&Sequence name\\
+ 0&Q19267_CAEEL/158-187\\
+ 1&Q86G85_PSEIC/635-670\\
+ 2&O97702_CANFA/508-543\\
+\end{tabular}
+
+\begin{tabular}{rl}
+Id&Sequences\\
+ 0&\{0\}\\
+ 1&\{1\}\\
+ 2&\{2\}\\
+\end{tabular}
+
+\begin{supertabular}{|r|cccccc|cccccc|cccccc|}
+\hline
+&1/1&1/2&1/3&1/-3&1/-2&1/-1&2/1&2/2&2/3&2/-3&2/-2&2/-1&3/1&3/2&3/3&3/-3&3/-2&3/-1\\
+\hline
+ 0/ 1&68.5&23.5&-inf&0.0&0.0&0.0&-inf&27.0&8.0&0.0&0.0&0.0&1.0&-inf&28.5&0.0&0.0&0.0\\
+ 0/ 2&58.5&11.0&4.5&0.0&0.0&0.0&-inf&5.0&10.0&0.0&0.0&0.0&5.5&-inf&15.0&0.0&0.0&0.0\\
+\hline
+ 1/ 2&138.0&9.0&9.0&0.0&0.0&0.0&3.0&22.0&5.0&0.0&0.0&0.0&5.0&3.0&22.5&0.0&0.0&0.0\\
+\hline
+\hline
+\end{supertabular}
+\end{center}
+\vspace*{\fill}
+\end{document}

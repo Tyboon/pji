@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/home/data/bio2/www/cgi-bin/RNA/carnac/carnac_common.py", line 150, in remove_old_results
-    stamp = open(CLEANING_TIMESTAMP, 'w')
-IOError: [Errno 13] Permission denied: '/bio2/www/cgi-bin/carnac/cleaning_timestamp.txt'
-Traceback (most recent call last):
-  File "/home/data/bio2/www/cgi-bin/RNA/carnac/carnac_common.py", line 150, in remove_old_results
-    stamp = open(CLEANING_TIMESTAMP, 'w')
-IOError: [Errno 13] Permission denied: '/bio2/www/cgi-bin/carnac/cleaning_timestamp.txt'
