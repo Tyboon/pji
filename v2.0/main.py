@@ -101,6 +101,11 @@ def launch_report(peptides_link, bi, bm, bc, bl) :
 	print('SCORE FOR ALL')
 	reportBis(X,Y,d)
 
+def predict(x) : # d = 'C10:0,Trp,D-Asn,Asp,Thr,Gly,Orn,Asp,D-Ala,Asp,Gly,D-Ser,3Me-Glu,Kyn@1@0,2@1,3@2,4@3,5,13@4,6@5,7@6,8@7,9@8,10@9,11@10,12@11,13@4,12'
+	monomers = read_csv('../data/monomers.csv')
+	clusters = read_cluster('../data/mono_cluster.csv') 
+	p = dec2print(x, monomers, clusters, 5)
+	print predicting(p)
 
 
 if  __name__ == "__main__" :
